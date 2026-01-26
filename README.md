@@ -27,7 +27,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions.
 
 - The deployment workflow triggers automatically on every push to the `main` branch
 - The workflow runs the crawler to update coupon data before building
-- The built site is deployed to GitHub Pages at: `https://ZWhitey.github.io/CheapPizza/`
+- The built site is deployed to the `gh-pages` branch, which is served at: `https://ZWhitey.github.io/CheapPizza/`
 
 ### Manual Deployment
 
