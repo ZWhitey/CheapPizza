@@ -40,7 +40,7 @@ jobs:
         run: npm ci
 
       - name: Run crawler to update data
-        run: npx tsx crawler.ts
+        run: npm run crawler
 
       - name: Build project
         run: npm run build
