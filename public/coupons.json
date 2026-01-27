@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "id": "14001",
+    "code": "14001",
+    "title": "經典大披薩雙人餐",
+    "items": [
+      "2份經典大披薩",
+      "1份雞米花",
+      "2杯可樂"
+    ],
+    "originalPrice": 1998,
+    "discountedPrice": 999,
+    "validUntil": "2025-12-31",
+    "imageUrl": "https://www.pizzahut.com.tw/images/logo_header.png"
+  },
+  {
+    "id": "15002",
+    "code": "15002",
+    "title": "豪華披薩套餐",
+    "items": [
+      "1份豪華大披薩",
+      "1份炸雞",
+      "2杯飲料"
+    ],
+    "originalPrice": 1599,
+    "discountedPrice": 799,
+    "validUntil": "2025-12-31",
+    "imageUrl": "https://www.pizzahut.com.tw/images/logo_header.png"
+  },
+  {
+    "id": "25003",
+    "code": "25003",
+    "title": "派對歡樂餐",
+    "items": [
+      "3份大披薩",
+      "2份雞塊",
+      "4杯可樂"
+    ],
+    "originalPrice": 2998,
+    "discountedPrice": 1699,
+    "validUntil": "2025-12-31",
+    "imageUrl": "https://www.pizzahut.com.tw/images/logo_header.png"
+  },
+  {
+    "id": "26004",
+    "code": "26004",
+    "title": "超值中披薩套餐",
+    "items": [
+      "2份中披薩",
+      "1份沙拉",
+      "2杯飲料"
+    ],
+    "originalPrice": 1299,
+    "discountedPrice": 699,
+    "validUntil": "2025-12-31",
+    "imageUrl": "https://www.pizzahut.com.tw/images/logo_header.png"
+  },
+  {
+    "id": "94005",
+    "code": "94005",
+    "title": "外帶特惠組",
+    "items": [
+      "1份大披薩",
+      "1份炸雞",
+      "1杯飲料"
+    ],
+    "originalPrice": 999,
+    "discountedPrice": 599,
+    "validUntil": "2025-12-31",
+    "imageUrl": "https://www.pizzahut.com.tw/images/logo_header.png"
+  }
+]
