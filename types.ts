@@ -8,3 +8,9 @@ export interface Coupon {
   validUntil: string;
   imageUrl: string;
 }
+
+export interface Metadata {
+  lastUpdated: string;
+  totalCoupons: number;
+  scannedRanges: string[];
+}
