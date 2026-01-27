@@ -238,9 +238,22 @@ async function main() {
   if (fs.existsSync(publicPath)) {
     try {
       const existingData = fs.readFileSync(publicPath, 'utf-8');
-      existingCoupons = JSON.parse(existingData);
+      const loadedCoupons: CouponData[] = JSON.parse(existingData);
+      
+      // Filter out expired coupons
+      const now = new Date();
+      existingCoupons = loadedCoupons.filter(coupon => {
+        const validUntil = new Date(coupon.validUntil);
+        return validUntil >= now;
+      });
+      
+      const expiredCount = loadedCoupons.length - existingCoupons.length;
+      console.log(`Loaded ${loadedCoupons.length} existing coupons from ${publicPath}`);
+      if (expiredCount > 0) {
+        console.log(`Removed ${expiredCount} expired coupons`);
+      }
+      
       existingIds = new Set(existingCoupons.map(c => c.id));
-      console.log(`Loaded ${existingCoupons.length} existing coupons from ${publicPath}`);
     } catch (err) {
       console.error('Failed to load existing coupons:', err);
     }
@@ -257,7 +270,7 @@ async function main() {
   const validCoupons: CouponData[] = [];
 
   for (const code of codesToScan) {
-    await delay(500); // Slight delay
+    await delay(250); // Slight delay
 
     const checkResult = await checkCouponValidity(code);
 
