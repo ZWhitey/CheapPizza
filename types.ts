@@ -13,4 +13,6 @@ export interface Metadata {
   lastUpdated: string;
   totalCoupons: number;
   scannedRanges: string[];
+  newCouponsFound?: number;
+  existingCoupons?: number;
 }

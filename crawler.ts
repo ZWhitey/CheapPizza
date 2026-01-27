@@ -282,12 +282,11 @@ async function main() {
 
   // Write to current directory or public if possible
   const simplePath = 'coupons.json';
-  const finalPublicPath = path.join((process as any).cwd(), 'public', 'coupons.json');
 
   // Try saving to public folder first, then fallback to current
   let savePath = simplePath;
-  if (fs.existsSync(path.dirname(finalPublicPath))) {
-      savePath = finalPublicPath;
+  if (fs.existsSync(path.dirname(publicPath))) {
+      savePath = publicPath;
   }
 
   try {
