@@ -26,9 +26,10 @@ import * as path from 'path';
  */
 
 // Default code ranges to scan when no arguments are provided
-// Optimized based on historical data analysis (853 valid coupons)
+// Optimized based on historical data analysis (853 valid coupons, analyzed on 2026-01-27)
 // Reduces scan size from 5000 to 1800 codes (64% reduction)
 // Focuses on ranges with highest coupon density (5+ coupons per 100 codes)
+// NOTE: Re-evaluate these ranges quarterly or when coupon patterns change significantly
 const DEFAULT_RANGES = [
   '15000-15099', '15100-15199', '15200-15299', '15300-15399', 
   '15400-15499', '15500-15599', '15600-15699', '15700-15799', '15800-15899',
