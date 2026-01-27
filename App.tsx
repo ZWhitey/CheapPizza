@@ -64,7 +64,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Header />
+      <Header lastUpdated={metadata?.lastUpdated} />
 
       <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
@@ -80,19 +80,6 @@ const App: React.FC = () => {
            </div>
         ) : (
           <>
-            {/* Update Time Display */}
-            {metadata && (
-              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-sm text-blue-800">
-                  <span className="font-semibold">最後更新時間：</span>
-                  {formatUpdateTime(metadata.lastUpdated)}
-                </p>
-                <p className="text-xs text-blue-600 mt-1">
-                  搜尋範圍：{metadata.scannedRanges.join(', ')}
-                </p>
-              </div>
-            )}
-
             {/* Results Count */}
             <div className="mb-4 text-sm text-gray-500 font-medium">
               全部優惠 ({coupons.length})
@@ -102,7 +89,7 @@ const App: React.FC = () => {
             {coupons.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {coupons.map((coupon) => (
-                  <CouponCard key={coupon.id} coupon={coupon} />
+                  <CouponCard key={coupon.code} coupon={coupon} />
                 ))}
               </div>
             ) : (

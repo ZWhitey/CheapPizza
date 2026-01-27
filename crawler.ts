@@ -45,14 +45,12 @@ const DEFAULT_RANGES = [
 
 // Interface for the output data
 interface CouponData {
-  id: string;
   code: string;
   title: string;
   items: string[];
   originalPrice: number;
   discountedPrice: number;
   validUntil: string;
-  imageUrl: string;
 }
 
 // Global cookie storage to maintain session (optional but good practice for sequential requests)
@@ -145,7 +143,7 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
     // --- HTML Parsing Logic ---
     
     // Extract Title (Look for <h1 id="cb_name">...</h1>)
-    let title = `優惠代碼 ${code}`;
+    let title = '';
     // Use [\s\S]*? to safely match across newlines if any
     const titleMatch = html.match(/<h1 id="cb_name"[^>]*>([\s\S]*?)<\/h1>/i);
     if (titleMatch) {
@@ -157,7 +155,7 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
     }
 
     // Extract Price (<div class="descPrice ...">$ 2098</div>)
-    let price = 999;
+    let price = 0;
     const priceMatch = html.match(/<div class="descPrice[^"]*"[^>]*>\$\s*([\d,]+)<\/div>/i);
     if (priceMatch) {
       price = parseInt(priceMatch[1].replace(/,/g, ''), 10);
@@ -168,26 +166,10 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
     }
 
     // Extract Original Price (Looking for "原價NT$..." or "原價$...")
-    let originalPrice = Math.round(price * 1.5); 
+    let originalPrice = 0; 
     const originalPriceMatch = html.match(/原價(?:NT)?\$([\d,]+)/i);
     if (originalPriceMatch) {
         originalPrice = parseInt(originalPriceMatch[1].replace(/,/g, ''), 10);
-    }
-
-    // Extract Image (<div class="combo_banner">...<img src="...">...)
-    let imageUrl = 'https://www.pizzahut.com.tw/images/logo_header.png';
-    const imgMatch = html.match(/<div class="combo_banner"[^>]*>[\s\S]*?<img[^>]+src="([^">]+)"/i);
-    if (imgMatch) {
-        imageUrl = imgMatch[1];
-    } else {
-        // Fallback
-        const oldImg = html.match(/<img[^>]+src="([^">]+)"[^>]*class="prod_img"/i);
-        if (oldImg) imageUrl = oldImg[1];
-    }
-
-    // Fix relative image URLs
-    if (imageUrl && !imageUrl.startsWith('http')) {
-        imageUrl = `https://www.pizzahut.com.tw${imageUrl}`;
     }
 
     // Extract Items
@@ -217,23 +199,20 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
         }
     }
 
-    if (items.length === 0) {
-        items.push('美味餐點組合 (請見官網詳情)');
+    // Extract Date - look for expiration date in HTML
+    let validUntil = '';
+    const dateMatch = html.match(/有效期限[：:]\s*(\d{4}[-\/]\d{1,2}[-\/]\d{1,2})/i);
+    if (dateMatch) {
+        validUntil = dateMatch[1].replace(/\//g, '-');
     }
 
-    // Extract Date (Not strictly available in the provided HTML snippets, defaulting)
-    // Sometimes it's in the text like "有效期限:..."
-    const validUntil = '2025-12-31';
-
     return {
-      id: code,
       code,
       title: title.replace(/&amp;/g, '&'),
       items,
       originalPrice,
-      discountedPrice: price > 0 ? price : 999,
+      discountedPrice: price,
       validUntil,
-      imageUrl,
     };
 
   } catch (error) {
@@ -254,16 +233,17 @@ async function main() {
   // Load existing coupons to enable incremental updates
   const publicPath = path.join((process as any).cwd(), 'public', 'coupons.json');
   let existingCoupons: CouponData[] = [];
-  let existingIds = new Set<string>();
+  let existingCodes = new Set<string>();
   
   if (fs.existsSync(publicPath)) {
     try {
       const existingData = fs.readFileSync(publicPath, 'utf-8');
       const loadedCoupons: CouponData[] = JSON.parse(existingData);
       
-      // Filter out expired coupons
+      // Filter out expired coupons (only if validUntil is not empty)
       const now = new Date();
       existingCoupons = loadedCoupons.filter(coupon => {
+        if (!coupon.validUntil) return true; // Keep coupons without expiration
         const validUntil = new Date(coupon.validUntil);
         return validUntil >= now;
       });
@@ -274,14 +254,14 @@ async function main() {
         console.log(`Removed ${expiredCount} expired coupons`);
       }
       
-      existingIds = new Set(existingCoupons.map(c => c.id));
+      existingCodes = new Set(existingCoupons.map(c => c.code));
     } catch (err) {
       console.error('Failed to load existing coupons:', err);
     }
   }
 
   // Filter out codes that already exist
-  const codesToScan = codes.filter(code => !existingIds.has(code));
+  const codesToScan = codes.filter(code => !existingCodes.has(code));
   const skippedCount = codes.length - codesToScan.length;
   
   console.log(`Total codes: ${codes.length}`);
