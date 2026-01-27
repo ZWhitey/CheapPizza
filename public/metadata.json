@@ -1,11 +1,9 @@
 {
-  "lastUpdated": "2026-01-27T01:42:06.882Z",
-  "totalCoupons": 5,
+  "lastUpdated": "2026-01-27T06:05:24.896Z",
+  "totalCoupons": 853,
   "scannedRanges": [
-    "14000-14999",
-    "15000-15999",
-    "25000-25999",
-    "26000-26999",
-    "94000-94999"
-  ]
+    "15002-15004"
+  ],
+  "newCouponsFound": 0,
+  "existingCoupons": 853
 }

@@ -223,11 +223,34 @@ async function main() {
   }
 
   const codes = parseArgsToCodes(args);
+  
+  // Load existing coupons to enable incremental updates
+  const publicPath = path.join((process as any).cwd(), 'public', 'coupons.json');
+  let existingCoupons: CouponData[] = [];
+  let existingIds = new Set<string>();
+  
+  if (fs.existsSync(publicPath)) {
+    try {
+      const existingData = fs.readFileSync(publicPath, 'utf-8');
+      existingCoupons = JSON.parse(existingData);
+      existingIds = new Set(existingCoupons.map(c => c.id));
+      console.log(`Loaded ${existingCoupons.length} existing coupons from ${publicPath}`);
+    } catch (err) {
+      console.error('Failed to load existing coupons:', err);
+    }
+  }
+
+  // Filter out codes that already exist
+  const codesToScan = codes.filter(code => !existingIds.has(code));
+  const skippedCount = codes.length - codesToScan.length;
+  
+  console.log(`Total codes: ${codes.length}`);
+  console.log(`Already scanned: ${skippedCount}`);
+  console.log(`New codes to scan: ${codesToScan.length}`);
+
   const validCoupons: CouponData[] = [];
 
-  console.log(`Scanning ${codes.length} codes...`);
-
-  for (const code of codes) {
+  for (const code of codesToScan) {
     await delay(500); // Slight delay
 
     const checkResult = await checkCouponValidity(code);
@@ -250,32 +273,39 @@ async function main() {
     }
   }
 
-  console.log(`\nScan complete. Found ${validCoupons.length} coupons.`);
+  console.log(`\nScan complete. Found ${validCoupons.length} new coupons.`);
+  
+  // Merge new coupons with existing ones
+  const allCoupons = [...existingCoupons, ...validCoupons];
+  
+  console.log(`Total coupons after merge: ${allCoupons.length}`);
 
   // Write to current directory or public if possible
   const simplePath = 'coupons.json';
-  const publicPath = path.join((process as any).cwd(), 'public', 'coupons.json');
+  const finalPublicPath = path.join((process as any).cwd(), 'public', 'coupons.json');
 
   // Try saving to public folder first, then fallback to current
   let savePath = simplePath;
-  if (fs.existsSync(path.dirname(publicPath))) {
-      savePath = publicPath;
+  if (fs.existsSync(path.dirname(finalPublicPath))) {
+      savePath = finalPublicPath;
   }
 
   try {
-     fs.writeFileSync(savePath, JSON.stringify(validCoupons, null, 2));
-     console.log(`Saved data to ${savePath}`);
+     fs.writeFileSync(savePath, JSON.stringify(allCoupons, null, 2));
+     console.log(`Saved ${allCoupons.length} total coupons to ${savePath}`);
   } catch (err) {
       console.error("Failed to write file:", err);
-      console.log("JSON Output:", JSON.stringify(validCoupons, null, 2));
+      console.log("JSON Output:", JSON.stringify(allCoupons, null, 2));
   }
 
   // Save metadata file with update timestamp
   const metadataPath = path.join(path.dirname(savePath), 'metadata.json');
   const metadata = {
     lastUpdated: new Date().toISOString(),
-    totalCoupons: validCoupons.length,
-    scannedRanges: args
+    totalCoupons: allCoupons.length,
+    scannedRanges: args,
+    newCouponsFound: validCoupons.length,
+    existingCoupons: existingCoupons.length
   };
 
   try {
