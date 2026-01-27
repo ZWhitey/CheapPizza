@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Run crawler to update data
-        run: npm run crawler 14000-14999 15000-15999 25000-25999 26000-26999 94000-94999
+        run: npm run crawler
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
