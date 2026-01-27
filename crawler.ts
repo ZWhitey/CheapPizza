@@ -4,6 +4,12 @@ import * as path from 'path';
 /**
  * Coupon Crawler Script
  * 
+ * Features:
+ * - Incremental updates: Automatically skips already-scanned coupon codes
+ * - Loads existing data from public/coupons.json to avoid redundant scans
+ * - Merges new coupons with existing ones
+ * - Significantly reduces execution time and resource usage
+ * 
  * Recommended Usage:
  * npx tsx crawler.ts [range]
  * 
