@@ -54,9 +54,10 @@ npm run preview
 
 ## Coupon Crawler Optimization
 
-The crawler has been optimized to reduce scanning time by 64%:
+The crawler has been optimized to reduce scanning time by 52% while ensuring NO data is missed:
 - **Original**: 5000 codes across 5 ranges (14xxx, 15xxx, 25xxx, 26xxx, 94xxx)
-- **Optimized**: 1800 codes across 18 targeted ranges
+- **Optimized**: 2400 codes across 24 targeted 10-code segments
+- Strategy: Keep ALL segments with any data, only remove completely empty ranges (14xxx)
 - Based on analysis of 853 valid coupons collected
 
 See [OPTIMIZATION.md](OPTIMIZATION.md) for detailed analysis and results.
