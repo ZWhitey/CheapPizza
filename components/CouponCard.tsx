@@ -20,7 +20,8 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
   };
 
   const handleOrder = () => {
-    window.open(`https://pizzahut.com.tw/order/?mode=step_2&type_id=1025&cno=${coupon.code}`, '_blank');
+    const encodedCode = encodeURIComponent(coupon.code);
+    window.open(`https://pizzahut.com.tw/order/?mode=step_2&type_id=1025&cno=${encodedCode}`, '_blank');
   };
 
   return (

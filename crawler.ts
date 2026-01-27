@@ -153,6 +153,11 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
         const fallbackTitle = html.match(/class="prod_name"[^>]*>([\s\S]*?)<\//i);
         if (fallbackTitle) title = fallbackTitle[1].trim();
     }
+    
+    // If still no title, use code as fallback
+    if (!title) {
+        title = `優惠代碼 ${code}`;
+    }
 
     // Extract Price (<div class="descPrice ...">$ 2098</div>)
     let price = 0;
