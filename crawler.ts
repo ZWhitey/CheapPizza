@@ -215,8 +215,8 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
 async function main() {
   let args = typeof process !== 'undefined' ? (process as any).argv.slice(2) : [];
   if (args.length === 0) {
-    console.log("No args. Using demo codes: 24000-24005");
-    args = ['24000-24005'];
+    console.log("No args. Using default ranges: 14000-14999, 15000-15999, 25000-25999, 26000-26999, 94000-94999");
+    args = ['14000-14999', '15000-15999', '25000-25999', '26000-26999', '94000-94999'];
   }
 
   const codes = parseArgsToCodes(args);
@@ -265,6 +265,21 @@ async function main() {
   } catch (err) {
       console.error("Failed to write file:", err);
       console.log("JSON Output:", JSON.stringify(validCoupons, null, 2));
+  }
+
+  // Save metadata file with update timestamp
+  const metadataPath = savePath.replace('coupons.json', 'metadata.json');
+  const metadata = {
+    lastUpdated: new Date().toISOString(),
+    totalCoupons: validCoupons.length,
+    scannedRanges: args
+  };
+
+  try {
+     fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
+     console.log(`Saved metadata to ${metadataPath}`);
+  } catch (err) {
+      console.error("Failed to write metadata file:", err);
   }
 }
 

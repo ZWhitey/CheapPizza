@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import CouponCard from './components/CouponCard';
-import { Coupon } from './types';
+import { Coupon, Metadata } from './types';
 import { Loader2 } from 'lucide-react';
 
 const App: React.FC = () => {
   const [coupons, setCoupons] = useState<Coupon[]>([]);
+  const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -30,8 +31,35 @@ const App: React.FC = () => {
       }
     };
 
+    const fetchMetadata = async () => {
+      try {
+        const response = await fetch('./metadata.json');
+        if (!response.ok) {
+          console.warn('Metadata not found, this is OK for older deployments');
+          return;
+        }
+        const data = await response.json();
+        setMetadata(data);
+      } catch (err) {
+        console.warn("Error loading metadata:", err);
+      }
+    };
+
     fetchCoupons();
+    fetchMetadata();
   }, []);
+
+  // Format update time for display
+  const formatUpdateTime = (isoString: string): string => {
+    const date = new Date(isoString);
+    return date.toLocaleString('zh-TW', { 
+      year: 'numeric',
+      month: '2-digit', 
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -51,6 +79,19 @@ const App: React.FC = () => {
            </div>
         ) : (
           <>
+            {/* Update Time Display */}
+            {metadata && (
+              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-sm text-blue-800">
+                  <span className="font-semibold">最後更新時間：</span>
+                  {formatUpdateTime(metadata.lastUpdated)}
+                </p>
+                <p className="text-xs text-blue-600 mt-1">
+                  搜尋範圍：{metadata.scannedRanges.join(', ')}
+                </p>
+              </div>
+            )}
+
             {/* Results Count */}
             <div className="mb-4 text-sm text-gray-500 font-medium">
               全部優惠 ({coupons.length})
