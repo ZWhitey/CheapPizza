@@ -9,12 +9,13 @@ import * as path from 'path';
  * - Loads existing data from public/coupons.json to avoid redundant scans
  * - Merges new coupons with existing ones
  * - Optimized search ranges based on historical data analysis
- * - Significantly reduces execution time and resource usage (64% fewer codes to scan)
+ * - Significantly reduces execution time and resource usage (52% fewer codes to scan)
  * 
  * Optimization Details:
  * - Original ranges: 14xxx, 15xxx, 25xxx, 26xxx, 94xxx (5000 codes)
- * - Optimized ranges: Focused on high-density 100s ranges (1800 codes)
+ * - Optimized ranges: 10-code segments with ANY valid coupon data (2400 codes)
  * - Based on analysis of 853 valid coupons found in previous scans
+ * - Strategy: Keep all segments with data, only remove completely empty ranges (14xxx)
  * 
  * Recommended Usage:
  * npx tsx crawler.ts [range]
@@ -27,14 +28,19 @@ import * as path from 'path';
 
 // Default code ranges to scan when no arguments are provided
 // Optimized based on historical data analysis (853 valid coupons, analyzed on 2026-01-27)
-// Reduces scan size from 5000 to 1800 codes (64% reduction)
-// Focuses on ranges with highest coupon density (5+ coupons per 100 codes)
+// Uses 10-code segments (e.g., 150xx, 151xx) to include ALL segments with data
+// Reduces scan size from 5000 to 2400 codes (52% reduction) while ensuring NO data is missed
 // NOTE: Re-evaluate these ranges quarterly or when coupon patterns change significantly
 const DEFAULT_RANGES = [
+  // 15xxx series (500 coupons across 9 segments)
   '15000-15099', '15100-15199', '15200-15299', '15300-15399', 
   '15400-15499', '15500-15599', '15600-15699', '15700-15799', '15800-15899',
-  '25300-25399', '25400-25499', '25500-25599', '25700-25799', '25900-25999',
-  '26300-26399', '26400-26499', '26500-26599', '26600-26699'
+  // 25xxx series (47 coupons across 6 segments)
+  '25300-25399', '25400-25499', '25500-25599', '25600-25699', '25700-25799', '25900-25999',
+  // 26xxx series (300 coupons across 4 segments)
+  '26300-26399', '26400-26499', '26500-26599', '26600-26699',
+  // 94xxx series (6 coupons across 5 segments)
+  '94100-94199', '94200-94299', '94500-94599', '94600-94699', '94700-94799'
 ];
 
 // Interface for the output data
