@@ -13,6 +13,9 @@ import * as path from 'path';
  * npx tsx crawler.ts 24000-24005
  */
 
+// Default code ranges to scan when no arguments are provided
+const DEFAULT_RANGES = ['14000-14999', '15000-15999', '25000-25999', '26000-26999', '94000-94999'];
+
 // Interface for the output data
 interface CouponData {
   id: string;
@@ -215,8 +218,8 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
 async function main() {
   let args = typeof process !== 'undefined' ? (process as any).argv.slice(2) : [];
   if (args.length === 0) {
-    console.log("No args. Using default ranges: 14000-14999, 15000-15999, 25000-25999, 26000-26999, 94000-94999");
-    args = ['14000-14999', '15000-15999', '25000-25999', '26000-26999', '94000-94999'];
+    console.log(`No args. Using default ranges: ${DEFAULT_RANGES.join(', ')}`);
+    args = DEFAULT_RANGES;
   }
 
   const codes = parseArgsToCodes(args);
@@ -268,7 +271,7 @@ async function main() {
   }
 
   // Save metadata file with update timestamp
-  const metadataPath = savePath.replace('coupons.json', 'metadata.json');
+  const metadataPath = path.join(path.dirname(savePath), 'metadata.json');
   const metadata = {
     lastUpdated: new Date().toISOString(),
     totalCoupons: validCoupons.length,
