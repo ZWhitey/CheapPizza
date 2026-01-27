@@ -51,3 +51,12 @@ npm run build
 # Preview the built site
 npm run preview
 ```
+
+## Coupon Crawler Optimization
+
+The crawler has been optimized to reduce scanning time by 64%:
+- **Original**: 5000 codes across 5 ranges (14xxx, 15xxx, 25xxx, 26xxx, 94xxx)
+- **Optimized**: 1800 codes across 18 targeted ranges
+- Based on analysis of 853 valid coupons collected
+
+See [OPTIMIZATION.md](OPTIMIZATION.md) for detailed analysis and results.

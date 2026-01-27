@@ -8,7 +8,13 @@ import * as path from 'path';
  * - Incremental updates: Automatically skips already-scanned coupon codes
  * - Loads existing data from public/coupons.json to avoid redundant scans
  * - Merges new coupons with existing ones
- * - Significantly reduces execution time and resource usage
+ * - Optimized search ranges based on historical data analysis
+ * - Significantly reduces execution time and resource usage (64% fewer codes to scan)
+ * 
+ * Optimization Details:
+ * - Original ranges: 14xxx, 15xxx, 25xxx, 26xxx, 94xxx (5000 codes)
+ * - Optimized ranges: Focused on high-density 100s ranges (1800 codes)
+ * - Based on analysis of 853 valid coupons found in previous scans
  * 
  * Recommended Usage:
  * npx tsx crawler.ts [range]
@@ -20,7 +26,15 @@ import * as path from 'path';
  */
 
 // Default code ranges to scan when no arguments are provided
-const DEFAULT_RANGES = ['14000-14999', '15000-15999', '25000-25999', '26000-26999', '94000-94999'];
+// Optimized based on historical data analysis (853 valid coupons)
+// Reduces scan size from 5000 to 1800 codes (64% reduction)
+// Focuses on ranges with highest coupon density (5+ coupons per 100 codes)
+const DEFAULT_RANGES = [
+  '15000-15099', '15100-15199', '15200-15299', '15300-15399', 
+  '15400-15499', '15500-15599', '15600-15699', '15700-15799', '15800-15899',
+  '25300-25399', '25400-25499', '25500-25599', '25700-25799', '25900-25999',
+  '26300-26399', '26400-26499', '26500-26599', '26600-26699'
+];
 
 // Interface for the output data
 interface CouponData {
