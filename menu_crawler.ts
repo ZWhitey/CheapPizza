@@ -3,17 +3,42 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // Define interfaces for the extracted data structure
+interface ProductSize {
+    size: string;
+    price: number;
+}
+
 interface MenuProduct {
     id: string;
     name: string;
     description: string;
     price: number;
     originalPrice?: number;
+    category: string;
+    categoryId: number;
+    sizes?: ProductSize[]; // For products with multiple sizes
+    url: string;
 }
 
-async function fetchAndParseMenu() {
-    const url = 'https://www.pizzahut.com.tw/order/?mode=step_2&ct=2';
-    console.log(`Fetching menu from ${url}...`);
+// Category mapping based on observation, will also try to extract from page
+const CATEGORY_NAMES: { [key: number]: string } = {
+    1: '優惠推薦',
+    2: '大/小比薩',
+    3: '個人比薩',
+    4: '義大利麵/燉飯',
+    5: '拼盤/熱烤',
+    6: '甜點/飲料',
+    7: '10人以上套餐',
+    8: '特殊優惠'
+};
+
+async function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchCategory(ct: number): Promise<MenuProduct[]> {
+    const url = `https://www.pizzahut.com.tw/order/?mode=step_2&ct=${ct}`;
+    console.log(`Fetching category ${ct} from ${url}...`);
 
     try {
         const response = await fetch(url, {
@@ -24,30 +49,29 @@ async function fetchAndParseMenu() {
         });
 
         if (!response.ok) {
-            throw new Error(`Failed to fetch page: ${response.status} ${response.statusText}`);
+            console.error(`Failed to fetch category ${ct}: ${response.status} ${response.statusText}`);
+            return [];
         }
 
         const html = await response.text();
         const $ = cheerio.load(html);
 
-        // Note on Implementation Strategy:
-        // The original request suggested parsing global JS variables (psidss, ctidss, pprcss) using the 'vm' module.
-        // However, during verification, it was confirmed that these variables are NOT present in the raw HTML response
-        // for the target URL (https://www.pizzahut.com.tw/order/?mode=step_2&ct=2).
-        // Instead, the product data is rendered directly in the HTML (Server-Side Rendering).
-        // Therefore, we use Cheerio to scrape the HTML elements directly, which is a proven working solution for the current site structure.
-
         const products: MenuProduct[] = [];
+
+        // Try to get category name from H1
+        let categoryName = $('h1.visually-hidden').text().trim() ||
+                           $('title').text().split('|')[0].trim() ||
+                           CATEGORY_NAMES[ct] ||
+                           `Category ${ct}`;
 
         // Select all product items
         const items = $('.promotion_list_item');
-        console.log(`Found ${items.length} product items in HTML.`);
+        console.log(`Found ${items.length} items in category ${ct} (${categoryName}).`);
 
         items.each((i, el) => {
             const $el = $(el);
 
             // Extract ID
-            // User mentioned mainpop_1_ID but we see itemss_pID or data-id-real
             const realId = $el.attr('data-id-real');
             const elementId = $el.attr('id'); // e.g., itemss_p326
             const id = realId || (elementId ? elementId.replace('itemss_p', '') : '');
@@ -59,17 +83,12 @@ async function fetchAndParseMenu() {
 
             // Extract Description
             const descHtml = $el.find('.pro-list-descContent').html() || '';
-            // Clean HTML tags from description
             const description = descHtml
-                .replace(/<br\s*\/?>/gi, '\n') // Replace <br> with newline
-                .replace(/<[^>]+>/g, '') // Remove other tags
+                .replace(/<br\s*\/?>/gi, '\n')
+                .replace(/<[^>]+>/g, '')
                 .trim();
 
             // Extract Price
-            // Structure:
-            // <span class="pro-li-pr priceTxt_original">原價<span class="notranslate">$968</span></span>
-            // <span class="pro-li-pr priceTxt">限時<span class="notranslate">$580</span>起</span>
-
             let price = 0;
             let originalPrice = 0;
 
@@ -83,7 +102,7 @@ async function fetchAndParseMenu() {
                 originalPrice = parseInt(originalPriceText.replace(/[^\d]/g, ''), 10);
             }
 
-            // Fallback if priceTxt not found (e.g. standard price)
+            // Fallback for price
             if (price === 0) {
                  const simplePrice = $el.find('.pro-li-pr').not('.priceTxt_original').text().trim();
                  if (simplePrice) {
@@ -91,33 +110,69 @@ async function fetchAndParseMenu() {
                  }
             }
 
+            // Construct URL
+            // Usually ?mode=step_2&ct=2&p_id=ID or similar
+            // We can try to extract href from the <a> tag
+            let productUrl = $el.find('a').attr('href') || '';
+            if (productUrl && !productUrl.startsWith('http')) {
+                productUrl = 'https://www.pizzahut.com.tw/order/' + productUrl;
+            }
+
             if (name) {
-                products.push({
+                const product: MenuProduct = {
                     id,
                     name,
                     description,
                     price,
-                    ...(originalPrice ? { originalPrice } : {})
-                });
+                    category: categoryName,
+                    categoryId: ct,
+                    url: productUrl
+                };
+
+                if (originalPrice) {
+                    product.originalPrice = originalPrice;
+                }
+
+                // Attempt to detect sizes if implicit in category 2 (Big/Small)
+                // Since the list page usually only shows the "Starting from" price which is often the Small size (or Large if it's the only one).
+                // Without detail page crawling or JS parsing, we can't get the exact matrix.
+                // However, we can structure the "sizes" field if we find evidence.
+                // For now, we will leave 'sizes' undefined unless we find explicit multi-price data in the list item.
+
+                products.push(product);
             }
         });
 
-        console.log(`Extracted ${products.length} products.`);
-
-        // Ensure public directory exists
-        const publicDir = path.join(process.cwd(), 'public');
-        if (!fs.existsSync(publicDir)) {
-            fs.mkdirSync(publicDir);
-        }
-
-        const outputPath = path.join(publicDir, 'menu.json');
-        fs.writeFileSync(outputPath, JSON.stringify(products, null, 2));
-        console.log(`Saved menu data to ${outputPath}`);
+        return products;
 
     } catch (error) {
-        console.error('Error in fetchAndParseMenu:', error);
-        process.exit(1);
+        console.error(`Error fetching category ${ct}:`, error);
+        return [];
     }
 }
 
-fetchAndParseMenu();
+async function main() {
+    const allProducts: MenuProduct[] = [];
+
+    // Loop through categories 1 to 8
+    for (let ct = 1; ct <= 8; ct++) {
+        const products = await fetchCategory(ct);
+        allProducts.push(...products);
+        // Add a small delay to be polite
+        await delay(1000);
+    }
+
+    console.log(`Total extracted products: ${allProducts.length}`);
+
+    // Ensure public directory exists
+    const publicDir = path.join(process.cwd(), 'public');
+    if (!fs.existsSync(publicDir)) {
+        fs.mkdirSync(publicDir);
+    }
+
+    const outputPath = path.join(publicDir, 'menu.json');
+    fs.writeFileSync(outputPath, JSON.stringify(allProducts, null, 2));
+    console.log(`Saved menu data to ${outputPath}`);
+}
+
+main();
