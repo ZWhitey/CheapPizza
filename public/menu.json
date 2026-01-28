@@ -3,31 +3,406 @@
     "id": "14849",
     "name": "外帶買大送大，再送副食、飲料",
     "description": "外帶買大送大，再送副食、飲料!\n      副食四選一(和風鱈魚塊5塊/黃金雞柳條4條/德國芝心腸3個/QQ球10顆)+飲料二選一(可樂1.25L/七喜1.25L)\n      (此優惠不得與其他單點比薩優惠合併使用。)",
-    "price": 0
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14849"
   },
   {
-    "id": "2696",
-    "name": "Hot任選小比薩餐",
-    "description": "小比薩1個+熱烤類1份。",
-    "price": 398
+    "id": "16895",
+    "name": "外帶大比薩送大比薩（火山系列）",
+    "description": "外帶買火山大比薩送大比薩/外送買火山大比薩送小比薩\n    *火山熔岩餅皮為植物五辛素(含奶)，需加價",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16895"
   },
   {
-    "id": "2704",
-    "name": "Hot任選大比薩餐",
-    "description": "大比薩1個+熱烤類1份。",
-    "price": 558
+    "id": "11211",
+    "name": "APP專屬-3個大比薩$888起",
+    "description": "三個大比薩",
+    "price": 888,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11211"
+  },
+  {
+    "id": "13386",
+    "name": "「限預購」APP專屬 單點金奢波士頓龍蝦海鮮比薩特價$1888 (原價$2099)",
+    "description": "新春限定 金奢波士頓龍蝦海鮮比薩 特價$1888 (原價$2099) (限店限量1000份/限PK APP預購/至少提前一日訂購/限線上付款/取餐當日不可取消訂單、不退款，詳細預購資訊可見以下注意事項)",
+    "price": 1888,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=13386"
+  },
+  {
+    "id": "17291",
+    "name": "APP專屬 單點金皇軟殼蟹鮑魚大比薩 $499起",
+    "description": "新春限定 金皇軟殼蟹鮑魚大比薩 外帶單點特價$499 (原價$968)",
+    "price": 499,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17291"
+  },
+  {
+    "id": "12337",
+    "name": "APP專屬-個人比薩+$1多一個副食",
+    "description": "個人比薩+$1多一個副食。",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=12337"
+  },
+  {
+    "id": "12776",
+    "name": "APP專屬-義大利麵/飯 加$1多一件副食",
+    "description": "義大利麵/飯 加$1多一件副食",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=12776"
+  },
+  {
+    "id": "17299",
+    "name": "我要發財餐 $528起",
+    "description": "1個大比薩+任選3樣副食+任選大瓶飲料。",
+    "price": 528,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17299"
+  },
+  {
+    "id": "10860",
+    "name": "APP專屬-Hot三小飽飽餐$549起",
+    "description": "小比薩2個+HOT燒小拼盤1個。",
+    "price": 549,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=10860"
+  },
+  {
+    "id": "17292",
+    "name": "新春蟹蟹鮑富小套餐 $688起",
+    "description": "一個金皇軟殼蟹鮑魚大比薩+副食六選一+飲料1.25L",
+    "price": 688,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17292"
+  },
+  {
+    "id": "16905",
+    "name": "平日外帶限定- 私廚系列單點6折",
+    "description": "13吋大比薩1個，私廚頂級美味-新春限定 金皇軟殼蟹鮑魚、丸勝日式章魚燒、海鮮四重奏、千島海鮮盛宴等任選",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16905"
+  },
+  {
+    "id": "17294",
+    "name": "新春烏金噴發火山餐 $1068起 - 外帶",
+    "description": "一個金皇軟殼蟹鮑魚大比薩(免費升級金饌烏魚子火山熔岩餅皮)+外帶大比薩/外送小比薩+副食六選一+飲料1.25L",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17294"
+  },
+  {
+    "id": "17296",
+    "name": "新春雙喜臨門大套餐 $1188起 - 外帶",
+    "description": "一個金皇軟殼蟹鮑魚大比薩+外帶大比薩/外送小比薩+副食六選一+冰藏起司塔4顆+飲料1.25L",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17296"
+  },
+  {
+    "id": "4453",
+    "name": "新春過年拼盤樂享餐 $1288起",
+    "description": "大比薩3個+指定拼盤1份。",
+    "price": 1288,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4453"
+  },
+  {
+    "id": "17342",
+    "name": "新春限時優惠！一公尺派對盒 特價$1888起",
+    "description": "套餐含方形大比薩3個+10種指定副食，新春優惠$1888起(原價$2199)。",
+    "price": 1888,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17342"
+  },
+  {
+    "id": "17230",
+    "name": "新年優惠 巧克力QQ球5顆 買一送一 $59",
+    "description": "巧克力QQ球5顆 買一送一 $59 (原價$118)",
+    "price": 59,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17230"
+  },
+  {
+    "id": "17228",
+    "name": "新年優惠 黃金雞柳條4條 買一送一 $99",
+    "description": "黃金雞柳條4條 買一送一 $99 (原價$199)",
+    "price": 99,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17228"
+  },
+  {
+    "id": "17226",
+    "name": "新年優惠 波隆那肉醬起司薯瓣 買一送一 $99",
+    "description": "波隆那肉醬起司薯瓣 買一送一 $99 (原價$198)",
+    "price": 99,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17226"
+  },
+  {
+    "id": "16386",
+    "name": "個人比薩 $111 套餐",
+    "description": "個人比薩x1 + 副食x1 + 飲料3選1。",
+    "price": 111,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16386"
+  },
+  {
+    "id": "16637",
+    "name": "個人比薩豪爽餐",
+    "description": "個人比薩5選1+副食共3份+百事可樂330ml*1罐。",
+    "price": 179,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16637"
+  },
+  {
+    "id": "16780",
+    "name": "買紙包麵/飯送個人比薩",
+    "description": "紙包麵/義大利麵/紙包飯/燉飯x1 + 指定口味個人比薩x1",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16780"
+  },
+  {
+    "id": "17223",
+    "name": "四小福雙拼系列$199",
+    "description": "限定外帶。13吋大比薩，雙拼-四小福+照燒雞 或 四小福+熱帶鳳梨海鮮總匯1個。",
+    "price": 199,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17223"
+  },
+  {
+    "id": "11390",
+    "name": "平日外帶限定-超值單點大比薩 / $199",
+    "description": "13吋大比薩1個，9種超值口味-蒜香起司燻雞培根 、熱帶鳳梨海鮮總匯、義式培根黃金薯等任選。",
+    "price": 199,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11390"
   },
   {
     "id": "4454",
     "name": "新年拼盤經典餐-外帶",
     "description": "外帶大比薩2個+指定拼盤1份。",
-    "price": 999
+    "price": 999,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4454"
+  },
+  {
+    "id": "16631",
+    "name": "必勝雙人套餐 $299",
+    "description": "指定個人比薩或紙包系列2份+指定副食2份+指定飲料2杯。",
+    "price": 299,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16631"
+  },
+  {
+    "id": "16632",
+    "name": "嫩牛大蝦起司 個人比薩_XL豪華套餐",
+    "description": "嫩牛大蝦起司個人比薩_XL豪華套餐",
+    "price": 222,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16632"
+  },
+  {
+    "id": "16630",
+    "name": "嫩牛大蝦起司 個人燉飯",
+    "description": "嫩牛大蝦起司個人燉飯單點及套餐",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16630"
+  },
+  {
+    "id": "16895",
+    "name": "外帶大比薩送大比薩（火山系列）",
+    "description": "外帶買火山大比薩送大比薩/外送買火山大比薩送小比薩\n    *火山熔岩餅皮為植物五辛素(含奶)，需加價",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16895"
+  },
+  {
+    "id": "16024",
+    "name": "火山享樂餐$555起",
+    "description": "1個大比薩(超過$620需加價、搭配火山餅皮)+任選1樣副食+任選大瓶飲料",
+    "price": 555,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16024"
+  },
+  {
+    "id": "15967",
+    "name": "財運噴發餐 $888起",
+    "description": "2個大比薩(1個搭配火山熔岩餅皮)+任選2樣副食+任選大瓶飲料",
+    "price": 888,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=15967"
+  },
+  {
+    "id": "16905",
+    "name": "平日外帶限定- 私廚系列單點6折",
+    "description": "13吋大比薩1個，私廚頂級美味-新春限定 金皇軟殼蟹鮑魚、丸勝日式章魚燒、海鮮四重奏、千島海鮮盛宴等任選",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16905"
+  },
+  {
+    "id": "11413",
+    "name": "平日外帶限定-人氣單點大比薩 / $299",
+    "description": "13吋大比薩1個，經典口味-韓式泡菜豬五花、超級夏威夷等任選",
+    "price": 299,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11413"
+  },
+  {
+    "id": "11390",
+    "name": "平日外帶限定-超值單點大比薩 / $199",
+    "description": "13吋大比薩1個，9種超值口味-蒜香起司燻雞培根 、熱帶鳳梨海鮮總匯、義式培根黃金薯等任選。",
+    "price": 199,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11390"
+  },
+  {
+    "id": "2696",
+    "name": "Hot任選小比薩餐",
+    "description": "小比薩1個+熱烤類1份。",
+    "price": 398,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=2696"
+  },
+  {
+    "id": "2704",
+    "name": "Hot任選大比薩餐",
+    "description": "大比薩1個+熱烤類1份。",
+    "price": 558,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=2704"
+  },
+  {
+    "id": "4998",
+    "name": "買大比薩送私廚系列紙包筆管麵/燉飯2份",
+    "description": "大比薩1個+私廚系列紙包筆管麵或燉飯2份。",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4998"
+  },
+  {
+    "id": "5157",
+    "name": "Hot拼盤比薩餐",
+    "description": "大比薩1個+指定拼盤1份",
+    "price": 799,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=5157"
+  },
+  {
+    "id": "4453",
+    "name": "新春過年拼盤樂享餐 $1288起",
+    "description": "大比薩3個+指定拼盤1份。",
+    "price": 1288,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4453"
+  },
+  {
+    "id": "11344",
+    "name": "壽星最大盒",
+    "description": "2個大比薩+8吋巴斯克熔岩起司蛋糕+指定大拼盤。",
+    "price": 1488,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11344"
+  },
+  {
+    "id": "4757",
+    "name": "Hot拼盤豪華餐",
+    "description": "大比薩4個+指定拼盤2份，本套餐再送1份網購好禮。",
+    "price": 1888,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4757"
+  },
+  {
+    "id": "14849",
+    "name": "外帶買大送大，再送副食、飲料",
+    "description": "外帶買大送大，再送副食、飲料!\n      副食四選一(和風鱈魚塊5塊/黃金雞柳條4條/德國芝心腸3個/QQ球10顆)+飲料二選一(可樂1.25L/七喜1.25L)\n      (此優惠不得與其他單點比薩優惠合併使用。)",
+    "price": 0,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14849"
+  },
+  {
+    "id": "2696",
+    "name": "Hot任選小比薩餐",
+    "description": "小比薩1個+熱烤類1份。",
+    "price": 398,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=2696"
+  },
+  {
+    "id": "2704",
+    "name": "Hot任選大比薩餐",
+    "description": "大比薩1個+熱烤類1份。",
+    "price": 558,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=2704"
+  },
+  {
+    "id": "4454",
+    "name": "新年拼盤經典餐-外帶",
+    "description": "外帶大比薩2個+指定拼盤1份。",
+    "price": 999,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4454"
   },
   {
     "id": "17289",
     "name": "金皇軟殼蟹鮑魚",
     "description": "嚴選酥炸軟殼蟹為主角，先炸後烤，外表香酥可口，同時維持肉質細緻。佐以鮮甜干貝，厚實口感、鮮嫩多汁，更升級加入 10 顆 Q 彈鮑魚，口感紮實彈嫩，海味再進化，多款海鮮層層堆疊出滿滿鮮味。 最後淋上以慢火細炒至金黃色澤的蟹黃風味醬汁，香氣濃郁迷人，全面提升味覺層次。今年過年，就以【金皇軟殼蟹鮑魚比薩】開啟春節海鮮盛宴！",
     "price": 580,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=326",
     "originalPrice": 968
   },
   {
@@ -35,6 +410,9 @@
     "name": "千島海鮮盛宴",
     "description": "享受四種海鮮的澎湃盛宴！嚴選鮮甜多汁的厚實干貝，搭配Q彈大蝦、魷魚圈與海味十足的蟹味棒，佐以三種蔬果點綴，層次豐富、色彩繽紛。以香濃莫札瑞拉起司佐特製千島醬作為比薩基底，畫龍點睛襯托海鮮的鮮味",
     "price": 521,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=317",
     "originalPrice": 869
   },
   {
@@ -42,6 +420,9 @@
     "name": "丸勝日式章魚燒",
     "description": "還原日本經典章魚燒風味，以和風照燒醬為基底，表層點綴柴魚片與海苔絲。不僅吃得到Q彈章魚，還吃得到一整顆章魚燒，一口咬下綿密內餡，迸出章魚鮮甜，划算又滿足的享受真正的章魚燒！",
     "price": 504,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=318",
     "originalPrice": 840
   },
   {
@@ -49,6 +430,9 @@
     "name": "法式海陸盛宴",
     "description": "以世界四大名醬之一的巴黎卡菲醬為基底，微微的咖哩香氣融入番茄、香草和椰汁的獨特風味。經典的BBQ烤肉搭配新鮮大蝦和鹽烤鱈魚，層次更加豐富，每一口都是全新的美味享受，更帶來了升級版的極致體驗！",
     "price": 539,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=199",
     "originalPrice": 899
   },
   {
@@ -56,6 +440,9 @@
     "name": "松露干貝鮮蝦起司",
     "description": "嚴選鮮美的干貝、鮮蝦和魷魚圈，搭配濃郁松露牛肝菌醬佐上撲鼻的松露香氣！洋蔥、菠菜、蕃茄增添鮮甜口感，莫札瑞拉起司帶來豐富層次~ 無論是海鮮愛好者還是松露迷，這都是你的必點口味，一次享受松露與海鮮的極致美味！",
     "price": 539,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=205",
     "originalPrice": 899
   },
   {
@@ -63,6 +450,9 @@
     "name": "超濃五重起司",
     "description": "融合高達、康門貝爾、鮮奶油乳酪、莫札瑞拉和帕瑪森五種頂級100%純天然起司，使用世界各地頂級乳源，每一口都香氣四溢，風味濃郁，超牽絲。再淋上蜂蜜風味糖漿鹹甜組合增添味覺層次，為起司迷們帶來味蕾盛宴，絕對不能錯過！起司產地: 莫札瑞拉起司(起司絲-紐西蘭/起司丁-荷蘭 )、高達起司(荷蘭)、帕瑪森起司(澳洲)、康門貝爾起司(丹麥)、鮮奶油乳酪(丹麥)",
     "price": 509,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=161",
     "originalPrice": 849
   },
   {
@@ -70,6 +460,9 @@
     "name": "經典費城起司牛肉",
     "description": "經典風味再現！費城牛肉片，搭配鮮嫩的紅椒、青椒、紫洋蔥，加上超濃郁的莫札瑞拉起司和香滑的起司片，最後點綴上洋香菜葉，這豐富的口感層次，每一口都是無與倫比的美味享受，一次滿足味蕾的渴望！",
     "price": 474,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=190",
     "originalPrice": 790
   },
   {
@@ -77,6 +470,9 @@
     "name": "泰式檸檬椒麻豬",
     "description": "選用鮮嫩豬腿肉片，搭配洋蔥、菠菜、蕃茄，再撒上莫札瑞拉起司與泰式椒麻醬完美融合，讓每一口都帶有獨特的泰式風味，清爽又開胃。",
     "price": 474,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=243",
     "originalPrice": 790
   },
   {
@@ -84,6 +480,9 @@
     "name": "經典海鮮四重奏",
     "description": "必勝客經典海鮮比薩，使用爽脆鮮蝦、鮮甜飽滿的帆立貝，加上鮮美蛤蜊、蟹味絲帶來滿滿海味，一次享受四種海鮮！經典不敗的香濃莫札瑞拉起司搭配比薩紅醬，襯托出海鮮的鮮美滋味。",
     "price": 468,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=314",
     "originalPrice": 780
   },
   {
@@ -91,6 +490,9 @@
     "name": "韓式泡菜豬五花",
     "description": "必勝客經典口味肉量升級！厚切韓式嫩烤五花豬肉，以韓國進口的正宗韓式烤肉醬慢醃入味，搭配道地韓式泡菜微微酸辣口感，爽口去油膩。",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=313",
     "originalPrice": 770
   },
   {
@@ -98,6 +500,9 @@
     "name": "超級夏威夷",
     "description": "必勝客經典夏威夷比薩，肉量升級兩倍！經典火腿片加上炙烤培根、人氣午餐肉，三重肉感疊加，口口都滿足。加上肉品絕配鳳梨切片，最後再加上熱帶鳳梨淋醬，微微酸甜清爽解膩，更涮嘴。",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=324",
     "originalPrice": 690
   },
   {
@@ -105,6 +510,9 @@
     "name": "金沙黃金脆雞",
     "description": "精選外皮金黃內層鮮嫩的香酥雞肉，搭配鮮嫩的洋菇與翠綠的菠菜，最後淋上特製的鹹蛋黃醬，帶來層次豐富、濃而不膩的美味體驗，讓味蕾沉醉於這極致的美味享受。",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=193",
     "originalPrice": 750
   },
   {
@@ -112,6 +520,9 @@
     "name": "鐵板雙牛",
     "description": "一份比薩享有兩種牛肉的滿足，以鮮嫩的牛肉丸為主角 ，搭配特調的黑胡椒牛柳，將牛肉輔以滿滿鮮甜的菠菜及洋菇餡料，最後再鋪上莫札瑞拉起司。層層入口後，齒頰留香，令人意猶未盡，回味無窮！",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=98",
     "originalPrice": 750
   },
   {
@@ -119,6 +530,9 @@
     "name": "炙燒明太子嫩雞",
     "description": "日式照燒醬為底醬，鋪上鮮嫩雞腿肉塊，搭配洋菇、番茄和濃郁的莫札瑞拉起司，最後再淋上明太子醬，豐富層次在口中完美交織，每一口都令人難忘。",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=217",
     "originalPrice": 690
   },
   {
@@ -126,6 +540,9 @@
     "name": "超級總匯",
     "description": "經典義式美味，超級總匯比薩的豐富餡料讓人忍不住大快朵頤！",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=64",
     "originalPrice": 690
   },
   {
@@ -133,6 +550,9 @@
     "name": "彩蔬鮮菇",
     "description": "(奶素可食) 鮮美的洋菇與菠菜和番茄，再加上BBQ素醬，素食口味比薩讓你吃到蔬菜的清爽美味。",
     "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=60",
     "originalPrice": 660
   },
   {
@@ -140,6 +560,9 @@
     "name": "雙拼比薩-四小福+日式照燒雞",
     "description": "雙拼口味，有甜鹹滋味交錯的日式照燒雞，經典日式照燒醬搭配煙燻雞肉絲及豐富佐料，還有四大經典餡料的四小福，兩大熱門口味令人吮指回味！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=306",
     "originalPrice": 660
   },
   {
@@ -147,6 +570,9 @@
     "name": "雙拼比薩-熱帶鳳梨海鮮總匯+四小福",
     "description": "New風味登場!!兩種口味一次享受！甜中帶點微酸的鳳梨遇上甜美鮮蝦與美味蟹味絲的「熱帶鳳梨海鮮總匯」、搭配由鹹香BBQ醬與四大經典餡料組成的「四小福」，雙拼的美味組合令人吮指回味！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=168",
     "originalPrice": 660
   },
   {
@@ -154,6 +580,9 @@
     "name": "蒜香起司燻雞培根",
     "description": "炙烤培根與煙燻雞肉，雙重肉香相互交織，滿足肉肉控的味蕾渴望，再搭配洋菇與菠菜，口感層次更豐富。金黃餅皮鋪滿濃郁莫札瑞拉起司，完美融合蒜香清炒醬，使肉香更迷人，專為大口吃肉的饕客打造，不可錯過。",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=309",
     "originalPrice": 565
   },
   {
@@ -161,6 +590,9 @@
     "name": "BBQ黃金嫩雞",
     "description": "「BBQ黃金嫩雞」結合酥炸嫩雞球、培根，以及金黃鳳梨點綴其中。配上BBQ醬和沙拉醬，每一口都香氣四溢，讓你一吃就愛上！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=216",
     "originalPrice": 660
   },
   {
@@ -168,6 +600,9 @@
     "name": "香濃蒜香海鮮",
     "description": "鮮味十足的蛤蜊與蟹味絲加入必勝客獨門蒜香醬汁中，融合洋蔥末、蒜末、辣椒和香料葉。香濃蒜香與海鮮風味完美搭配。絕妙口味讓你一片接一片！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=265",
     "originalPrice": 620
   },
   {
@@ -175,6 +610,9 @@
     "name": "熱帶鳳梨海鮮總匯",
     "description": "New風味登場!!甜中帶點微酸的鳳梨，遇上甜美鮮蝦與美味蟹味絲，絕妙口味讓你越吃越順口！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=169",
     "originalPrice": 620
   },
   {
@@ -182,6 +620,9 @@
     "name": "義式培根黃金薯",
     "description": "肉食控的夢幻逸品！義式肉腸、炙烤培根與精選豬肉，完美融合於濃郁經典紅醬中，肉香四溢、層次豐富，每一口都是大口滿足。搭配必勝客人氣-酥脆薯金幣，一次享受多重美味，絕對讓你欲罷不能！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=280",
     "originalPrice": 565
   },
   {
@@ -189,6 +630,9 @@
     "name": "四小福",
     "description": "鹹香BBQ醬料配上四大經典餡料，令人吮指回味！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=20",
     "originalPrice": 565
   },
   {
@@ -196,6 +640,9 @@
     "name": "日式照燒雞",
     "description": "日式照燒醬搭配煙燻雞肉絲及豐富佐料，甜鹹滋味讓你忍不住一口接一口！",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=13",
     "originalPrice": 565
   },
   {
@@ -203,6 +650,9 @@
     "name": "雙層美式臘腸",
     "description": "加量的雙層美式臘腸，豐盛臘腸口口吃得到，讓你盡享道地的美式風味。",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=93",
     "originalPrice": 565
   },
   {
@@ -210,6 +660,882 @@
     "name": "夏威夷",
     "description": "經典夏威夷比薩口味，當甜中帶點微酸的鳳梨，遇上風味濃郁的火腿，絕妙味道，越吃越順口。",
     "price": 199,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=54",
     "originalPrice": 555
+  },
+  {
+    "id": "7165",
+    "name": "獨享比薩",
+    "description": "獨享比薩單點及套餐",
+    "price": 0,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=7165"
+  },
+  {
+    "id": "9847",
+    "name": "起司咔滋餅",
+    "description": "起司咔滋餅套餐。",
+    "price": 0,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=9847"
+  },
+  {
+    "id": "14218",
+    "name": "必勝雙人套餐$299",
+    "description": "指定個人比薩或紙包系列2份+指定副食2份+指定飲料2杯。",
+    "price": 299,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14218"
+  },
+  {
+    "id": "16622",
+    "name": "嫩牛大蝦起司個人比薩_XL豪華套餐",
+    "description": "嫩牛大蝦起司個人比薩_XL豪華套餐",
+    "price": 222,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16622"
+  },
+  {
+    "id": "16313",
+    "name": "五重起司蒜香雞",
+    "description": "個人比薩再升級！餅皮更清爽，餡料增量！ 香嫩雞腿肉結合義式蒜香白醬，搭配五種香濃起司：莫札瑞拉起司X康門貝爾起司X帕達諾起司X帕瑪森起司X切達起司，多層次口感，令人上癮的個人主食新選擇！ *產品為手工製作，尺寸略有差異，請以實物為準。",
+    "price": 149,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16313"
+  },
+  {
+    "id": "16314",
+    "name": "韓式雙醬雪花牛",
+    "description": "個人比薩再升級！餅皮更清爽，餡料增量！ 經典韓式燒牛搭配彩椒、紫洋蔥與莫札瑞拉起司，再淋上韓式洋釀醬 × 濃郁BBQ醬雙重醬香，層層交疊鹹甜濃厚風味，大口咬下辣香微甜超過癮！ *產品為手工製作，尺寸略有差異，請以實物為準。",
+    "price": 149,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16314"
+  },
+  {
+    "id": "16547",
+    "name": "雙拼比薩-丸勝章魚燒+鐵板雙牛",
+    "description": "雙拼個人比薩，一個比薩即可品嘗兩種美味！ 還原日本經典章魚燒風味，以和風照燒醬為基底，表層點綴柴魚片與海苔絲。不僅吃得到Q彈章魚，還吃得到一整顆章魚燒！再配上牛肉丸和特調的黑胡椒牛柳及滿滿鮮甜的菠菜和洋菇，兩種美味一次滿足！",
+    "price": 139,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16547"
+  },
+  {
+    "id": "16477",
+    "name": "千島海鮮盛宴",
+    "description": "享受四種海鮮的澎湃盛宴！嚴選鮮甜多汁的厚實干貝，搭配Q彈大蝦、魷魚圈與海味十足的蟹味棒，佐以三種蔬果點綴，層次豐富、色彩繽紛。以香濃莫札瑞拉起司佐特製千島醬作為比薩基底，畫龍點睛襯托海鮮的鮮味",
+    "price": 135,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16477"
+  },
+  {
+    "id": "16539",
+    "name": "丸勝日式章魚燒",
+    "description": "還原日本經典章魚燒風味，以和風照燒醬為基底，表層點綴柴魚片與海苔絲。不僅吃得到Q彈章魚，每片都有一顆章魚燒，一口咬下綿密內餡，迸出章魚鮮甜，划算又滿足的享受真正的章魚燒！",
+    "price": 135,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16539"
+  },
+  {
+    "id": "16340",
+    "name": "雙拼比薩-經典海鮮四重奏+夏威夷",
+    "description": "雙拼個人比薩，讓一人食也不必妥協! 使用爽脆鮮蝦、鮮甜飽滿的帆立貝，加上鮮美蛤蜊、蟹味絲帶來滿滿海味，一次享受四種海鮮！再配上甜中帶點微酸的鳳梨和風味濃郁的火腿，一個比薩即可品嘗兩種美味!",
+    "price": 129,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16340"
+  },
+  {
+    "id": "16338",
+    "name": "經典海鮮四重奏",
+    "description": "必勝客經典海鮮比薩，使用爽脆鮮蝦、鮮甜飽滿的帆立貝，加上鮮美蛤蜊、蟹味絲帶來滿滿海味，一次享受四種海鮮！經典不敗的香濃莫札瑞拉起司搭配比薩紅醬，襯托出海鮮的鮮美滋味。",
+    "price": 129,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16338"
+  },
+  {
+    "id": "9758",
+    "name": "雙拼比薩-超級總匯+夏威夷",
+    "description": "雙拼個人比薩 讓一人食也不必妥協! 豐富餡料經典義式美味X 甜中帶點微酸的鳳梨和風味濃郁的火腿，一個比薩即可品嘗兩種美味!",
+    "price": 129,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=9758"
+  },
+  {
+    "id": "16326",
+    "name": "韓式泡菜豬五花",
+    "description": "必勝客經典口味肉量升級！厚切韓式嫩烤五花豬肉，以韓國進口的正宗韓式烤肉醬慢醃入味，搭配道地韓式泡菜微微酸辣口感，爽口去油膩。",
+    "price": 125,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16326"
+  },
+  {
+    "id": "6745",
+    "name": "鐵板雙牛",
+    "description": "一份比薩享有兩種牛肉的滿足，以鮮嫩的牛肉丸為主角 ，搭配特調的黑胡椒牛柳，將牛肉輔以滿滿鮮甜的菠菜及洋菇餡料，最後再鋪上莫札瑞拉起司。層層入口後，齒頰留香，令人意猶未盡，回味無窮！",
+    "price": 120,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=6745"
+  },
+  {
+    "id": "16998",
+    "name": "超級夏威夷",
+    "description": "必勝客經典夏威夷比薩，肉量升級兩倍！經典火腿片加上炙烤培根、人氣午餐肉，三重肉感疊加，口口都滿足。加上肉品絕配鳳梨切片，最後再加上熱帶鳳梨淋醬，微微酸甜清爽解膩，更涮嘴。",
+    "price": 115,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=16998"
+  },
+  {
+    "id": "13341",
+    "name": "炙燒明太子嫩雞",
+    "description": "日式照燒醬為底醬，鋪上鮮嫩雞腿肉塊，搭配洋菇、番茄和濃郁的莫札瑞拉起司，最後再淋上明太子醬，豐富層次在口中完美交織，每一口都令人難忘。",
+    "price": 115,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=13341"
+  },
+  {
+    "id": "2667",
+    "name": "超級總匯",
+    "description": "經典義式美味，超級總匯比薩的豐富餡料讓人忍不住大快朵頤！",
+    "price": 115,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=2667"
+  },
+  {
+    "id": "2178",
+    "name": "彩蔬鮮菇",
+    "description": "(奶素可食) 鮮美的洋菇與菠菜和番茄，再加上BBQ素醬，素食口味比薩讓你吃到蔬菜的清爽美味。",
+    "price": 105,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=2178"
+  },
+  {
+    "id": "10427",
+    "name": "四小福",
+    "description": "鹹香BBQ醬料配上四大經典餡料，令人吮指回味！",
+    "price": 89,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=10427"
+  },
+  {
+    "id": "10428",
+    "name": "日式照燒雞",
+    "description": "日式照燒醬搭配煙燻雞肉絲及豐富佐料，甜鹹滋味讓你忍不住一口接一口！",
+    "price": 89,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=10428"
+  },
+  {
+    "id": "2179",
+    "name": "夏威夷",
+    "description": "當甜中帶點微酸的鳳梨，遇上風味濃郁的火腿，夏威夷口味的絕妙味道，越吃越順口。",
+    "price": 89,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=2179"
+  },
+  {
+    "id": "2664",
+    "name": "雙層美式臘腸",
+    "description": "加量的雙層美式臘腸，豐盛臘腸口口吃得到，讓你盡享道地的美式風味。",
+    "price": 89,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=2664"
+  },
+  {
+    "id": "12439",
+    "name": "起司咔滋餅-明太子四重起司(單片)",
+    "description": "濃郁海味的明太子醬，與奶香四溢的莫扎瑞拉起司結合，經烘烤後散發誘人的香氣，滿滿起司層層拉絲，搭配馬鈴薯增添豐富口感，包覆著酥脆外皮，交織出層次豐富的風味！",
+    "price": 79,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=12439"
+  },
+  {
+    "id": "12441",
+    "name": "起司咔滋餅-超級總匯(單片)",
+    "description": "萬年不敗的經典義式風味X加量莫札瑞拉起司內餡～酥脆外皮搭配超牽絲起司內餡，爽感爆表讓你一口接一口！\"",
+    "price": 79,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=12441"
+  },
+  {
+    "id": "12878",
+    "name": "起司咔滋餅-爆濃巧克力香蕉(單片)",
+    "description": "美味特色:酥脆餅皮 + 香濃起司 + 滿滿餡料 + 有甜有鹹滿足你的下午茶與甜點療癒需求★甜口味使用食材特色1. 榛果風味巧克力醬 使用經典榛果風味巧克力醬作為基底，提供了濃郁的榛果風味及柔滑的質地。其次添加了超苦甜巧克力，使巧克力醬多了一份深邃的可可香氣。2. 香蕉餡香蕉果香濃郁、口感細膩、甜度適中。搭配燕麥片，使餡料增添一層豐富的口感及穀物的香氣，同時也提升營養價值。3. OREO餅乾 (香草內餡)經典Oreo餅乾，使口感香脆增加豐富的層次感，與香甜的味道完美結合。4. 芝心PIZZAHUT經典品牌特色-芝心，頂級莫札瑞拉起司為基礎，結合香濃芝心與餅皮，可以拉絲的美味。5. 嘉麗寶可可粉法國進口的100%的天然無糖可可粉，保留可可豆原始的濃郁風味。",
+    "price": 79,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=12878"
+  },
+  {
+    "id": "10707",
+    "name": "起司咔滋餅_明太子四重起司",
+    "description": "濃郁海味的明太子醬，與奶香四溢的莫扎瑞拉起司結合，經烘烤後散發誘人的香氣，滿滿起司層層拉絲，搭配馬鈴薯增添豐富口感，包覆著酥脆外皮，交織出層次豐富的風味！",
+    "price": 149,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=10707"
+  },
+  {
+    "id": "9818",
+    "name": "起司咔滋餅_超級總匯",
+    "description": "萬年不敗的經典義式風味X加量莫札瑞拉起司內餡～酥脆外皮搭配超牽絲起司內餡，爽感爆表讓你一口接一口！\"",
+    "price": 139,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=9818"
+  },
+  {
+    "id": "12780",
+    "name": "起司咔滋餅-爆濃巧克力香蕉",
+    "description": "美味特色:酥脆餅皮 + 香濃起司 + 滿滿餡料 + 有甜有鹹滿足你的下午茶與甜點療癒需求★甜口味使用食材特色1. 榛果風味巧克力醬 使用經典榛果風味巧克力醬作為基底，提供了濃郁的榛果風味及柔滑的質地。其次添加了超苦甜巧克力，使巧克力醬多了一份深邃的可可香氣。2. 香蕉餡香蕉果香濃郁、口感細膩、甜度適中。搭配燕麥片，使餡料增添一層豐富的口感及穀物的香氣，同時也提升營養價值。3. OREO餅乾 (香草內餡)經典Oreo餅乾，使口感香脆增加豐富的層次感，與香甜的味道完美結合。4. 芝心PIZZAHUT經典品牌特色-芝心，頂級莫札瑞拉起司為基礎，結合香濃芝心與餅皮，可以拉絲的美味。5. 嘉麗寶可可粉法國進口的100%的天然無糖可可粉，保留可可豆原始的濃郁風味。",
+    "price": 139,
+    "category": "個人比薩",
+    "categoryId": 3,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=3&pd=12780"
+  },
+  {
+    "id": "13484",
+    "name": "激省系列義大利麵/飯",
+    "description": "激省義大利麵/飯單點及套餐",
+    "price": 0,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=13484"
+  },
+  {
+    "id": "12686",
+    "name": "私廚系列紙包義大利麵/飯",
+    "description": "紙包筆管麵/紙包飯/千層麵單點或套餐。",
+    "price": 0,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=12686"
+  },
+  {
+    "id": "14218",
+    "name": "必勝雙人套餐$299",
+    "description": "指定個人比薩或紙包系列2份+指定副食2份+指定飲料2杯。",
+    "price": 299,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14218"
+  },
+  {
+    "id": "16623",
+    "name": "嫩牛大蝦起司個人燉飯",
+    "description": "嫩牛大蝦起司個人燉飯單點及套餐",
+    "price": 0,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16623"
+  },
+  {
+    "id": "15843",
+    "name": "松露鮮蝦干貝燉飯",
+    "description": "濃郁牛肝菌加上特極鮮奶油佐上松露製成醬汁，透過紙包封烤，讓醬汁精華均勻融入每一粒米飯中， 搭配鮮甜干貝與大尾鮮蝦、洋菇與香濃莫札瑞拉起司，口口都是濃郁鮮味！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=15843"
+  },
+  {
+    "id": "15845",
+    "name": "紅醬炙燒嫩雞腿燉飯",
+    "description": "源自義大利的經典波隆那肉醬風味！透過紙包封烤，讓醬汁精華均勻融入每一粒米飯中，搭配炭烤雞腿肉、培根、洋菇、花椰菜與香濃莫札瑞拉起司，讓你一口接著一口！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=15845"
+  },
+  {
+    "id": "14977",
+    "name": "五倍起司焗烤千層麵",
+    "description": "起司控一吃就愛不釋手！5倍加量莫札瑞拉起司，給你滿滿超牽絲的起司！每一口都吃得到滿滿番茄香氣與肉末的波隆那肉醬~千層麵與波隆那肉醬、白醬層層交疊，達到幸福感滿分的完美平衡！需要被療癒一下？那就來點必勝客五倍起司焗烤千層麵吧！",
+    "price": 259,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=14977"
+  },
+  {
+    "id": "14229",
+    "name": "紅醬干貝鱈魚筆管麵",
+    "description": "源自義大利的經典波隆那肉醬風味！配上鹽烤鱈魚片、鮮甜干貝、番茄與花椰菜，再透過高溫紙包封烤，讓每一根筆管麵沾附包裹醬汁並吸收食材精華，交疊出奢華的味覺饗宴，讓你一口接著一口！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=14229"
+  },
+  {
+    "id": "14230",
+    "name": "紅醬嫩牛乳酪筆管麵",
+    "description": "源自義大利的經典波隆那肉醬風味！配上滑嫩牛肉片、起司丁、番茄、洋菇與花椰菜，再透過高溫紙包封烤，讓每一根筆管麵沾附包裹醬汁並吸收食材精華，交疊出奢華的味覺饗宴，讓你一口接著一口！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=14230"
+  },
+  {
+    "id": "14228",
+    "name": "白醬干貝鱈魚筆管麵",
+    "description": "濃郁奶油白醬，搭配鹽烤鱈魚片、鮮甜干貝、番茄與花椰菜，再透過高溫紙包封烤，讓每一根筆管麵沾附包裹醬汁並吸收食材精華，交疊出奢華的味覺饗宴，讓你一口接著一口！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=14228"
+  },
+  {
+    "id": "14226",
+    "name": "白醬炭烤雞肉筆管麵",
+    "description": "濃郁奶油白醬，搭配炭烤雞腿肉、培根、洋菇與花椰菜，再透過高溫紙包封烤，讓每一根筆管麵沾附包裹醬汁並吸收食材精華，交疊出奢華的味覺饗宴，讓你一口接著一口！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=14226"
+  },
+  {
+    "id": "14227",
+    "name": "青醬干貝鱈魚筆管麵",
+    "description": "加上帕瑪森起司及鮮奶油製成的清新羅勒青醬，搭配鹽烤鱈魚片、鮮甜干貝、番茄與花椰菜，再透過高溫紙包封烤，讓每一根筆管麵沾附包裹醬汁並吸收食材精華，交疊出奢華的味覺饗宴，讓你一口接著一口！",
+    "price": 189,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=14227"
+  },
+  {
+    "id": "13388",
+    "name": "蒜香培根起司麵",
+    "description": "這道蒜香培根義大利麵，選用Q彈的直麵，搭配獨門蒜香醬汁，融合了洋蔥末、蒜末、辣椒和香料葉，與酥脆的培根完美融合，並加入清爽的青花菜增添口感，最後撒上帕瑪森起司提味。每一口都能感受到蒜香與培根的鹹香交織，簡單卻充滿魅力的義大利麵料理。",
+    "price": 139,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=13388"
+  },
+  {
+    "id": "13390",
+    "name": "番茄肉醬起司麵",
+    "description": "這是一份經典的番茄起司義大利肉醬麵，內含口感滑順的直麵，搭配波隆那紅醬，富有濃郁的蕃茄與肉香，再撒上帕瑪森起司，風味絕佳。每一口都能享受到濃郁的番茄酸甜與肉醬的鹹香，是一款簡單卻充滿層次的美味義大利麵。",
+    "price": 139,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=13390"
+  },
+  {
+    "id": "13389",
+    "name": "奶油燻雞起司麵",
+    "description": "這道奶油燻雞蘑菇義大利麵，選用滑順的直麵，搭配香濃的奶油白醬，融合煙燻雞肉與嫩滑洋菇，還有清爽青花菜增加口感，最後撒上帕瑪森起司，增添鹹香風味。每一口都能品味到濃郁的奶香與燻雞的獨特風味，是一道豐富且滿足的義大利麵料理。",
+    "price": 139,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=13389"
+  },
+  {
+    "id": "13391",
+    "name": "奶油燻雞燉飯",
+    "description": "這道奶油燻雞蘑菇燉飯，使用台灣優質一等米作為基底，搭配濃郁的奶油白醬，混合煙燻雞肉與嫩滑的洋菇，再加入清爽的青花菜，為整道料理增添口感與色彩。每一口都能享受到奶香與燻雞的迷人風味，是一道豐富且飽滿的燉飯料理，喜歡燉飯料理的千萬別錯過。",
+    "price": 139,
+    "category": "義大利麵/燉飯",
+    "categoryId": 4,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=4&pd=13391"
+  },
+  {
+    "id": "16639",
+    "name": "德國豬腳海陸盛宴拼盤",
+    "description": "年末海陸拼盤包含四款人氣美味副食。期間限定的德國豬腳，採用正宗德式香料醃漬與烹煮，外皮的酥脆焦香與內部肉質的軟嫩多汁，搭配黃芥末醬提升風味，是年末聚餐的餐桌加分亮點！拼盤內還有人氣黃金和風鱈魚塊、薯金幣及 BBQ 烤雞，豐富海陸拼盤是你年末聚餐首選",
+    "price": 599,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=16639"
+  },
+  {
+    "id": "4873",
+    "name": "HOT海陸大拼盤",
+    "description": "涮嘴香酥的黃金雞軟骨、酥脆鮮嫩的黃金雞柳，和經典BBQ烤雞，以及肥美多汁阿拉斯加深海鱈魚塊，豐富的海陸美味一次擁有！",
+    "price": 499,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=4873"
+  },
+  {
+    "id": "4886",
+    "name": "HOT燒大拼盤",
+    "description": "經典烤雞，加上起司味滿滿的德國芝心腸搭配薯金幣，以及巧克力QQ球，滿足超享受！",
+    "price": 449,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=4886"
+  },
+  {
+    "id": "4937",
+    "name": "HOT烤雞拼盤",
+    "description": "精選厚燒雞腿、腿排以及雞翅，搭配獨家秘方經典BBQ烤肉醬，聚會加分同樂必備！",
+    "price": 449,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=4937"
+  },
+  {
+    "id": "4874",
+    "name": "HOT海陸小拼盤",
+    "description": "涮嘴香酥黃金雞軟骨、酥脆鮮嫩的黃金雞柳，和經典BBQ烤雞，以及阿拉斯加深海鱈魚塊，海陸美味一次擁有！小拼盤適合2-3人。",
+    "price": 269,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=4874"
+  },
+  {
+    "id": "4885",
+    "name": "HOT燒小拼盤",
+    "description": "經典烤雞，加上起司味滿滿的德國芝心腸搭配薯金幣，以及巧克力QQ球，滿足超享受！小拼盤適合2-3人",
+    "price": 239,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=4885"
+  },
+  {
+    "id": "16470",
+    "name": "起司三重奏豬肉條",
+    "description": "嚴選三種天然起司 (高達/切達/帕瑪森)，再搭配CAS標章認證的台灣在地豬後腿肉，內餡多汁，風味濃郁順口。",
+    "price": 75,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=16470"
+  },
+  {
+    "id": "12078",
+    "name": "蒜香起司軟法",
+    "description": "使用老麵製作的手工軟法，經多次發酵工序及烘烤， 搭配香濃莫札瑞拉起司和香蒜，呈現外脆內軟的口感",
+    "price": 49,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=12078"
+  },
+  {
+    "id": "5137",
+    "name": "薯金幣(大份)",
+    "description": "(純素可食) 馬鈴薯香烤出色，香脆入嘴，口口酥鬆！",
+    "price": 69,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=5137"
+  },
+  {
+    "id": "13045",
+    "name": "起司濃心酥",
+    "description": "(蛋奶素可食) 多層次奶香酥皮、莫札瑞拉起司內餡，甜而不膩的絕妙平衡，欲罷不能的牽絲美味",
+    "price": 59,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=13045"
+  },
+  {
+    "id": "10989",
+    "name": "酥炸嫩雞球",
+    "description": "金黃酥脆外衣、肉質飽滿多汁、經典涮嘴好滋味 !",
+    "price": 69,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=10989"
+  },
+  {
+    "id": "14447",
+    "name": "酥炸三味甜不辣",
+    "description": "匯聚原味、墨魚與紅麴三種經典口味，選用新鮮魚漿製作，外皮酥脆美味，無論是經典原味、海味墨魚，還是香醇紅麴，都是台味小吃愛好者的絕佳選擇！",
+    "price": 75,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=14447"
+  },
+  {
+    "id": "11565",
+    "name": "酥炸杏鮑菇",
+    "description": "嚴選台灣在地新鮮杏鮑菇，裹上精心調配炸粉，外皮金黃酥脆，一口咬下鮮嫩多汁，令人欲罷不能。 (五辛素)",
+    "price": 75,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=11565"
+  },
+  {
+    "id": "7050",
+    "name": "波隆那肉醬起司薯瓣",
+    "description": "金黃酥香、口感綿密的馬鈴薯瓣, 淋上發源於義大利波隆那的經典肉醬，肉醬富有濃郁的蕃茄與肉香,   搭配香濃起司",
+    "price": 99,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=7050"
+  },
+  {
+    "id": "1303",
+    "name": "德國芝心腸",
+    "description": "肥美多汁的德國香腸搭配濃濃的起司超對味！",
+    "price": 199,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=1303"
+  },
+  {
+    "id": "2257",
+    "name": "黃金和風鱈魚塊(10個)",
+    "description": "嚴選阿拉斯加深海鱈魚，搭配小魚造型，皮脆肉鮮，濃濃海洋風味，營養滿滿！",
+    "price": 199,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=2257"
+  },
+  {
+    "id": "5181",
+    "name": "黃金雞柳條8條",
+    "description": "酥脆鮮嫩的黃金雞柳條，一口咬下肉質紮實，美味推薦！",
+    "price": 199,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=5181"
+  },
+  {
+    "id": "7119",
+    "name": "黃金雞軟骨",
+    "description": "來自台灣嚴選本土雞隻，與各種香料拌勻後裹粉酥炸，鎖住精華，一口接著一口超級涮嘴！",
+    "price": 199,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=7119"
+  },
+  {
+    "id": "4215",
+    "name": "厚燒醬烤BBQ(2腿2排)",
+    "description": "精選厚燒雞腿及腿排，搭配獨家秘方BBQ烤肉醬， 讓你吃得過癮，美味上癮！  *烤雞實際尺寸以各餐廳實際供應為準, 恕不開放選擇，圖片僅供參考，產品請以實物為準。",
+    "price": 229,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=4215"
+  },
+  {
+    "id": "2725",
+    "name": "BBQ烤雞(8塊)",
+    "description": "精選上等嫩雞烘烤，外皮細薄滑、肉質鮮嫩可口不油膩！",
+    "price": 229,
+    "category": "拼盤/熱烤",
+    "categoryId": 5,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=5&pd=2725"
+  },
+  {
+    "id": "13521",
+    "name": "巧克力QQ球5顆",
+    "description": "(蛋奶素可食) 濃濃巧克力風味，軟Q口感讓人忍不住一口接一口~",
+    "price": 59,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=13521"
+  },
+  {
+    "id": "13509",
+    "name": "巧克力QQ球10顆",
+    "description": "(蛋奶素可食) 濃濃巧克力風味，軟Q口感讓人忍不住一口接一口~",
+    "price": 99,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=13509"
+  },
+  {
+    "id": "12682",
+    "name": "脆糖扁可頌",
+    "description": "(蛋奶素可食) 韓國人氣甜點，極致酥脆、多層次口感的扁可頌，外層撒上香脆冰糖，讓美味再升級。",
+    "price": 69,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=12682"
+  },
+  {
+    "id": "4852",
+    "name": "冰藏起司塔1顆",
+    "description": "(蛋奶素可食) 使用來自法國與紐西蘭的乳酪，品嚐冰藏滑順的香濃起司。",
+    "price": 59,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=4852"
+  },
+  {
+    "id": "4853",
+    "name": "冰藏起司塔2顆",
+    "description": "(蛋奶素可食) 使用來自法國與紐西蘭的乳酪，品嚐冰藏滑順的香濃起司。",
+    "price": 118,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=4853"
+  },
+  {
+    "id": "4854",
+    "name": "冰藏起司塔禮盒",
+    "description": "(蛋奶素可食) 使用來自法國與紐西蘭的乳酪，品嚐冰藏滑順的香濃起司。",
+    "price": 319,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=4854"
+  },
+  {
+    "id": "4119",
+    "name": "半熟起司塔1顆",
+    "description": "(蛋奶素可食) 二次烘培的酥脆塔皮搭配來自法國與紐西蘭的乳酪起司，讓你體驗香濃滑順、厚實綿密的爆漿口感！",
+    "price": 55,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=4119"
+  },
+  {
+    "id": "4121",
+    "name": "半熟起司塔禮盒",
+    "description": "(蛋奶素可食) 二次烘培的酥脆塔皮搭配來自法國與紐西蘭的乳酪起司，讓你體驗香濃滑順、厚實綿密的爆漿口感！",
+    "price": 295,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=4121"
+  },
+  {
+    "id": "6576",
+    "name": "巴斯克起司蛋糕(4吋)",
+    "description": "(蛋奶素可食) 小尺寸好入手！個人獨享與小型聚會分享都好搭！  獨創冰藏吃法別具風味，重新感受內餡香濃、口感絲滑！  輕鬆進階東京排隊美食，小聚時刻必嗑！",
+    "price": 180,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=6576"
+  },
+  {
+    "id": "6040",
+    "name": "巴斯克熔岩起司蛋糕(8吋)",
+    "description": "(蛋奶素可食) 熱騰騰的「巴斯克熔岩起司蛋糕」翻轉蛋糕冰過才吃的常見吃法，以「溫熱口感」與「爆漿熔岩起司內餡」帶給起司蛋糕控前所未有的享受，如卡士達般的柔順感，讓口齒間充滿濃郁的起司香氣。",
+    "price": 888,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=6040"
+  },
+  {
+    "id": "1042",
+    "name": "玉米濃湯(含奶製品)1杯",
+    "description": "",
+    "price": 49,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=1042"
+  },
+  {
+    "id": "11279",
+    "name": "飛想檸檬紅茶300ml",
+    "description": "1罐",
+    "price": 15,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=11279"
+  },
+  {
+    "id": "5637",
+    "name": "百事可樂330ml",
+    "description": "1罐",
+    "price": 21,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5637"
+  },
+  {
+    "id": "5628",
+    "name": "百事可樂330ml(2罐)",
+    "description": "2罐",
+    "price": 42,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5628"
+  },
+  {
+    "id": "5624",
+    "name": "百事可樂1.25L",
+    "description": "1罐",
+    "price": 42,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5624"
+  },
+  {
+    "id": "5639",
+    "name": "七喜330ml",
+    "description": "1罐",
+    "price": 21,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5639"
+  },
+  {
+    "id": "5636",
+    "name": "七喜330ml(2罐)",
+    "description": "2罐",
+    "price": 42,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5636"
+  },
+  {
+    "id": "5625",
+    "name": "七喜1.25L",
+    "description": "1罐",
+    "price": 42,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5625"
+  },
+  {
+    "id": "12463",
+    "name": "原萃綠茶580ml",
+    "description": "1罐",
+    "price": 25,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=12463"
+  },
+  {
+    "id": "5017",
+    "name": "原萃綠茶1.25L",
+    "description": "1罐",
+    "price": 50,
+    "category": "甜點/飲料",
+    "categoryId": 6,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=6&pd=5017"
+  },
+  {
+    "id": "16128",
+    "name": "HOT雙拼饗樂餐",
+    "description": "4鬆厚大P+2芝心大P+可樂1.25Lx2+HOT燒大拼盤x2+薯金幣大份",
+    "price": 3299,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16128"
+  },
+  {
+    "id": "5753",
+    "name": "HOT豪華歡聚餐",
+    "description": "大比薩6個+Hot烤雞拼盤1份+冰藏起司塔6顆+黃金和風鱈魚塊10個3份+薯金幣大份2份+巧克力QQ球4份+1.25L可樂3瓶",
+    "price": 3499,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=5753"
+  },
+  {
+    "id": "16129",
+    "name": "HOT一公尺必勝餐",
+    "description": "LIMO(底特律、黃金嫩雞、鳳梨海鮮)+4大P+可樂1.25Lx3+巴斯克起司蛋糕(4吋)。",
+    "price": 3999,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16129"
+  },
+  {
+    "id": "8137",
+    "name": "HOT燒星揪團分享餐",
+    "description": "大比薩9個+可樂5瓶(1.25L)+麻糬QQ球(巧克力)4份+冰藏起司塔(6顆)2份+黃金和風鱈魚塊(10個)",
+    "price": 4299,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=8137"
+  },
+  {
+    "id": "8139",
+    "name": "HOT燒星分享餐",
+    "description": "獨享個人比薩餐25份(限定口味個人比薩+薯金幣小份+330ml可樂1罐)+HOT烤雞拼盤 3份。",
+    "price": 4499,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=8139"
+  },
+  {
+    "id": "12507",
+    "name": "HOT燒星派對精選餐",
+    "description": "大比薩12個+冰藏起司塔6入*2+8吋巴斯克蛋糕*1",
+    "price": 4999,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=12507"
+  },
+  {
+    "id": "16894",
+    "name": "HOT御選尊爵餐",
+    "description": "6鬆厚大P+3芝心大P+可樂1.25Lx2+HOT海陸大拼盤*2 。",
+    "price": 5499,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16894"
+  },
+  {
+    "id": "8145",
+    "name": "HOT燒星芝心分享餐",
+    "description": "芝心大比薩12個+可樂10瓶(1.25L)+麻糬QQ球(巧克力)4份。",
+    "price": 5988,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=8145"
+  },
+  {
+    "id": "8146",
+    "name": "HOT燒星超值拼盤餐",
+    "description": "大比薩16個+HOT烤雞拼盤3份+可樂7瓶(1.25L)+麻糬QQ球(巧克力)4份。",
+    "price": 6499,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=8146"
+  },
+  {
+    "id": "8144",
+    "name": "HOT燒星全員集合豪華餐",
+    "description": "大比薩30個+可樂12瓶(1.25L)+麻糬QQ球4份。",
+    "price": 9888,
+    "category": "10人以上套餐",
+    "categoryId": 7,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=8144"
+  },
+  {
+    "id": "15149",
+    "name": "悠遊卡開春小送小",
+    "description": "外帶 買小送小(以價高者計) 再享好禮6選1: 2塊厚燒醬烤腿排或1份薯金幣(大)或10顆麻糬QQ球或1瓶1.25L可樂或1.25L七喜或2杯玉米濃湯",
+    "price": 0,
+    "category": "特殊優惠",
+    "categoryId": 8,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=15149"
+  },
+  {
+    "id": "3781",
+    "name": "悠遊卡大方個P半價",
+    "description": "外帶個人比薩第2個半價(以價低者折) 再享加碼送5選1: 1塊厚燒醬烤腿排或1罐330cc可樂或1罐330cc七喜或1杯玉米濃湯或蒜香起司軟法(小}",
+    "price": 0,
+    "category": "特殊優惠",
+    "categoryId": 8,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=3781"
+  },
+  {
+    "id": "3870",
+    "name": "悠遊卡限時小送大",
+    "description": "外帶買1個9吋鬆厚比薩(全口味任選)=NT$320元起 \n    送1個13吋鬆厚比薩(10選1):(雙拼比薩-熱帶鳳梨海鮮總匯+四小福)或(雙拼比薩-四小福+日式照燒雞)或BBQ黃金嫩雞或義式培根薯金幣或夏威夷或香濃蒜香海鮮或雙層美式臘腸或四小福或日式照燒雞或彩蔬鮮菇",
+    "price": 0,
+    "category": "特殊優惠",
+    "categoryId": 8,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=3870"
   }
 ]
