@@ -151,19 +151,29 @@ function extractMinPurchasePrice(text: string): number | undefined {
 function extractDeliveryType(text: string): 'delivery' | 'takeout' | 'both' | undefined {
   const lowerText = text.toLowerCase();
   
-  // Check for both delivery and takeout
-  if ((lowerText.includes('外送') || lowerText.includes('外送/外帶') || lowerText.includes('外帶/外送')) && 
-      lowerText.includes('外帶')) {
-    return 'both';
-  }
-  
-  // Check for delivery only (and not preceded by "限" which means restriction)
-  if (lowerText.includes('限外送') || (lowerText.includes('外送') && !lowerText.includes('外帶'))) {
+  // Check for specific patterns first (more specific to less specific)
+  // Check for delivery only restrictions
+  if (lowerText.includes('限外送') && !lowerText.includes('外帶')) {
     return 'delivery';
   }
   
-  // Check for takeout only
-  if (lowerText.includes('限外帶') || (lowerText.includes('外帶') && !lowerText.includes('外送'))) {
+  // Check for takeout only restrictions
+  if (lowerText.includes('限外帶') && !lowerText.includes('外送')) {
+    return 'takeout';
+  }
+  
+  // Check for both delivery and takeout (patterns like "外送/外帶" or "外帶/外送")
+  if ((lowerText.includes('外送/外帶') || lowerText.includes('外帶/外送')) ||
+      (lowerText.includes('外送') && lowerText.includes('外帶'))) {
+    return 'both';
+  }
+  
+  // Check for single mentions
+  if (lowerText.includes('外送')) {
+    return 'delivery';
+  }
+  
+  if (lowerText.includes('外帶')) {
     return 'takeout';
   }
   
