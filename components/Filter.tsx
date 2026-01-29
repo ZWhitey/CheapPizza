@@ -6,16 +6,16 @@ interface FilterProps {
   menuItems: MenuItem[];
   selectedItems: string[];
   onSelectionChange: (items: string[]) => void;
-  selectedDeliveryType?: string;
-  onDeliveryTypeChange?: (type: string) => void;
+  selectedDeliveryTypes?: string[];
+  onDeliveryTypesChange?: (types: string[]) => void;
 }
 
 const Filter: React.FC<FilterProps> = ({ 
   menuItems, 
   selectedItems, 
   onSelectionChange,
-  selectedDeliveryType = 'all',
-  onDeliveryTypeChange = () => {}
+  selectedDeliveryTypes = [],
+  onDeliveryTypesChange = () => {}
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -59,8 +59,17 @@ const Filter: React.FC<FilterProps> = ({
     }
   };
 
+  const handleDeliveryTypeChange = (type: string) => {
+    if (selectedDeliveryTypes.includes(type)) {
+      onDeliveryTypesChange(selectedDeliveryTypes.filter(t => t !== type));
+    } else {
+      onDeliveryTypesChange([...selectedDeliveryTypes, type]);
+    }
+  };
+
   const clearFilter = () => {
       onSelectionChange([]);
+      onDeliveryTypesChange([]);
   }
 
   const removeTag = (item: string, e: React.MouseEvent) => {
@@ -124,47 +133,37 @@ const Filter: React.FC<FilterProps> = ({
             {/* Delivery Type Filter */}
             <div className="mb-6">
                 <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">優惠使用範圍</h2>
-                <div className="flex flex-wrap gap-2">
-                    <button
-                        onClick={() => onDeliveryTypeChange('all')}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                            selectedDeliveryType === 'all'
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                    >
-                        全部
-                    </button>
-                    <button
-                        onClick={() => onDeliveryTypeChange('delivery')}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                            selectedDeliveryType === 'delivery'
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                    >
-                        外送
-                    </button>
-                    <button
-                        onClick={() => onDeliveryTypeChange('takeout')}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                            selectedDeliveryType === 'takeout'
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                    >
-                        外帶
-                    </button>
-                    <button
-                        onClick={() => onDeliveryTypeChange('both')}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                            selectedDeliveryType === 'both'
-                                ? 'bg-blue-600 text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                    >
-                        外送外帶
-                    </button>
+                <div className="flex flex-wrap gap-3">
+                    <label className="flex items-center gap-2 cursor-pointer group">
+                        <div className="relative flex items-center">
+                            <input
+                                type="checkbox"
+                                checked={selectedDeliveryTypes.includes('delivery')}
+                                onChange={() => handleDeliveryTypeChange('delivery')}
+                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                        </div>
+                        <span className={`text-sm font-medium transition-colors ${
+                            selectedDeliveryTypes.includes('delivery') ? 'text-blue-700' : 'text-gray-700'
+                        }`}>
+                            外送
+                        </span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer group">
+                        <div className="relative flex items-center">
+                            <input
+                                type="checkbox"
+                                checked={selectedDeliveryTypes.includes('takeout')}
+                                onChange={() => handleDeliveryTypeChange('takeout')}
+                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                        </div>
+                        <span className={`text-sm font-medium transition-colors ${
+                            selectedDeliveryTypes.includes('takeout') ? 'text-blue-700' : 'text-gray-700'
+                        }`}>
+                            外帶
+                        </span>
+                    </label>
                 </div>
             </div>
 
