@@ -132,10 +132,10 @@ async function checkCouponValidity(code: string): Promise<any> {
 function extractMinPurchasePrice(text: string): number | undefined {
   // Match patterns like "NT$320元(含)以上" or "限定NT$460元(含)以上"
   const patterns = [
-    /NT\$(\d+)元?\([含含]+\)以上/i,
-    /限定NT\$(\d+)元?\([含含]+\)以上/i,
-    /NT\$(\d+)\([含含]+\)以上/i,
-    /\$(\d+)元?\([含含]+\)以上/i,
+    /NT\$(\d+)元?\(含\)以上/i,
+    /限定NT\$(\d+)元?\(含\)以上/i,
+    /NT\$(\d+)\(含\)以上/i,
+    /\$(\d+)元?\(含\)以上/i,
   ];
   
   for (const pattern of patterns) {
