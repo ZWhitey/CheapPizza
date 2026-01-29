@@ -9,7 +9,7 @@ const App: React.FC = () => {
   const [coupons, setCoupons] = useState<Coupon[]>([]);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [selectedFilterItems, setSelectedFilterItems] = useState<string[]>([]);
-  const [selectedDeliveryType, setSelectedDeliveryType] = useState<string>('all');
+  const [selectedDeliveryTypes, setSelectedDeliveryTypes] = useState<string[]>([]);
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -71,18 +71,16 @@ const App: React.FC = () => {
       }
 
       // Filter by delivery type
-      if (selectedDeliveryType !== 'all') {
+      if (selectedDeliveryTypes.length > 0) {
           result = result.filter(coupon => {
-              // If coupon has no delivery type, show it in all filters (backward compatibility)
+              // If coupon has no delivery type, show it (backward compatibility)
               if (!coupon.deliveryType) return true;
               
-              // For 'both' filter, show coupons that support both or have undefined type
-              if (selectedDeliveryType === 'both') {
-                  return coupon.deliveryType === 'both' || !coupon.deliveryType;
-              }
+              // If coupon supports 'both', it matches any selection
+              if (coupon.deliveryType === 'both') return true;
               
-              // For specific filters, match the type or 'both'
-              return coupon.deliveryType === selectedDeliveryType || coupon.deliveryType === 'both';
+              // Check if coupon's delivery type is in the selected types
+              return selectedDeliveryTypes.includes(coupon.deliveryType);
           });
       }
 
@@ -95,7 +93,7 @@ const App: React.FC = () => {
       });
 
       return result;
-  }, [coupons, selectedFilterItems, selectedDeliveryType]);
+  }, [coupons, selectedFilterItems, selectedDeliveryTypes]);
 
 
   return (
@@ -122,8 +120,8 @@ const App: React.FC = () => {
                     menuItems={menuItems}
                     selectedItems={selectedFilterItems}
                     onSelectionChange={setSelectedFilterItems}
-                    selectedDeliveryType={selectedDeliveryType}
-                    onDeliveryTypeChange={setSelectedDeliveryType}
+                    selectedDeliveryTypes={selectedDeliveryTypes}
+                    onDeliveryTypesChange={setSelectedDeliveryTypes}
                 />
             )}
 
@@ -150,7 +148,7 @@ const App: React.FC = () => {
                 <button
                     onClick={() => {
                         setSelectedFilterItems([]);
-                        setSelectedDeliveryType('all');
+                        setSelectedDeliveryTypes([]);
                     }}
                     className="text-red-600 hover:underline"
                 >
