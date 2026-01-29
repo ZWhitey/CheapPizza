@@ -76,10 +76,12 @@ const App: React.FC = () => {
               // If coupon has no delivery type, show it in all filters (backward compatibility)
               if (!coupon.deliveryType) return true;
               
-              // Match the selected delivery type
+              // For 'both' filter, show coupons that support both or have undefined type
               if (selectedDeliveryType === 'both') {
-                  return coupon.deliveryType === 'both';
+                  return coupon.deliveryType === 'both' || !coupon.deliveryType;
               }
+              
+              // For specific filters, match the type or 'both'
               return coupon.deliveryType === selectedDeliveryType || coupon.deliveryType === 'both';
           });
       }
