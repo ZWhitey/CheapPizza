@@ -1,66 +1,79 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import CouponCard from './components/CouponCard';
-import { Coupon, Metadata } from './types';
+import Filter from './components/Filter';
+import { Coupon, Metadata, MenuItem } from './types';
 import { Loader2 } from 'lucide-react';
 
 const App: React.FC = () => {
   const [coupons, setCoupons] = useState<Coupon[]>([]);
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [selectedFilterItems, setSelectedFilterItems] = useState<string[]>([]);
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch Coupons from JSON
+  // Fetch Data
   useEffect(() => {
-    const fetchCoupons = async () => {
+    const fetchData = async () => {
       try {
         setLoading(true);
-        // In a real deployed app, this fetches from /coupons.json
-        // In some dev environments, we might need to reference public folder
-        const response = await fetch('./coupons.json');
-        if (!response.ok) {
-          throw new Error('Failed to load coupons');
+
+        // Parallel fetch
+        const [couponsRes, menuRes, metadataRes] = await Promise.all([
+            fetch('./coupons.json'),
+            fetch('./menu.json'),
+            fetch('./metadata.json').catch(() => null)
+        ]);
+
+        if (!couponsRes.ok) throw new Error('Failed to load coupons');
+        const couponsData = await couponsRes.json();
+        setCoupons(couponsData);
+
+        if (menuRes.ok) {
+            const menuData = await menuRes.json();
+            setMenuItems(menuData);
         }
-        const data = await response.json();
-        setCoupons(data);
+
+        if (metadataRes && metadataRes.ok) {
+            const metadataData = await metadataRes.json();
+            setMetadata(metadataData);
+        }
+
       } catch (err) {
-        console.error("Error loading coupons:", err);
+        console.error("Error loading data:", err);
         setError('無法載入優惠券資料，請稍後再試。');
       } finally {
         setLoading(false);
       }
     };
 
-    const fetchMetadata = async () => {
-      try {
-        const response = await fetch('./metadata.json');
-        if (!response.ok) {
-          console.warn('Metadata not found, this is OK for older deployments');
-          return;
-        }
-        const data = await response.json();
-        setMetadata(data);
-      } catch (err) {
-        console.warn("Error loading metadata:", err);
-      }
-    };
-
-    fetchCoupons();
-    fetchMetadata();
+    fetchData();
   }, []);
 
-  // Format update time for display
-  const formatUpdateTime = (isoString: string): string => {
-    const date = new Date(isoString);
-    return date.toLocaleString('zh-TW', { 
-      year: 'numeric',
-      month: '2-digit', 
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZone: 'Asia/Taipei'
-    });
-  };
+  // Filter and Sort Coupons
+  const filteredCoupons = useMemo(() => {
+      // 1. Filter
+      let result = coupons;
+
+      if (selectedFilterItems.length > 0) {
+          result = result.filter(coupon => {
+              // Combine title and items for searching
+              const couponText = (coupon.title + (coupon.items ? coupon.items.join('') : '')).toLowerCase();
+
+              // Check if ALL selected items are present in the coupon text
+              return selectedFilterItems.every(item => {
+                  return couponText.includes(item.toLowerCase());
+              });
+          });
+      }
+
+      // 2. Sort by Price (Low to High)
+      result.sort((a, b) => a.discountedPrice - b.discountedPrice);
+
+      return result;
+  }, [coupons, selectedFilterItems]);
+
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -80,21 +93,41 @@ const App: React.FC = () => {
            </div>
         ) : (
           <>
+            {/* Filter Section */}
+            {menuItems.length > 0 && (
+                <Filter
+                    menuItems={menuItems}
+                    selectedItems={selectedFilterItems}
+                    onSelectionChange={setSelectedFilterItems}
+                />
+            )}
+
             {/* Results Count */}
-            <div className="mb-4 text-sm text-gray-500 font-medium">
-              全部優惠 ({coupons.length})
+            <div className="mb-4 text-sm text-gray-500 font-medium flex justify-between items-center">
+              <span>
+                  {selectedFilterItems.length > 0 ? `搜尋結果: ${filteredCoupons.length} 筆優惠` : `全部優惠 (${coupons.length})`}
+              </span>
+              <span className="text-xs text-gray-400">
+                  排序：價格低到高
+              </span>
             </div>
 
             {/* Coupon Grid */}
-            {coupons.length > 0 ? (
+            {filteredCoupons.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {coupons.map((coupon) => (
+                {filteredCoupons.map((coupon) => (
                   <CouponCard key={coupon.code} coupon={coupon} />
                 ))}
               </div>
             ) : (
-              <div className="text-center py-20 text-gray-500">
-                目前沒有可用的優惠券。
+              <div className="text-center py-20 text-gray-500 bg-white rounded-xl border border-gray-200">
+                <p className="text-lg font-medium mb-2">找不到符合條件的優惠券</p>
+                <button
+                    onClick={() => setSelectedFilterItems([])}
+                    className="text-red-600 hover:underline"
+                >
+                    清除篩選條件
+                </button>
               </div>
             )}
           </>

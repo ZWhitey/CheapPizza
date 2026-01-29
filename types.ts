@@ -14,3 +14,13 @@ export interface Metadata {
   newCouponsFound?: number;
   existingCoupons?: number;
 }
+
+export interface MenuItem {
+  id: string;
+  name: string;
+  description?: string;
+  price: number;
+  category: string;
+  categoryId: number;
+  url: string;
+}

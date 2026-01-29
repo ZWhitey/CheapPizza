@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Coupon } from '../types';
-import { Copy, Check, Clock, Utensils, ExternalLink } from 'lucide-react';
+import { Copy, Check, ExternalLink } from 'lucide-react';
 
 interface CouponCardProps {
   coupon: Coupon;
@@ -25,103 +25,85 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
   };
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full relative">
-      {/* Top Section: Brand Banner */}
-      <div className="relative h-24 overflow-hidden flex-shrink-0 bg-gradient-to-br from-red-600 to-red-700">
+    <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative overflow-hidden group">
+        {/* Discount Badge */}
         {discountPercentage > 0 && (
-          <div className="absolute top-0 right-0 bg-yellow-400 text-red-900 font-bold px-3 py-1 rounded-bl-xl shadow-md z-10">
-            省 {discountPercentage}%
-          </div>
+            <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-bl-lg z-10 shadow-sm">
+                -{discountPercentage}%
+            </div>
         )}
-        <div className="absolute bottom-0 left-0 right-0 p-3">
-           <span className="text-white text-sm font-bold">必勝客 Pizza Hut</span>
-        </div>
-      </div>
 
-      {/* Decorative dashed line for "Coupon" feel */}
-      <div className="relative h-4 bg-gray-50 flex items-center justify-between flex-shrink-0">
-        <div className="w-4 h-4 bg-gray-50 rounded-full -ml-2 border-r border-gray-200"></div>
-        <div className="w-full border-t-2 border-dashed border-gray-300"></div>
-        <div className="w-4 h-4 bg-gray-50 rounded-full -mr-2 border-l border-gray-200"></div>
-      </div>
+      <div className="p-5 flex-1 flex flex-col">
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug group-hover:text-red-600 transition-colors">
+            {coupon.title}
+        </h3>
 
-      {/* Bottom Section: Details */}
-      <div className="p-4 flex-1 flex flex-col justify-between bg-white">
-        <div>
-          <h4 className="text-lg font-bold text-gray-800 mb-3 leading-snug">{coupon.title}</h4>
-          
-          {coupon.items && coupon.items.length > 0 && (
-            <div className="mb-4 bg-red-50/50 p-3 rounded-lg border border-red-100">
-               <ul className="space-y-1.5">
-                 {coupon.items.map((item, idx) => (
-                   <li key={idx} className="text-sm text-gray-700 flex items-start">
-                     <Utensils size={14} className="text-red-500 mr-2 mt-0.5 flex-shrink-0" />
-                     <span className="leading-tight">{item}</span>
-                   </li>
-                 ))}
-               </ul>
+        {/* Valid Date */}
+        {coupon.validUntil && (
+            <div className="text-xs text-gray-400 mb-3">
+                有效期限：{coupon.validUntil}
             </div>
-          )}
+        )}
 
-          {coupon.validUntil && (
-            <div className="flex items-center text-xs text-gray-400 mb-4 gap-1">
-              <Clock size={12} />
-              <span>有效期限: {coupon.validUntil}</span>
-            </div>
-          )}
-        </div>
+        {/* Divider */}
+        <div className="h-px bg-gray-100 my-2"></div>
 
-        <div>
-            {/* Price Row */}
-            {coupon.originalPrice > 0 && coupon.discountedPrice > 0 && (
-              <div className="flex items-end justify-between mb-4">
-                  <div className="text-gray-400 text-sm line-through decoration-gray-400">
-                      ${coupon.originalPrice}
-                  </div>
-                  <div className="text-2xl font-extrabold text-red-600 flex items-baseline">
-                      <span className="text-sm mr-0.5">$</span>
-                      {coupon.discountedPrice}
-                  </div>
-              </div>
+        {/* Items */}
+        <div className="flex-1 mb-4">
+            {coupon.items && coupon.items.length > 0 ? (
+                <ul className="space-y-2">
+                    {coupon.items.map((item, idx) => (
+                        <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>
+                            <span className="leading-relaxed">{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p className="text-sm text-gray-400 italic">無詳細餐點說明</p>
             )}
+        </div>
 
-            {/* Action Row */}
-            <div className="bg-gray-50 rounded-xl p-2 flex items-center justify-between border border-gray-100 mb-2">
-                <div className="flex flex-col px-2">
-                    <span className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold">優惠碼</span>
-                    <span className="font-mono font-bold text-gray-800 text-lg tracking-widest">{coupon.code}</span>
+        {/* Price */}
+        <div className="mt-auto flex items-end gap-2 mb-4">
+            <div className="text-2xl font-extrabold text-red-600">
+                ${coupon.discountedPrice}
+            </div>
+            {coupon.originalPrice > 0 && (
+                <div className="text-sm text-gray-400 line-through mb-1">
+                    ${coupon.originalPrice}
                 </div>
+            )}
+        </div>
+
+        {/* Actions */}
+        <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between bg-gray-50 rounded-lg p-2 border border-gray-100">
+                <span className="text-base font-mono font-bold text-gray-700 tracking-wider pl-1">
+                    {coupon.code}
+                </span>
                 <button
                     onClick={handleCopy}
                     className={`
-                        flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200
+                        flex items-center gap-1.5 px-3 py-1.5 rounded-md font-medium text-xs transition-colors
                         ${copied 
-                            ? 'bg-green-500 text-white' 
-                            : 'bg-red-600 text-white hover:bg-red-700 active:scale-95'
+                            ? 'bg-green-100 text-green-700'
+                            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 hover:text-gray-900'
                         }
                     `}
                 >
-                    {copied ? (
-                        <>
-                            <Check size={16} />
-                            <span>已複製</span>
-                        </>
-                    ) : (
-                        <>
-                            <Copy size={16} />
-                            <span>複製</span>
-                        </>
-                    )}
+                    {copied ? <Check size={14} /> : <Copy size={14} />}
+                    {copied ? '已複製' : '複製'}
                 </button>
             </div>
 
-            {/* Order Button */}
             <button
                 onClick={handleOrder}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm bg-gray-800 text-white hover:bg-gray-900 transition-all duration-200 active:scale-95"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-bold text-sm bg-red-600 text-white hover:bg-red-700 active:bg-red-800 transition-colors shadow-sm"
             >
                 <ExternalLink size={16} />
-                <span>前往點餐</span>
+                前往點餐
             </button>
         </div>
       </div>
