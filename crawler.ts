@@ -51,6 +51,8 @@ interface CouponData {
   originalPrice: number;
   discountedPrice: number;
   validUntil: string;
+  minPurchasePrice?: number;
+  deliveryType?: 'delivery' | 'takeout' | 'both';
 }
 
 // Global cookie storage to maintain session (optional but good practice for sequential requests)
@@ -124,6 +126,48 @@ async function checkCouponValidity(code: string): Promise<any> {
     console.error(`Error checking code ${code}:`, error);
     return null;
   }
+}
+
+// Helper function to extract minimum purchase price from coupon text
+function extractMinPurchasePrice(text: string): number | undefined {
+  // Match patterns like "NT$320元(含)以上" or "限定NT$460元(含)以上"
+  const patterns = [
+    /NT\$(\d+)元?\([含含]+\)以上/i,
+    /限定NT\$(\d+)元?\([含含]+\)以上/i,
+    /NT\$(\d+)\([含含]+\)以上/i,
+    /\$(\d+)元?\([含含]+\)以上/i,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) {
+      return parseInt(match[1], 10);
+    }
+  }
+  return undefined;
+}
+
+// Helper function to extract delivery type from coupon text
+function extractDeliveryType(text: string): 'delivery' | 'takeout' | 'both' | undefined {
+  const lowerText = text.toLowerCase();
+  
+  // Check for both delivery and takeout
+  if ((lowerText.includes('外送') || lowerText.includes('外送/外帶') || lowerText.includes('外帶/外送')) && 
+      lowerText.includes('外帶')) {
+    return 'both';
+  }
+  
+  // Check for delivery only (and not preceded by "限" which means restriction)
+  if (lowerText.includes('限外送') || (lowerText.includes('外送') && !lowerText.includes('外帶'))) {
+    return 'delivery';
+  }
+  
+  // Check for takeout only
+  if (lowerText.includes('限外帶') || (lowerText.includes('外帶') && !lowerText.includes('外送'))) {
+    return 'takeout';
+  }
+  
+  return undefined;
 }
 
 // 2. Fetch and Parse HTML for details
@@ -211,6 +255,11 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
         validUntil = dateMatch[1].replace(/\//g, '-');
     }
 
+    // Extract minimum purchase price and delivery type from title and items
+    const allText = [title, ...items].join(' ');
+    const minPurchasePrice = extractMinPurchasePrice(allText);
+    const deliveryType = extractDeliveryType(allText);
+
     return {
       code,
       title: title.replace(/&amp;/g, '&'),
@@ -218,6 +267,8 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
       originalPrice,
       discountedPrice: price,
       validUntil,
+      minPurchasePrice,
+      deliveryType,
     };
 
   } catch (error) {

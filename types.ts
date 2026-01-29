@@ -5,6 +5,8 @@ export interface Coupon {
   originalPrice: number;
   discountedPrice: number;
   validUntil: string;
+  minPurchasePrice?: number; // Minimum purchase requirement (e.g., NT$320)
+  deliveryType?: 'delivery' | 'takeout' | 'both'; // 外送 | 外帶 | 外送外帶
 }
 
 export interface Metadata {

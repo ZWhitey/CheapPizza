@@ -6,9 +6,17 @@ interface FilterProps {
   menuItems: MenuItem[];
   selectedItems: string[];
   onSelectionChange: (items: string[]) => void;
+  selectedDeliveryType?: string;
+  onDeliveryTypeChange?: (type: string) => void;
 }
 
-const Filter: React.FC<FilterProps> = ({ menuItems, selectedItems, onSelectionChange }) => {
+const Filter: React.FC<FilterProps> = ({ 
+  menuItems, 
+  selectedItems, 
+  onSelectionChange,
+  selectedDeliveryType = 'all',
+  onDeliveryTypeChange = () => {}
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Group items by category and deduplicate names within category
@@ -113,6 +121,53 @@ const Filter: React.FC<FilterProps> = ({ menuItems, selectedItems, onSelectionCh
 
       {isExpanded && (
         <div className="p-4 border-t border-gray-200">
+            {/* Delivery Type Filter */}
+            <div className="mb-6">
+                <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">優惠使用範圍</h2>
+                <div className="flex flex-wrap gap-2">
+                    <button
+                        onClick={() => onDeliveryTypeChange('all')}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                            selectedDeliveryType === 'all'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                    >
+                        全部
+                    </button>
+                    <button
+                        onClick={() => onDeliveryTypeChange('delivery')}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                            selectedDeliveryType === 'delivery'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                    >
+                        外送
+                    </button>
+                    <button
+                        onClick={() => onDeliveryTypeChange('takeout')}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                            selectedDeliveryType === 'takeout'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                    >
+                        外帶
+                    </button>
+                    <button
+                        onClick={() => onDeliveryTypeChange('both')}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                            selectedDeliveryType === 'both'
+                                ? 'bg-blue-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        }`}
+                    >
+                        外送外帶
+                    </button>
+                </div>
+            </div>
+
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">餐點分類</h2>
                 {selectedItems.length > 0 && (

@@ -9,6 +9,7 @@ const App: React.FC = () => {
   const [coupons, setCoupons] = useState<Coupon[]>([]);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [selectedFilterItems, setSelectedFilterItems] = useState<string[]>([]);
+  const [selectedDeliveryType, setSelectedDeliveryType] = useState<string>('all');
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -56,6 +57,7 @@ const App: React.FC = () => {
       // 1. Filter
       let result = coupons;
 
+      // Filter by menu items
       if (selectedFilterItems.length > 0) {
           result = result.filter(coupon => {
               // Combine title and items for searching
@@ -68,11 +70,30 @@ const App: React.FC = () => {
           });
       }
 
+      // Filter by delivery type
+      if (selectedDeliveryType !== 'all') {
+          result = result.filter(coupon => {
+              // If coupon has no delivery type, show it in all filters (backward compatibility)
+              if (!coupon.deliveryType) return true;
+              
+              // Match the selected delivery type
+              if (selectedDeliveryType === 'both') {
+                  return coupon.deliveryType === 'both';
+              }
+              return coupon.deliveryType === selectedDeliveryType || coupon.deliveryType === 'both';
+          });
+      }
+
       // 2. Sort by Price (Low to High)
-      result.sort((a, b) => a.discountedPrice - b.discountedPrice);
+      // Use minPurchasePrice when discountedPrice is 0
+      result.sort((a, b) => {
+          const priceA = a.discountedPrice || a.minPurchasePrice || 0;
+          const priceB = b.discountedPrice || b.minPurchasePrice || 0;
+          return priceA - priceB;
+      });
 
       return result;
-  }, [coupons, selectedFilterItems]);
+  }, [coupons, selectedFilterItems, selectedDeliveryType]);
 
 
   return (
@@ -99,6 +120,8 @@ const App: React.FC = () => {
                     menuItems={menuItems}
                     selectedItems={selectedFilterItems}
                     onSelectionChange={setSelectedFilterItems}
+                    selectedDeliveryType={selectedDeliveryType}
+                    onDeliveryTypeChange={setSelectedDeliveryType}
                 />
             )}
 
@@ -123,7 +146,10 @@ const App: React.FC = () => {
               <div className="text-center py-20 text-gray-500 bg-white rounded-xl border border-gray-200">
                 <p className="text-lg font-medium mb-2">找不到符合條件的優惠券</p>
                 <button
-                    onClick={() => setSelectedFilterItems([])}
+                    onClick={() => {
+                        setSelectedFilterItems([]);
+                        setSelectedDeliveryType('all');
+                    }}
                     className="text-red-600 hover:underline"
                 >
                     清除篩選條件
