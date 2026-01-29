@@ -13,6 +13,10 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
     ? Math.round(((coupon.originalPrice - coupon.discountedPrice) / coupon.originalPrice) * 100)
     : 0;
 
+  // Get the effective price to display
+  const displayPrice = coupon.discountedPrice || coupon.minPurchasePrice || 0;
+  const showMinPriceIndicator = coupon.discountedPrice === 0 && coupon.minPurchasePrice;
+
   const handleCopy = () => {
     navigator.clipboard.writeText(coupon.code);
     setCopied(true);
@@ -24,12 +28,36 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
     window.open(`https://pizzahut.com.tw/order/?mode=step_2&type_id=1025&cno=${encodedCode}`, '_blank');
   };
 
+  // Get delivery type label
+  const getDeliveryTypeLabel = () => {
+    if (!coupon.deliveryType) return null;
+    switch (coupon.deliveryType) {
+      case 'delivery':
+        return '僅外送';
+      case 'takeout':
+        return '僅外帶';
+      case 'both':
+        return '外送外帶';
+      default:
+        return null;
+    }
+  };
+
+  const deliveryLabel = getDeliveryTypeLabel();
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative overflow-hidden group">
         {/* Discount Badge */}
         {discountPercentage > 0 && (
             <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-bl-lg z-10 shadow-sm">
                 -{discountPercentage}%
+            </div>
+        )}
+
+        {/* Delivery Type Badge */}
+        {deliveryLabel && (
+            <div className="absolute top-0 left-0 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded-br-lg z-10 shadow-sm">
+                {deliveryLabel}
             </div>
         )}
 
@@ -67,8 +95,13 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
 
         {/* Price */}
         <div className="mt-auto flex items-end gap-2 mb-4">
-            <div className="text-2xl font-extrabold text-red-600">
-                ${coupon.discountedPrice}
+            <div className="flex items-baseline gap-1">
+                <div className="text-2xl font-extrabold text-red-600">
+                    ${displayPrice}
+                </div>
+                {showMinPriceIndicator && (
+                    <span className="text-sm text-red-500 font-medium">起</span>
+                )}
             </div>
             {coupon.originalPrice > 0 && (
                 <div className="text-sm text-gray-400 line-through mb-1">
