@@ -130,31 +130,86 @@ async function checkCouponValidity(code: string): Promise<any> {
 
 // Helper function to extract minimum purchase price from coupon text
 function extractMinPurchasePrice(text: string): number | undefined {
-  // Match patterns like "NT$320元(含)以上" or "限定NT$460元(含)以上"
-  const patterns = [
-    /NT\$(\d+)元?\(含\)以上/i,
-    /限定NT\$(\d+)元?\(含\)以上/i,
+  // Priority 1: Match patterns with explicit minimum price indicators (含)以上
+  // e.g., "NT$320元(含)以上" or "限定NT$460元(含)以上" or "$690元起(含)以上口味"
+  const minPricePatterns = [
+    /NT\$(\d+)元?起?\(含\)以上/i,
+    /限定NT\$(\d+)元?起?\(含\)以上/i,
     /NT\$(\d+)\(含\)以上/i,
-    /\$(\d+)元?\(含\)以上/i,
+    /\$(\d+)元?起?\(含\)以上/i,
+    /限定\$(\d+)元?起?\(含\)以上/i,
   ];
   
-  for (const pattern of patterns) {
+  for (const pattern of minPricePatterns) {
     const match = text.match(pattern);
     if (match) {
       return parseInt(match[1], 10);
     }
   }
+  
+  // Priority 2: Match "此套餐合計NT$298" pattern (total price for combo sets)
+  // e.g., "享第2份半價(此套餐合計NT$298)"
+  const totalPricePattern = /此套餐合計(?:NT)?\$(\d+)/i;
+  const totalMatch = text.match(totalPricePattern);
+  if (totalMatch) {
+    return parseInt(totalMatch[1], 10);
+  }
+  
+  // Priority 3: Match "=NT$320元起" or "=$320起" patterns (price starting from)
+  // e.g., "買1個9吋鬆厚比薩(全口味任選)=NT$320元起"
+  // e.g., "買1個6吋鬆厚比薩=NT$89元起"
+  const startingPricePatterns = [
+    /=\s*NT\$(\d+)元?起/i,
+    /=\s*\$(\d+)元?起/i,
+    /=NT\$(\d+)元?起/i,
+    /=\$(\d+)起/i,
+  ];
+  
+  for (const pattern of startingPricePatterns) {
+    const match = text.match(pattern);
+    if (match) {
+      return parseInt(match[1], 10);
+    }
+  }
+  
+  // Priority 4: Handle "9吋鬆厚比薩買1送1" patterns with default min price of 320
+  // e.g., "外帶9吋鬆厚比薩買1送1(比薩以價高者計價)"
+  // The minimum 9-inch pizza price is 320 based on menu data
+  if (/9吋.*比薩.*買1送1/i.test(text) || /小比薩.*買1送1/i.test(text)) {
+    return 320;
+  }
+  
+  // Priority 5: Handle "買小送小" pattern with default min price of 320
+  // e.g., "外帶 買小送小(以價高者計)=NT$320元起"
+  if (/買小送小/i.test(text)) {
+    return 320;
+  }
+  
   return undefined;
 }
 
 // Helper function to extract delivery type from coupon text
 function extractDeliveryType(text: string): 'delivery' | 'takeout' | 'both' | undefined {
-  const lowerText = text.toLowerCase();
+  // Remove asterisk notes about delivery services to avoid false positives
+  // These notes typically start with * and contain 外送服務 or 外送限定
+  // e.g., "*外送服務為限區服務，購買商品實際付款金額滿$399，外送服務一律免費"
+  const cleanedText = text.replace(/\*外送服務[^*]*/g, '').replace(/\*[^*]*外送服務[^*]*/g, '');
+  const lowerText = cleanedText.toLowerCase();
   
   // Check for specific patterns first (more specific to less specific)
   // Check for delivery only restrictions
   if (lowerText.includes('限外送') && !lowerText.includes('外帶')) {
     return 'delivery';
+  }
+  
+  // Check for "外送限定" pattern in title (e.g., "外送限定-94700")
+  if (text.includes('外送限定')) {
+    return 'delivery';
+  }
+  
+  // Check for "外帶限定" pattern in title (e.g., "外帶限定-94555")
+  if (text.includes('外帶限定')) {
+    return 'takeout';
   }
   
   // Check for takeout only restrictions
