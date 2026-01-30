@@ -619,7 +619,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "both",
+    "minPurchasePrice": 690
   },
   {
     "code": "15230",
@@ -2228,7 +2229,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "15481",
@@ -2373,7 +2375,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15502",
@@ -2529,7 +2532,8 @@
     "originalPrice": 229,
     "discountedPrice": 343,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 343
   },
   {
     "code": "15522",
@@ -2562,7 +2566,8 @@
     "originalPrice": 199,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 298
   },
   {
     "code": "15525",
@@ -2930,7 +2935,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "15564",
@@ -2941,7 +2947,7 @@
     "originalPrice": 0,
     "discountedPrice": 249,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15565",
@@ -2963,7 +2969,7 @@
     "originalPrice": 0,
     "discountedPrice": 289,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15568",
@@ -3007,7 +3013,7 @@
     "originalPrice": 0,
     "discountedPrice": 159,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15573",
@@ -3040,7 +3046,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "15576",
@@ -3051,7 +3058,7 @@
     "originalPrice": 0,
     "discountedPrice": 289,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15577",
@@ -3062,7 +3069,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15578",
@@ -3073,7 +3080,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15579",
@@ -3084,7 +3091,7 @@
     "originalPrice": 0,
     "discountedPrice": 289,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15580",
@@ -3095,7 +3102,7 @@
     "originalPrice": 0,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15581",
@@ -3106,7 +3113,7 @@
     "originalPrice": 0,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15582",
@@ -3117,7 +3124,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15583",
@@ -3186,7 +3193,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15589",
@@ -3197,7 +3204,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15590",
@@ -3219,7 +3226,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15592",
@@ -3242,7 +3249,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15594",
@@ -3253,7 +3260,7 @@
     "originalPrice": 0,
     "discountedPrice": 155,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15597",
@@ -3275,7 +3282,7 @@
     "originalPrice": 0,
     "discountedPrice": 100,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15599",
@@ -3320,7 +3327,7 @@
     "originalPrice": 0,
     "discountedPrice": 100,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15603",
@@ -3342,7 +3349,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "15607",
@@ -3364,7 +3372,7 @@
     "originalPrice": 0,
     "discountedPrice": 100,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15612",
@@ -3375,7 +3383,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "15613",
@@ -3397,7 +3406,8 @@
     "originalPrice": 0,
     "discountedPrice": 130,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 130
   },
   {
     "code": "15615",
@@ -3419,7 +3429,7 @@
     "originalPrice": 0,
     "discountedPrice": 233,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15618",
@@ -3452,7 +3462,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15625",
@@ -3518,7 +3529,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15631",
@@ -3562,7 +3574,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "15638",
@@ -3573,7 +3586,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15639",
@@ -3584,7 +3598,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15640",
@@ -3629,7 +3643,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15644",
@@ -3651,7 +3666,7 @@
     "originalPrice": 0,
     "discountedPrice": 368,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15646",
@@ -3717,7 +3732,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15652",
@@ -3739,7 +3755,7 @@
     "originalPrice": 0,
     "discountedPrice": 368,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15654",
@@ -3772,7 +3788,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15657",
@@ -3805,7 +3822,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15660",
@@ -3838,7 +3856,7 @@
     "originalPrice": 0,
     "discountedPrice": 368,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15663",
@@ -3849,7 +3867,7 @@
     "originalPrice": 0,
     "discountedPrice": 125,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15664",
@@ -3871,7 +3889,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15666",
@@ -3904,7 +3922,8 @@
     "originalPrice": 0,
     "discountedPrice": 139,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 139
   },
   {
     "code": "15669",
@@ -3915,7 +3934,7 @@
     "originalPrice": 0,
     "discountedPrice": 289,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15670",
@@ -3959,7 +3978,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15674",
@@ -3981,7 +4000,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15676",
@@ -4036,7 +4055,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15682",
@@ -4047,7 +4066,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15683",
@@ -4080,7 +4100,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15686",
@@ -4102,7 +4122,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15690",
@@ -4135,7 +4156,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15693",
@@ -4146,7 +4167,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15694",
@@ -4179,7 +4201,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15697",
@@ -4190,7 +4212,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15698",
@@ -4223,7 +4246,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15701",
@@ -4234,7 +4257,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15702",
@@ -4267,7 +4291,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15705",
@@ -4278,7 +4302,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15706",
@@ -4311,7 +4336,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15709",
@@ -4322,7 +4347,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15710",
@@ -4388,7 +4414,7 @@
     "originalPrice": 0,
     "discountedPrice": 125,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15716",
@@ -4421,7 +4447,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15719",
@@ -4432,7 +4458,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "15720",
@@ -4465,7 +4492,7 @@
     "originalPrice": 0,
     "discountedPrice": 125,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15723",
@@ -4498,7 +4525,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15726",
@@ -4531,7 +4558,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15729",
@@ -4542,7 +4569,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15730",
@@ -4553,7 +4580,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15732",
@@ -4564,7 +4591,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15733",
@@ -4586,7 +4613,7 @@
     "originalPrice": 0,
     "discountedPrice": 139,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15735",
@@ -4619,7 +4646,7 @@
     "originalPrice": 0,
     "discountedPrice": 139,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15738",
@@ -4630,7 +4657,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15739",
@@ -4652,7 +4679,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "15741",
@@ -4663,7 +4691,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15742",
@@ -4685,7 +4713,7 @@
     "originalPrice": 0,
     "discountedPrice": 177,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15744",
@@ -4718,7 +4746,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15747",
@@ -4729,7 +4757,7 @@
     "originalPrice": 0,
     "discountedPrice": 145,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15748",
@@ -4751,7 +4779,7 @@
     "originalPrice": 0,
     "discountedPrice": 396,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15750",
@@ -4762,7 +4790,7 @@
     "originalPrice": 0,
     "discountedPrice": 139,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15751",
@@ -4796,7 +4824,7 @@
     "originalPrice": 0,
     "discountedPrice": 228,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15754",
@@ -4807,7 +4835,7 @@
     "originalPrice": 0,
     "discountedPrice": 99,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15755",
@@ -4818,7 +4846,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15756",
@@ -4840,7 +4868,7 @@
     "originalPrice": 0,
     "discountedPrice": 228,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15758",
@@ -4851,7 +4879,7 @@
     "originalPrice": 0,
     "discountedPrice": 99,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15759",
@@ -4862,7 +4890,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15760",
@@ -4939,7 +4967,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15767",
@@ -4950,7 +4978,8 @@
     "originalPrice": 0,
     "discountedPrice": 120,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 120
   },
   {
     "code": "15768",
@@ -4984,7 +5013,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15771",
@@ -4995,7 +5024,7 @@
     "originalPrice": 0,
     "discountedPrice": 109,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15772",
@@ -5018,7 +5047,8 @@
     "originalPrice": 0,
     "discountedPrice": 120,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 120
   },
   {
     "code": "15774",
@@ -5040,7 +5070,7 @@
     "originalPrice": 0,
     "discountedPrice": 109,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15776",
@@ -5074,7 +5104,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15779",
@@ -5085,7 +5115,7 @@
     "originalPrice": 0,
     "discountedPrice": 120,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15780",
@@ -5129,7 +5159,7 @@
     "originalPrice": 0,
     "discountedPrice": 120,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15784",
@@ -5140,7 +5170,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15785",
@@ -5151,7 +5181,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15786",
@@ -5173,7 +5203,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15788",
@@ -5184,7 +5214,8 @@
     "originalPrice": 0,
     "discountedPrice": 328,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 328
   },
   {
     "code": "15789",
@@ -5217,7 +5248,7 @@
     "originalPrice": 0,
     "discountedPrice": 120,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15792",
@@ -5228,7 +5259,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15793",
@@ -5239,7 +5270,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15794",
@@ -5272,7 +5303,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15797",
@@ -5294,7 +5325,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15799",
@@ -5316,7 +5347,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15801",
@@ -5338,7 +5369,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15803",
@@ -5360,7 +5391,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15805",
@@ -5382,7 +5413,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15807",
@@ -5404,7 +5435,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15809",
@@ -5415,7 +5446,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15810",
@@ -5426,7 +5457,7 @@
     "originalPrice": 0,
     "discountedPrice": 175,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15811",
@@ -5437,7 +5468,7 @@
     "originalPrice": 0,
     "discountedPrice": 130,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15812",
@@ -5448,7 +5479,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15813",
@@ -5459,7 +5490,7 @@
     "originalPrice": 0,
     "discountedPrice": 139,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15814",
@@ -5469,8 +5500,7 @@
     ],
     "originalPrice": 0,
     "discountedPrice": 159,
-    "validUntil": "",
-    "deliveryType": "delivery"
+    "validUntil": ""
   },
   {
     "code": "15815",
@@ -5481,7 +5511,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15816",
@@ -5492,7 +5522,7 @@
     "originalPrice": 919,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15817",
@@ -5503,7 +5533,7 @@
     "originalPrice": 0,
     "discountedPrice": 320,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15818",
@@ -5514,7 +5544,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "15819",
@@ -5525,7 +5556,7 @@
     "originalPrice": 0,
     "discountedPrice": 149,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15820",
@@ -5547,7 +5578,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "15822",
@@ -5558,7 +5589,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "25313",
@@ -5759,7 +5790,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "25770",
@@ -6123,7 +6155,7 @@
     "originalPrice": 0,
     "discountedPrice": 249,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26306",
@@ -6134,7 +6166,7 @@
     "originalPrice": 0,
     "discountedPrice": 129,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26307",
@@ -6145,7 +6177,7 @@
     "originalPrice": 0,
     "discountedPrice": 169,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26308",
@@ -6167,7 +6199,7 @@
     "originalPrice": 0,
     "discountedPrice": 249,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26310",
@@ -6189,7 +6221,8 @@
     "originalPrice": 0,
     "discountedPrice": 94,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 94
   },
   {
     "code": "26312",
@@ -6224,7 +6257,7 @@
     "originalPrice": 0,
     "discountedPrice": 179,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26315",
@@ -6280,7 +6313,7 @@
     "originalPrice": 0,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26320",
@@ -6291,7 +6324,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "26321",
@@ -6335,7 +6369,7 @@
     "originalPrice": 0,
     "discountedPrice": 179,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26325",
@@ -6369,7 +6403,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "both",
+    "minPurchasePrice": 320
   },
   {
     "code": "26328",
@@ -6380,7 +6415,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 89
   },
   {
     "code": "26329",
@@ -6391,7 +6427,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "both",
+    "minPurchasePrice": 89
   },
   {
     "code": "26331",
@@ -6402,7 +6439,7 @@
     "originalPrice": 0,
     "discountedPrice": 139,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26332",
@@ -6424,7 +6461,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26334",
@@ -6435,7 +6473,7 @@
     "originalPrice": 0,
     "discountedPrice": 289,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26335",
@@ -6458,7 +6496,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26337",
@@ -6469,7 +6507,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26338",
@@ -6480,7 +6518,7 @@
     "originalPrice": 0,
     "discountedPrice": 358,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26339",
@@ -6548,7 +6586,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26348",
@@ -6559,7 +6597,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26349",
@@ -6616,7 +6654,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26354",
@@ -6650,7 +6688,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26357",
@@ -6661,7 +6699,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26358",
@@ -6683,7 +6721,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26360",
@@ -6694,7 +6732,7 @@
     "originalPrice": 919,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26361",
@@ -6705,7 +6743,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26362",
@@ -6716,7 +6755,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26363",
@@ -6727,7 +6766,7 @@
     "originalPrice": 919,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26364",
@@ -6738,7 +6777,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26365",
@@ -6749,7 +6789,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26366",
@@ -6760,7 +6800,7 @@
     "originalPrice": 640,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26367",
@@ -6771,7 +6811,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26368",
@@ -6782,7 +6823,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26369",
@@ -6793,7 +6834,7 @@
     "originalPrice": 640,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26370",
@@ -6804,7 +6845,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26371",
@@ -6815,7 +6857,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26372",
@@ -6826,7 +6868,7 @@
     "originalPrice": 919,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26373",
@@ -6837,7 +6879,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26374",
@@ -6848,7 +6891,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26375",
@@ -6859,7 +6902,7 @@
     "originalPrice": 919,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26376",
@@ -6870,7 +6913,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26377",
@@ -6881,7 +6925,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26378",
@@ -6892,7 +6936,7 @@
     "originalPrice": 640,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26379",
@@ -6903,7 +6947,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26380",
@@ -6914,7 +6959,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26381",
@@ -6925,7 +6970,7 @@
     "originalPrice": 919,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26382",
@@ -6936,7 +6981,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26383",
@@ -6947,7 +6993,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26384",
@@ -6958,7 +7004,7 @@
     "originalPrice": 640,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26385",
@@ -6969,7 +7015,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26386",
@@ -6980,7 +7027,7 @@
     "originalPrice": 0,
     "discountedPrice": 98,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26387",
@@ -6991,7 +7038,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26388",
@@ -7002,7 +7050,7 @@
     "originalPrice": 640,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26389",
@@ -7013,7 +7061,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26390",
@@ -7024,7 +7073,7 @@
     "originalPrice": 640,
     "discountedPrice": 298,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26391",
@@ -7035,7 +7084,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26392",
@@ -7069,7 +7119,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26396",
@@ -7080,7 +7130,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26397",
@@ -7102,7 +7152,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26399",
@@ -7147,7 +7197,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26403",
@@ -7158,7 +7208,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26404",
@@ -7169,7 +7219,7 @@
     "originalPrice": 0,
     "discountedPrice": 250,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26405",
@@ -7180,7 +7230,7 @@
     "originalPrice": 0,
     "discountedPrice": 177,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26406",
@@ -7257,7 +7307,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26435",
@@ -7268,7 +7318,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26436",
@@ -7279,7 +7329,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26458",
@@ -7290,7 +7340,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26459",
@@ -7324,7 +7374,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26462",
@@ -7335,7 +7385,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26463",
@@ -7346,7 +7396,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26464",
@@ -7357,7 +7407,8 @@
     "originalPrice": 398,
     "discountedPrice": 317,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 317
   },
   {
     "code": "26465",
@@ -7379,7 +7430,8 @@
     "originalPrice": 0,
     "discountedPrice": 209,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 209
   },
   {
     "code": "26467",
@@ -7424,7 +7476,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26471",
@@ -7435,7 +7487,7 @@
     "originalPrice": 1039,
     "discountedPrice": 355,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26472",
@@ -7458,7 +7510,7 @@
     "originalPrice": 0,
     "discountedPrice": 396,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26474",
@@ -7469,7 +7521,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26480",
@@ -7525,7 +7577,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26485",
@@ -7536,7 +7588,7 @@
     "originalPrice": 1039,
     "discountedPrice": 355,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26486",
@@ -7558,7 +7610,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26488",
@@ -7569,7 +7621,7 @@
     "originalPrice": 1039,
     "discountedPrice": 355,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26489",
@@ -7591,7 +7643,7 @@
     "originalPrice": 0,
     "discountedPrice": 159,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26491",
@@ -7613,7 +7665,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26493",
@@ -7624,7 +7676,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26494",
@@ -7657,7 +7709,7 @@
     "originalPrice": 0,
     "discountedPrice": 159,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26497",
@@ -7690,7 +7742,7 @@
     "originalPrice": 0,
     "discountedPrice": 159,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26501",
@@ -7701,7 +7753,7 @@
     "originalPrice": 1039,
     "discountedPrice": 355,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26502",
@@ -7723,7 +7775,7 @@
     "originalPrice": 0,
     "discountedPrice": 88,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26512",
@@ -7767,7 +7819,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26516",
@@ -7778,7 +7830,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26517",
@@ -7789,7 +7841,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26518",
@@ -7800,7 +7852,7 @@
     "originalPrice": 0,
     "discountedPrice": 369,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26519",
@@ -7833,7 +7885,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26525",
@@ -7844,7 +7896,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26526",
@@ -7954,7 +8006,7 @@
     "originalPrice": 0,
     "discountedPrice": 192,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26536",
@@ -7965,7 +8017,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26537",
@@ -7999,7 +8051,7 @@
     "originalPrice": 0,
     "discountedPrice": 130,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26540",
@@ -8021,7 +8073,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26542",
@@ -8032,7 +8084,7 @@
     "originalPrice": 0,
     "discountedPrice": 222,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26543",
@@ -8043,7 +8095,7 @@
     "originalPrice": 0,
     "discountedPrice": 111,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26544",
@@ -8065,7 +8117,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26546",
@@ -8076,7 +8128,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26547",
@@ -8087,7 +8139,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26548",
@@ -8098,7 +8150,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26549",
@@ -8154,7 +8206,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26554",
@@ -8165,7 +8217,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26555",
@@ -8176,7 +8228,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26556",
@@ -8187,7 +8239,7 @@
     "originalPrice": 0,
     "discountedPrice": 333,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26557",
@@ -8198,7 +8250,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26558",
@@ -8209,7 +8261,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26559",
@@ -8220,7 +8272,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26560",
@@ -8242,7 +8294,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26562",
@@ -8253,7 +8305,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26563",
@@ -8264,7 +8316,7 @@
     "originalPrice": 0,
     "discountedPrice": 169,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26564",
@@ -8286,7 +8338,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26566",
@@ -8297,7 +8349,7 @@
     "originalPrice": 0,
     "discountedPrice": 169,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26567",
@@ -8308,7 +8360,7 @@
     "originalPrice": 0,
     "discountedPrice": 233,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26568",
@@ -8353,7 +8405,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26572",
@@ -8397,7 +8449,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26576",
@@ -8408,7 +8460,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26577",
@@ -8419,7 +8471,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26578",
@@ -8441,7 +8493,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26580",
@@ -8452,7 +8504,7 @@
     "originalPrice": 0,
     "discountedPrice": 168,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26581",
@@ -8496,7 +8548,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26585",
@@ -8507,7 +8559,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26586",
@@ -8529,7 +8581,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26588",
@@ -8540,7 +8592,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26589",
@@ -8562,7 +8614,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26591",
@@ -8573,7 +8625,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "26592",
@@ -8595,7 +8648,7 @@
     "originalPrice": 0,
     "discountedPrice": 89,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26594",
@@ -8606,7 +8659,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26595",
@@ -8617,7 +8670,7 @@
     "originalPrice": 0,
     "discountedPrice": 250,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26599",
@@ -8639,7 +8692,7 @@
     "originalPrice": 0,
     "discountedPrice": 168,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26601",
@@ -8650,7 +8703,7 @@
     "originalPrice": 0,
     "discountedPrice": 168,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26602",
@@ -8672,7 +8725,7 @@
     "originalPrice": 0,
     "discountedPrice": 168,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26604",
@@ -8683,7 +8736,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26605",
@@ -8694,7 +8747,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26606",
@@ -8705,7 +8758,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26607",
@@ -8716,7 +8769,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26608",
@@ -8727,7 +8780,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26609",
@@ -8760,7 +8813,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26612",
@@ -8793,7 +8846,7 @@
     "originalPrice": 0,
     "discountedPrice": 135,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26615",
@@ -8827,7 +8880,7 @@
     "originalPrice": 0,
     "discountedPrice": 111,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26624",
@@ -8838,7 +8891,7 @@
     "originalPrice": 0,
     "discountedPrice": 111,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26625",
@@ -8871,7 +8924,7 @@
     "originalPrice": 0,
     "discountedPrice": 111,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26628",
@@ -8915,7 +8968,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26633",
@@ -8937,7 +8990,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26635",
@@ -8959,7 +9012,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26637",
@@ -8970,7 +9023,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26638",
@@ -8992,7 +9045,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26640",
@@ -9003,7 +9056,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26641",
@@ -9025,7 +9078,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26643",
@@ -9036,7 +9089,7 @@
     "originalPrice": 0,
     "discountedPrice": 369,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26644",
@@ -9047,7 +9100,7 @@
     "originalPrice": 0,
     "discountedPrice": 359,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26645",
@@ -9058,7 +9111,7 @@
     "originalPrice": 0,
     "discountedPrice": 299,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26646",
@@ -9069,7 +9122,7 @@
     "originalPrice": 0,
     "discountedPrice": 399,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26647",
@@ -9080,7 +9133,7 @@
     "originalPrice": 0,
     "discountedPrice": 359,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26648",
@@ -9091,7 +9144,7 @@
     "originalPrice": 0,
     "discountedPrice": 168,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26649",
@@ -9102,7 +9155,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26653",
@@ -9146,7 +9199,7 @@
     "originalPrice": 0,
     "discountedPrice": 300,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26657",
@@ -9203,7 +9256,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26662",
@@ -9259,7 +9312,7 @@
     "originalPrice": 0,
     "discountedPrice": 137,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26679",
@@ -9303,7 +9356,7 @@
     "originalPrice": 0,
     "discountedPrice": 388,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26683",
@@ -9314,7 +9367,7 @@
     "originalPrice": 0,
     "discountedPrice": 169,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26684",
@@ -9337,7 +9390,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26686",
@@ -9348,7 +9401,7 @@
     "originalPrice": 0,
     "discountedPrice": 138,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26687",
@@ -9370,7 +9423,7 @@
     "originalPrice": 0,
     "discountedPrice": 198,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout"
   },
   {
     "code": "26690",
@@ -9404,7 +9457,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "both"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 320
   },
   {
     "code": "94103",
@@ -9447,7 +9501,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 283
   },
   {
     "code": "94666",
@@ -9458,7 +9513,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 339
   },
   {
     "code": "94700",
@@ -9469,6 +9525,7 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "delivery"
+    "deliveryType": "delivery",
+    "minPurchasePrice": 396
   }
 ]
