@@ -129,15 +129,16 @@ async function checkCouponValidity(code: string): Promise<any> {
 }
 
 // Helper function to extract minimum purchase price from coupon text
+// Uses early return pattern - higher priority patterns are checked first
 function extractMinPurchasePrice(text: string): number | undefined {
   // Priority 1: Match patterns with explicit minimum price indicators (含)以上
   // e.g., "NT$320元(含)以上" or "限定NT$460元(含)以上" or "$690元起(含)以上口味"
   const minPricePatterns = [
-    /NT\$(\d+)元?起?\(含\)以上/i,
-    /限定NT\$(\d+)元?起?\(含\)以上/i,
-    /NT\$(\d+)\(含\)以上/i,
-    /\$(\d+)元?起?\(含\)以上/i,
-    /限定\$(\d+)元?起?\(含\)以上/i,
+    /NT\$(\d+)元?起?\(含\)以上/,
+    /限定NT\$(\d+)元?起?\(含\)以上/,
+    /NT\$(\d+)\(含\)以上/,
+    /\$(\d+)元?起?\(含\)以上/,
+    /限定\$(\d+)元?起?\(含\)以上/,
   ];
   
   for (const pattern of minPricePatterns) {
@@ -149,7 +150,7 @@ function extractMinPurchasePrice(text: string): number | undefined {
   
   // Priority 2: Match "此套餐合計NT$298" pattern (total price for combo sets)
   // e.g., "享第2份半價(此套餐合計NT$298)"
-  const totalPricePattern = /此套餐合計(?:NT)?\$(\d+)/i;
+  const totalPricePattern = /此套餐合計(?:NT)?\$(\d+)/;
   const totalMatch = text.match(totalPricePattern);
   if (totalMatch) {
     return parseInt(totalMatch[1], 10);
@@ -159,10 +160,10 @@ function extractMinPurchasePrice(text: string): number | undefined {
   // e.g., "買1個9吋鬆厚比薩(全口味任選)=NT$320元起"
   // e.g., "買1個6吋鬆厚比薩=NT$89元起"
   const startingPricePatterns = [
-    /=\s*NT\$(\d+)元?起/i,
-    /=\s*\$(\d+)元?起/i,
-    /=NT\$(\d+)元?起/i,
-    /=\$(\d+)起/i,
+    /=\s*NT\$(\d+)元?起/,
+    /=\s*\$(\d+)元?起/,
+    /=NT\$(\d+)元?起/,
+    /=\$(\d+)起/,
   ];
   
   for (const pattern of startingPricePatterns) {
@@ -172,16 +173,16 @@ function extractMinPurchasePrice(text: string): number | undefined {
     }
   }
   
-  // Priority 4: Handle "9吋鬆厚比薩買1送1" patterns with default min price of 320
-  // e.g., "外帶9吋鬆厚比薩買1送1(比薩以價高者計價)"
-  // The minimum 9-inch pizza price is 320 based on menu data
-  if (/9吋.*比薩.*買1送1/i.test(text) || /小比薩.*買1送1/i.test(text)) {
+  // Priority 4 (fallback): Handle "9吋鬆厚比薩買1送1" or "小比薩買1送1" patterns
+  // with default min price of 320 (based on 9-inch/small pizza menu prices)
+  // Only applies when no explicit price is found in the text
+  // Note: Both 9吋 and 小比薩 refer to the same pizza size with min price 320
+  if (/9吋[^。]*比薩[^。]*買1送1/.test(text) || /小比薩[^。]*買1送1/.test(text)) {
     return 320;
   }
   
-  // Priority 5: Handle "買小送小" pattern with default min price of 320
-  // e.g., "外帶 買小送小(以價高者計)=NT$320元起"
-  if (/買小送小/i.test(text)) {
+  // Priority 5 (fallback): Handle "買小送小" pattern with default min price of 320
+  if (/買小送小/.test(text)) {
     return 320;
   }
   
@@ -190,26 +191,27 @@ function extractMinPurchasePrice(text: string): number | undefined {
 
 // Helper function to extract delivery type from coupon text
 function extractDeliveryType(text: string): 'delivery' | 'takeout' | 'both' | undefined {
-  // Remove asterisk notes about delivery services to avoid false positives
-  // These notes typically start with * and contain 外送服務 or 外送限定
-  // e.g., "*外送服務為限區服務，購買商品實際付款金額滿$399，外送服務一律免費"
-  const cleanedText = text.replace(/\*外送服務[^*]*/g, '').replace(/\*[^*]*外送服務[^*]*/g, '');
-  const lowerText = cleanedText.toLowerCase();
-  
-  // Check for specific patterns first (more specific to less specific)
-  // Check for delivery only restrictions
-  if (lowerText.includes('限外送') && !lowerText.includes('外帶')) {
-    return 'delivery';
-  }
-  
-  // Check for "外送限定" pattern in title (e.g., "外送限定-94700")
+  // Check for "外送限定" or "外帶限定" patterns in title first (highest priority)
+  // These appear in coupon titles like "外送限定-94700" or "外帶限定-94555"
   if (text.includes('外送限定')) {
     return 'delivery';
   }
   
-  // Check for "外帶限定" pattern in title (e.g., "外帶限定-94555")
   if (text.includes('外帶限定')) {
     return 'takeout';
+  }
+  
+  // Remove asterisk notes about delivery services to avoid false positives
+  // These notes typically appear at the end with pattern like:
+  // "*外送服務為限區服務，購買商品實際付款金額滿$399，外送服務一律免費"
+  // Use a pattern that stops at common delimiters (period, newline, or another asterisk)
+  const cleanedText = text.replace(/\*外送服務[^。\n*]*/g, '');
+  const lowerText = cleanedText.toLowerCase();
+  
+  // Check for specific patterns (more specific to less specific)
+  // Check for delivery only restrictions
+  if (lowerText.includes('限外送') && !lowerText.includes('外帶')) {
+    return 'delivery';
   }
   
   // Check for takeout only restrictions
