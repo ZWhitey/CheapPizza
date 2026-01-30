@@ -9501,7 +9501,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 283
   },
   {
     "code": "94666",
@@ -9512,7 +9513,8 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "takeout"
+    "deliveryType": "takeout",
+    "minPurchasePrice": 339
   },
   {
     "code": "94700",
@@ -9523,6 +9525,7 @@
     "originalPrice": 0,
     "discountedPrice": 0,
     "validUntil": "",
-    "deliveryType": "delivery"
+    "deliveryType": "delivery",
+    "minPurchasePrice": 396
   }
 ]

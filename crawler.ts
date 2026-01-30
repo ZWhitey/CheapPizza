@@ -186,6 +186,25 @@ function extractMinPurchasePrice(text: string): number | undefined {
     return 320;
   }
   
+  // Priority 6 (fallback): Handle 13吋大比薩 percentage discount patterns
+  // Only applies to "單點大比薩" discounts (e.g., 94555, 94666, 94700)
+  // These coupons have patterns like "單點大比薩半價" or "單點大比薩7折"
+  // Calculate discounted price based on minimum 13-inch pizza original price (565)
+  const minLargePizzaPrice = 565; // Minimum 13-inch pizza original price from menu
+  
+  // Match "單點大比薩半價" or "單點...大比薩半價" (50% off)
+  if (/單點[^。]*大比薩[^。]*半價/.test(text)) {
+    return Math.round(minLargePizzaPrice * 0.5);
+  }
+  
+  // Match "單點大比薩X折" pattern (X0% of original price)
+  // 6折 = 60% of original, 7折 = 70% of original
+  const discountMatch = text.match(/單點[^。]*大比薩[^。]*?(\d)折/);
+  if (discountMatch) {
+    const discountDigit = parseInt(discountMatch[1], 10);
+    return Math.round(minLargePizzaPrice * discountDigit * 0.1);
+  }
+  
   return undefined;
 }
 
