@@ -128,6 +128,37 @@ async function checkCouponValidity(code: string): Promise<any> {
   }
 }
 
+// Helper function to remove delivery service notes from text
+// These notes typically appear at the end like:
+// "*外送服務為限區服務，購買商品實際付款金額滿$399，外送服務一律免費；購買商品實際付款金額未滿$399，酌收官網定價外送服務費用。"
+// Note: Some notes don't have the asterisk (*) prefix
+function removeDeliveryNotes(text: string): string {
+  // Remove delivery service notes - match from "*外送服務" or " 外送服務" to end of text
+  return text.replace(/\s*\*?外送服務為限區服務[^]*$/, '').trim();
+}
+
+// Helper function to extract maximum value (original price) from coupon text
+// Patterns like "最高價值NT$204" or "(最高價值NT$890元)" indicate the original value
+function extractMaxValuePrice(text: string): number | undefined {
+  // Match patterns like:
+  // - "最高價值NT$204"
+  // - "(最高價值NT$890元)"
+  // - "最高價值$174元"
+  const patterns = [
+    /最高價值(?:NT)?\$([\d,]+)/i,
+    /\(最高價值(?:NT)?\$([\d,]+)元?\)/i,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match) {
+      return parseInt(match[1].replace(/,/g, ''), 10);
+    }
+  }
+  
+  return undefined;
+}
+
 // Helper function to extract minimum purchase price from coupon text
 // Uses early return pattern - higher priority patterns are checked first
 function extractMinPurchasePrice(text: string): number | undefined {
@@ -342,14 +373,26 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
     }
 
     // Extract minimum purchase price and delivery type from title and items
+    // Note: Extract these BEFORE removing delivery notes to preserve delivery type detection
     const allText = [title, ...items].join(' ');
     const minPurchasePrice = extractMinPurchasePrice(allText);
     const deliveryType = extractDeliveryType(allText);
 
+    // Extract original price from "最高價值" if not found via "原價" pattern
+    if (originalPrice === 0) {
+      const maxValuePrice = extractMaxValuePrice(allText);
+      if (maxValuePrice) {
+        originalPrice = maxValuePrice;
+      }
+    }
+
+    // Remove delivery notes from items (after extracting delivery type)
+    const cleanedItems = items.map(item => removeDeliveryNotes(item)).filter(item => item.length > 0);
+
     return {
       code,
       title: title.replace(/&amp;/g, '&'),
-      items,
+      items: cleanedItems,
       originalPrice,
       discountedPrice: price,
       validUntil,
