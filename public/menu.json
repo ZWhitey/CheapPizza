@@ -1,23 +1,5 @@
 [
   {
-    "id": "14849",
-    "name": "外帶買大送大，再送副食、飲料",
-    "description": "外帶買大送大，再送副食、飲料!\n      副食四選一(和風鱈魚塊5塊/黃金雞柳條4條/德國芝心腸3個/QQ球10顆)+飲料二選一(可樂1.25L/七喜1.25L)\n      (此優惠不得與其他單點比薩優惠合併使用。)",
-    "price": 0,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14849"
-  },
-  {
-    "id": "16895",
-    "name": "外帶大比薩送大比薩（火山系列）",
-    "description": "外帶買火山大比薩送大比薩/外送買火山大比薩送小比薩\n    *火山熔岩餅皮為植物五辛素(含奶)，需加價",
-    "price": 0,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16895"
-  },
-  {
     "id": "11211",
     "name": "APP專屬-3個大比薩$888起",
     "description": "三個大比薩",
@@ -81,6 +63,24 @@
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=10860"
   },
   {
+    "id": "7372",
+    "name": "外帶大比薩送大比薩",
+    "description": "外帶買大比薩送大比薩/外送買大比薩送小比薩。使用PK APP訂購再送專屬好禮。",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=7372"
+  },
+  {
+    "id": "15352",
+    "name": "外帶大比薩送大比薩（火山系列）",
+    "description": "外帶買火山大比薩送大比薩/外送買火山大比薩送小比薩\n    *火山熔岩餅皮為植物五辛素(含奶)，需加價",
+    "price": 0,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=15352"
+  },
+  {
     "id": "17292",
     "name": "新春蟹蟹鮑富小套餐 $688起",
     "description": "一個金皇軟殼蟹鮑魚大比薩+副食六選一+飲料1.25L",
@@ -88,15 +88,6 @@
     "category": "優惠推薦",
     "categoryId": 1,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17292"
-  },
-  {
-    "id": "16905",
-    "name": "平日外帶限定- 私廚系列單點6折",
-    "description": "13吋大比薩1個，私廚頂級美味-新春限定 金皇軟殼蟹鮑魚、丸勝日式章魚燒、海鮮四重奏、千島海鮮盛宴等任選",
-    "price": 0,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16905"
   },
   {
     "id": "17294",
@@ -135,85 +126,22 @@
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17342"
   },
   {
-    "id": "17230",
-    "name": "新年優惠 巧克力QQ球5顆 買一送一 $59",
-    "description": "巧克力QQ球5顆 買一送一 $59 (原價$118)",
-    "price": 59,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17230"
-  },
-  {
-    "id": "17228",
-    "name": "新年優惠 黃金雞柳條4條 買一送一 $99",
-    "description": "黃金雞柳條4條 買一送一 $99 (原價$199)",
-    "price": 99,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17228"
-  },
-  {
-    "id": "17226",
-    "name": "新年優惠 波隆那肉醬起司薯瓣 買一送一 $99",
-    "description": "波隆那肉醬起司薯瓣 買一送一 $99 (原價$198)",
-    "price": 99,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17226"
-  },
-  {
-    "id": "16386",
-    "name": "個人比薩 $111 套餐",
-    "description": "個人比薩x1 + 副食x1 + 飲料3選1。",
-    "price": 111,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16386"
-  },
-  {
-    "id": "16637",
-    "name": "個人比薩豪爽餐",
-    "description": "個人比薩5選1+副食共3份+百事可樂330ml*1罐。",
-    "price": 179,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16637"
-  },
-  {
-    "id": "16780",
-    "name": "買紙包麵/飯送個人比薩",
-    "description": "紙包麵/義大利麵/紙包飯/燉飯x1 + 指定口味個人比薩x1",
+    "id": "16905",
+    "name": "平日外帶限定- 私廚系列單點6折",
+    "description": "13吋大比薩1個，私廚頂級美味-新春限定 金皇軟殼蟹鮑魚、丸勝日式章魚燒、海鮮四重奏、千島海鮮盛宴等任選",
     "price": 0,
     "category": "優惠推薦",
     "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16780"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16905"
   },
   {
-    "id": "17223",
-    "name": "四小福雙拼系列$199",
-    "description": "限定外帶。13吋大比薩，雙拼-四小福+照燒雞 或 四小福+熱帶鳳梨海鮮總匯1個。",
-    "price": 199,
+    "id": "17459",
+    "name": "花好月圓愛心",
+    "description": "軟Q的經典炸湯圓、綿密飽滿的紅豆，再灑上花生粉與煉乳，搭配濃郁芝心餅皮，交織出多層次的迷人香甜。獨特的愛心造型讓你一口咬下品嚐情人節的浪漫滋味！",
+    "price": 299,
     "category": "優惠推薦",
     "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17223"
-  },
-  {
-    "id": "11390",
-    "name": "平日外帶限定-超值單點大比薩 / $199",
-    "description": "13吋大比薩1個，9種超值口味-蒜香起司燻雞培根 、熱帶鳳梨海鮮總匯、義式培根黃金薯等任選。",
-    "price": 199,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11390"
-  },
-  {
-    "id": "4454",
-    "name": "新年拼盤經典餐-外帶",
-    "description": "外帶大比薩2個+指定拼盤1份。",
-    "price": 999,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4454"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=17459"
   },
   {
     "id": "16631",
@@ -225,31 +153,31 @@
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16631"
   },
   {
-    "id": "16632",
-    "name": "嫩牛大蝦起司 個人比薩_XL豪華套餐",
-    "description": "嫩牛大蝦起司個人比薩_XL豪華套餐",
-    "price": 222,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16632"
-  },
-  {
-    "id": "16630",
-    "name": "嫩牛大蝦起司 個人燉飯",
-    "description": "嫩牛大蝦起司個人燉飯單點及套餐",
+    "id": "16356",
+    "name": "個人比薩買一送一 $129起",
+    "description": "個人比薩*2個。",
     "price": 0,
     "category": "優惠推薦",
     "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16630"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16356"
   },
   {
-    "id": "16895",
+    "id": "16381",
+    "name": "個人比薩烤雞分享餐",
+    "description": "4個個人比薩+金黃薯瓣小份x2 + BBQ烤雞4翅4腿 + 1.25L 飲料x1",
+    "price": 509,
+    "category": "優惠推薦",
+    "categoryId": 1,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16381"
+  },
+  {
+    "id": "15352",
     "name": "外帶大比薩送大比薩（火山系列）",
     "description": "外帶買火山大比薩送大比薩/外送買火山大比薩送小比薩\n    *火山熔岩餅皮為植物五辛素(含奶)，需加價",
     "price": 0,
     "category": "優惠推薦",
     "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16895"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=15352"
   },
   {
     "id": "16024",
@@ -270,13 +198,13 @@
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=15967"
   },
   {
-    "id": "16905",
-    "name": "平日外帶限定- 私廚系列單點6折",
-    "description": "13吋大比薩1個，私廚頂級美味-新春限定 金皇軟殼蟹鮑魚、丸勝日式章魚燒、海鮮四重奏、千島海鮮盛宴等任選",
-    "price": 0,
+    "id": "11390",
+    "name": "平日外帶限定-超值單點大比薩 / $199",
+    "description": "13吋大比薩1個，9種超值口味-蒜香起司燻雞培根 、熱帶鳳梨海鮮總匯、義式培根黃金薯等任選。",
+    "price": 199,
     "category": "優惠推薦",
     "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16905"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11390"
   },
   {
     "id": "11413",
@@ -286,15 +214,6 @@
     "category": "優惠推薦",
     "categoryId": 1,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11413"
-  },
-  {
-    "id": "11390",
-    "name": "平日外帶限定-超值單點大比薩 / $199",
-    "description": "13吋大比薩1個，9種超值口味-蒜香起司燻雞培根 、熱帶鳳梨海鮮總匯、義式培根黃金薯等任選。",
-    "price": 199,
-    "category": "優惠推薦",
-    "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=11390"
   },
   {
     "id": "2696",
@@ -333,13 +252,13 @@
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=5157"
   },
   {
-    "id": "4453",
-    "name": "新春過年拼盤樂享餐 $1288起",
-    "description": "大比薩3個+指定拼盤1份。",
-    "price": 1288,
+    "id": "4454",
+    "name": "Hot拼盤經典餐",
+    "description": "外帶大比薩2個+指定拼盤1份。",
+    "price": 999,
     "category": "優惠推薦",
     "categoryId": 1,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4453"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4454"
   },
   {
     "id": "11344",
@@ -360,13 +279,13 @@
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4757"
   },
   {
-    "id": "14849",
-    "name": "外帶買大送大，再送副食、飲料",
-    "description": "外帶買大送大，再送副食、飲料!\n      副食四選一(和風鱈魚塊5塊/黃金雞柳條4條/德國芝心腸3個/QQ球10顆)+飲料二選一(可樂1.25L/七喜1.25L)\n      (此優惠不得與其他單點比薩優惠合併使用。)",
+    "id": "7372",
+    "name": "外帶大比薩送大比薩",
+    "description": "外帶買大比薩送大比薩/外送買大比薩送小比薩。使用PK APP訂購再送專屬好禮。",
     "price": 0,
     "category": "大/小比薩",
     "categoryId": 2,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14849"
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=7372"
   },
   {
     "id": "2696",
@@ -388,12 +307,21 @@
   },
   {
     "id": "4454",
-    "name": "新年拼盤經典餐-外帶",
+    "name": "Hot拼盤經典餐",
     "description": "外帶大比薩2個+指定拼盤1份。",
     "price": 999,
     "category": "大/小比薩",
     "categoryId": 2,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=4454"
+  },
+  {
+    "id": "17448",
+    "name": "花好月圓愛心",
+    "description": "軟Q的經典炸湯圓、綿密飽滿的紅豆，再灑上花生粉與煉乳，搭配濃郁芝心餅皮，交織出多層次的迷人香甜。獨特的愛心造型讓你一口咬下品嚐情人節的浪漫滋味！",
+    "price": 299,
+    "category": "大/小比薩",
+    "categoryId": 2,
+    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=327"
   },
   {
     "id": "17289",
@@ -559,7 +487,7 @@
     "id": "15849",
     "name": "雙拼比薩-四小福+日式照燒雞",
     "description": "雙拼口味，有甜鹹滋味交錯的日式照燒雞，經典日式照燒醬搭配煙燻雞肉絲及豐富佐料，還有四大經典餡料的四小福，兩大熱門口味令人吮指回味！",
-    "price": 199,
+    "price": 299,
     "category": "大/小比薩",
     "categoryId": 2,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=306",
@@ -569,7 +497,7 @@
     "id": "12341",
     "name": "雙拼比薩-熱帶鳳梨海鮮總匯+四小福",
     "description": "New風味登場!!兩種口味一次享受！甜中帶點微酸的鳳梨遇上甜美鮮蝦與美味蟹味絲的「熱帶鳳梨海鮮總匯」、搭配由鹹香BBQ醬與四大經典餡料組成的「四小福」，雙拼的美味組合令人吮指回味！",
-    "price": 199,
+    "price": 299,
     "category": "大/小比薩",
     "categoryId": 2,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&ct=2&ipd=168",
@@ -691,15 +619,6 @@
     "category": "個人比薩",
     "categoryId": 3,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14218"
-  },
-  {
-    "id": "16622",
-    "name": "嫩牛大蝦起司個人比薩_XL豪華套餐",
-    "description": "嫩牛大蝦起司個人比薩_XL豪華套餐",
-    "price": 222,
-    "category": "個人比薩",
-    "categoryId": 3,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16622"
   },
   {
     "id": "16313",
@@ -943,15 +862,6 @@
     "category": "義大利麵/燉飯",
     "categoryId": 4,
     "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=14218"
-  },
-  {
-    "id": "16623",
-    "name": "嫩牛大蝦起司個人燉飯",
-    "description": "嫩牛大蝦起司個人燉飯單點及套餐",
-    "price": 0,
-    "category": "義大利麵/燉飯",
-    "categoryId": 4,
-    "url": "https://www.pizzahut.com.tw/order/?mode=step_2&p_id=16623"
   },
   {
     "id": "15843",

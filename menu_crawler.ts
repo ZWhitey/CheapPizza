@@ -32,10 +32,6 @@ const CATEGORY_NAMES: { [key: number]: string } = {
     8: '特殊優惠'
 };
 
-async function delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 async function fetchCategory(ct: number): Promise<MenuProduct[]> {
     const url = `https://www.pizzahut.com.tw/order/?mode=step_2&ct=${ct}`;
     console.log(`Fetching category ${ct} from ${url}...`);
@@ -152,15 +148,11 @@ async function fetchCategory(ct: number): Promise<MenuProduct[]> {
 }
 
 async function main() {
-    const allProducts: MenuProduct[] = [];
+    // Fetch categories 1 to 8 in parallel
+    const categoryPromises = Array.from({ length: 8 }, (_, i) => fetchCategory(i + 1));
+    const results = await Promise.all(categoryPromises);
 
-    // Loop through categories 1 to 8
-    for (let ct = 1; ct <= 8; ct++) {
-        const products = await fetchCategory(ct);
-        allProducts.push(...products);
-        // Add a small delay to be polite
-        await delay(1000);
-    }
+    const allProducts: MenuProduct[] = results.flat();
 
     console.log(`Total extracted products: ${allProducts.length}`);
 
