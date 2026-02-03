@@ -29,7 +29,13 @@ const App: React.FC = () => {
 
         if (!couponsRes.ok) throw new Error('Failed to load coupons');
         const couponsData = await couponsRes.json();
-        setCoupons(couponsData);
+
+        // Pre-calculate search text for performance
+        const couponsWithSearch = couponsData.map((c: Coupon) => ({
+            ...c,
+            _searchText: (c.title + (c.items ? c.items.join('') : '')).toLowerCase()
+        }));
+        setCoupons(couponsWithSearch);
 
         if (menuRes.ok) {
             const menuData = await menuRes.json();
@@ -59,13 +65,16 @@ const App: React.FC = () => {
 
       // Filter by menu items
       if (selectedFilterItems.length > 0) {
+          // Pre-process filter items to lowercase once
+          const lowerCaseFilterItems = selectedFilterItems.map(item => item.toLowerCase());
+
           result = result.filter(coupon => {
-              // Combine title and items for searching
-              const couponText = (coupon.title + (coupon.items ? coupon.items.join('') : '')).toLowerCase();
+              // Use pre-calculated search text or fallback to calculation (safeguard)
+              const couponText = coupon._searchText || (coupon.title + (coupon.items ? coupon.items.join('') : '')).toLowerCase();
 
               // Check if ALL selected items are present in the coupon text
-              return selectedFilterItems.every(item => {
-                  return couponText.includes(item.toLowerCase());
+              return lowerCaseFilterItems.every(item => {
+                  return couponText.includes(item);
               });
           });
       }
