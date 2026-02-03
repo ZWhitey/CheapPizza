@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import pLimit from 'p-limit';
 
 /**
  * Coupon Crawler Script
@@ -455,7 +456,8 @@ async function main() {
 
   const validCoupons: CouponData[] = [];
 
-  for (const code of codesToScan) {
+  const limit = pLimit(3);
+  const tasks = codesToScan.map(code => limit(async () => {
     await delay(250); // Slight delay
 
     const checkResult = await checkCouponValidity(code);
@@ -476,7 +478,12 @@ async function main() {
             (process as any).stdout.write('.'); 
         }
     }
-  }
+  }));
+
+  await Promise.all(tasks);
+
+  // Sort validCoupons by code to maintain deterministic order (matching original sequential behavior)
+  validCoupons.sort((a, b) => a.code.localeCompare(b.code));
 
   console.log(`\nScan complete. Found ${validCoupons.length} new coupons.`);
   
