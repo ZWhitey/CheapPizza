@@ -1,8 +1,8 @@
-import * as cheerio from 'cheerio';
+import { CopilotClient } from "@github/copilot-sdk";
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Define interfaces for the extracted data structure
+// Define the output structure matching the frontend requirements
 interface ProductSize {
     size: string;
     price: number;
@@ -16,155 +16,165 @@ interface MenuProduct {
     originalPrice?: number;
     category: string;
     categoryId: number;
-    sizes?: ProductSize[]; // For products with multiple sizes
+    sizes?: ProductSize[];
     url: string;
 }
 
-// Category mapping based on observation, will also try to extract from page
-const CATEGORY_NAMES: { [key: number]: string } = {
-    1: '優惠推薦',
-    2: '大/小比薩',
-    3: '個人比薩',
-    4: '義大利麵/燉飯',
-    5: '拼盤/熱烤',
-    6: '甜點/飲料',
-    7: '10人以上套餐',
-    8: '特殊優惠'
-};
-
-async function fetchCategory(ct: number): Promise<MenuProduct[]> {
-    const url = `https://www.pizzahut.com.tw/order/?mode=step_2&ct=${ct}`;
-    console.log(`Fetching category ${ct} from ${url}...`);
-
+// Tool implementation for fetching pages
+async function fetchPage({ url }: { url: string }) {
+    console.log(`[Tool] Fetching: ${url}`);
     try {
         const response = await fetch(url, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Referer': 'https://www.pizzahut.com.tw/'
+                'Referer': 'https://www.pizzahut.com.tw/',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
             }
         });
 
         if (!response.ok) {
-            console.error(`Failed to fetch category ${ct}: ${response.status} ${response.statusText}`);
-            return [];
+            return `Error: ${response.status} ${response.statusText}`;
         }
 
-        const html = await response.text();
-        const $ = cheerio.load(html);
-
-        const products: MenuProduct[] = [];
-
-        // Try to get category name from H1
-        let categoryName = $('h1.visually-hidden').text().trim() ||
-                           $('title').text().split('|')[0].trim() ||
-                           CATEGORY_NAMES[ct] ||
-                           `Category ${ct}`;
-
-        // Select all product items
-        const items = $('.promotion_list_item');
-        console.log(`Found ${items.length} items in category ${ct} (${categoryName}).`);
-
-        items.each((i, el) => {
-            const $el = $(el);
-
-            // Extract ID
-            const realId = $el.attr('data-id-real');
-            const elementId = $el.attr('id'); // e.g., itemss_p326
-            const id = realId || (elementId ? elementId.replace('itemss_p', '') : '');
-
-            if (!id) return;
-
-            // Extract Name
-            const name = $el.find('.pro-li-name').text().trim();
-
-            // Extract Description
-            const descHtml = $el.find('.pro-list-descContent').html() || '';
-            const description = descHtml
-                .replace(/<br\s*\/?>/gi, '\n')
-                .replace(/<[^>]+>/g, '')
-                .trim();
-
-            // Extract Price
-            let price = 0;
-            let originalPrice = 0;
-
-            const priceText = $el.find('.priceTxt .notranslate').text().trim();
-            if (priceText) {
-                price = parseInt(priceText.replace(/[^\d]/g, ''), 10);
-            }
-
-            const originalPriceText = $el.find('.priceTxt_original .notranslate').text().trim();
-            if (originalPriceText) {
-                originalPrice = parseInt(originalPriceText.replace(/[^\d]/g, ''), 10);
-            }
-
-            // Fallback for price
-            if (price === 0) {
-                 const simplePrice = $el.find('.pro-li-pr').not('.priceTxt_original').text().trim();
-                 if (simplePrice) {
-                    price = parseInt(simplePrice.replace(/[^\d]/g, ''), 10);
-                 }
-            }
-
-            // Construct URL
-            // Usually ?mode=step_2&ct=2&p_id=ID or similar
-            // We can try to extract href from the <a> tag
-            let productUrl = $el.find('a').attr('href') || '';
-            if (productUrl && !productUrl.startsWith('http')) {
-                productUrl = 'https://www.pizzahut.com.tw/order/' + productUrl;
-            }
-
-            if (name) {
-                const product: MenuProduct = {
-                    id,
-                    name,
-                    description,
-                    price,
-                    category: categoryName,
-                    categoryId: ct,
-                    url: productUrl
-                };
-
-                if (originalPrice) {
-                    product.originalPrice = originalPrice;
-                }
-
-                // Attempt to detect sizes if implicit in category 2 (Big/Small)
-                // Since the list page usually only shows the "Starting from" price which is often the Small size (or Large if it's the only one).
-                // Without detail page crawling or JS parsing, we can't get the exact matrix.
-                // However, we can structure the "sizes" field if we find evidence.
-                // For now, we will leave 'sizes' undefined unless we find explicit multi-price data in the list item.
-
-                products.push(product);
-            }
-        });
-
-        return products;
-
-    } catch (error) {
-        console.error(`Error fetching category ${ct}:`, error);
-        return [];
+        const text = await response.text();
+        // Return a truncated version if it's too huge to save context,
+        // but for now we'll return full HTML as the agent needs to parse it.
+        // We might want to strip script/style tags to save tokens.
+        return text.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gm, "")
+                   .replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gm, "")
+                   .replace(/<!--[\s\S]*?-->/gm, "");
+    } catch (error: any) {
+        return `Error fetching page: ${error.message}`;
     }
 }
 
 async function main() {
-    // Fetch categories 1 to 8 in parallel
-    const categoryPromises = Array.from({ length: 8 }, (_, i) => fetchCategory(i + 1));
-    const results = await Promise.all(categoryPromises);
+    console.log("Starting Menu Crawler Agent (Powered by GitHub Copilot SDK)...");
 
-    const allProducts: MenuProduct[] = results.flat();
+    // Initialize the Copilot Client
+    // This assumes 'copilot' CLI is installed and available in PATH
+    const client = new CopilotClient();
 
-    console.log(`Total extracted products: ${allProducts.length}`);
+    try {
+        // Start the client (connects to CLI)
+        // Note: autoStart is true by default in constructor, but being explicit is fine.
+        // If not authenticated, the CLI might prompt or fail. In CI, we use tokens.
 
-    // Ensure public directory exists
-    const publicDir = path.join(process.cwd(), 'public');
-    if (!fs.existsSync(publicDir)) {
-        fs.mkdirSync(publicDir);
+        const session = await client.createSession({
+            model: 'gpt-4.1',
+            tools: [
+                {
+                    name: 'fetch_page',
+                    description: 'Fetches the HTML content of a URL to extract menu information.',
+                    parameters: {
+                        type: 'object',
+                        properties: {
+                            url: { type: 'string', description: 'The fully qualified URL to fetch' }
+                        },
+                        required: ['url']
+                    },
+                    handler: fetchPage
+                }
+            ]
+        });
+
+        console.log("Session created. Sending instructions...");
+
+        const prompt = `
+You are an intelligent menu crawler for Pizza Hut Taiwan.
+Your goal is to discover the menu categories and all products, then output a structured JSON file.
+
+Start by visiting: https://www.pizzahut.com.tw/
+
+Follow these steps:
+1. Fetch the homepage to find links to the "Menu" or "Order" section.
+2. Identify the main categories (e.g., Pizza, Pasta, BBQ, Drinks, etc.).
+   (Hint: Categories usually look like ?mode=step_2&ct=1, ct=2, etc.)
+3. Visit each category page.
+4. Extract every product found in the category.
+
+For each product, extract:
+- id: The unique product ID (often in data attributes or URL).
+- name: Product name.
+- description: Ingredients or details.
+- price: Current price (integer).
+- originalPrice: Original price (if visible, integer).
+- category: The category name (e.g., "個人比薩").
+- categoryId: The category number (e.g., 1, 2...).
+- url: Full URL to the product.
+
+OUTPUT FORMAT:
+You must output ONLY the valid JSON array of objects. Do not wrap it in markdown code blocks if possible, or just plain text.
+The JSON structure must match this TypeScript interface:
+interface MenuProduct {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    originalPrice?: number;
+    category: string;
+    categoryId: number;
+    sizes?: { size: string; price: number }[];
+    url: string;
+}
+
+IMPORTANT:
+- Be thorough.
+- Do not make up data.
+- Use the 'fetch_page' tool to get the HTML.
+- If the page is large, focus on the list of products.
+- Return ONLY the JSON string in your final response.
+`;
+
+        // We use sendAndWait to let the agent do its "thinking" and tool calling loops.
+        // We set a long timeout because crawling multiple pages takes time.
+        const response = await session.sendAndWait({ prompt }, 600000); // 10 minutes timeout
+
+        if (response && response.data && response.data.content) {
+            let content = response.data.content;
+            console.log("Agent finished. Processing output...");
+
+            // Cleanup potential markdown formatting
+            if (content.startsWith('```json')) {
+                content = content.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+            } else if (content.startsWith('```')) {
+                content = content.replace(/^```\s*/, '').replace(/\s*```$/, '');
+            }
+
+            try {
+                const menuData: MenuProduct[] = JSON.parse(content);
+                console.log(`Successfully parsed ${menuData.length} products.`);
+
+                // Validation: Ensure it's an array
+                if (!Array.isArray(menuData)) {
+                    throw new Error("Output is not an array");
+                }
+
+                // Save to file
+                const publicDir = path.join(process.cwd(), 'public');
+                if (!fs.existsSync(publicDir)) {
+                    fs.mkdirSync(publicDir);
+                }
+                const outputPath = path.join(publicDir, 'menu.json');
+                fs.writeFileSync(outputPath, JSON.stringify(menuData, null, 2));
+                console.log(`Saved menu data to ${outputPath}`);
+
+            } catch (parseError) {
+                console.error("Failed to parse JSON output:", parseError);
+                console.log("Raw output:", content);
+            }
+        } else {
+            console.error("No response from agent.");
+        }
+
+        await session.destroy();
+        await client.stop();
+
+    } catch (error) {
+        console.error("Agent failed:", error);
+        await client.stop();
+        process.exit(1);
     }
-
-    const outputPath = path.join(publicDir, 'menu.json');
-    fs.writeFileSync(outputPath, JSON.stringify(allProducts, null, 2));
-    console.log(`Saved menu data to ${outputPath}`);
 }
 
 main();
