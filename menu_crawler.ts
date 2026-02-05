@@ -20,62 +20,20 @@ interface MenuProduct {
     url: string;
 }
 
-// Tool implementation for fetching pages
-async function fetchPage({ url }: { url: string }) {
-    console.log(`[Tool] Fetching: ${url}`);
-    try {
-        const response = await fetch(url, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Referer': 'https://www.pizzahut.com.tw/',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-            }
-        });
-
-        if (!response.ok) {
-            return `Error: ${response.status} ${response.statusText}`;
-        }
-
-        const text = await response.text();
-        // Return a truncated version if it's too huge to save context,
-        // but for now we'll return full HTML as the agent needs to parse it.
-        // We might want to strip script/style tags to save tokens.
-        return text.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gm, "")
-                   .replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gm, "")
-                   .replace(/<!--[\s\S]*?-->/gm, "");
-    } catch (error: any) {
-        return `Error fetching page: ${error.message}`;
-    }
-}
-
 async function main() {
     console.log("Starting Menu Crawler Agent (Powered by GitHub Copilot SDK)...");
 
     // Initialize the Copilot Client
     // This assumes 'copilot' CLI is installed and available in PATH
-    const client = new CopilotClient();
+    const client = new CopilotClient({
+        githubToken: process.env.COPILOT_GITHUB_TOKEN
+    });
 
     try {
         // Start the client (connects to CLI)
-        // Note: autoStart is true by default in constructor, but being explicit is fine.
-        // If not authenticated, the CLI might prompt or fail. In CI, we use tokens.
-
+        // We do not provide custom tools, relying on Copilot's built-in capabilities (e.g. browsing)
         const session = await client.createSession({
-            model: 'gpt-4.1',
-            tools: [
-                {
-                    name: 'fetch_page',
-                    description: 'Fetches the HTML content of a URL to extract menu information.',
-                    parameters: {
-                        type: 'object',
-                        properties: {
-                            url: { type: 'string', description: 'The fully qualified URL to fetch' }
-                        },
-                        required: ['url']
-                    },
-                    handler: fetchPage
-                }
-            ]
+            model: 'gpt-4.1'
         });
 
         console.log("Session created. Sending instructions...");
@@ -85,9 +43,10 @@ You are an intelligent menu crawler for Pizza Hut Taiwan.
 Your goal is to discover the menu categories and all products, then output a structured JSON file.
 
 Start by visiting: https://www.pizzahut.com.tw/
+Use your built-in browser or web surfing capabilities to navigate the site.
 
 Follow these steps:
-1. Fetch the homepage to find links to the "Menu" or "Order" section.
+1. Browse the homepage to find links to the "Menu" or "Order" section.
 2. Identify the main categories (e.g., Pizza, Pasta, BBQ, Drinks, etc.).
    (Hint: Categories usually look like ?mode=step_2&ct=1, ct=2, etc.)
 3. Visit each category page.
@@ -121,7 +80,6 @@ interface MenuProduct {
 IMPORTANT:
 - Be thorough.
 - Do not make up data.
-- Use the 'fetch_page' tool to get the HTML.
 - If the page is large, focus on the list of products.
 - Return ONLY the JSON string in your final response.
 `;
