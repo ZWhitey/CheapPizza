@@ -186,7 +186,8 @@ async function main() {
 }
 
 // Only run main when executed directly, not when imported
-const isMainModule = process.argv[1]?.includes('menu_crawler');
-if (isMainModule) {
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+if (process.argv[1] === __filename) {
     main();
 }
