@@ -23,7 +23,11 @@ export interface MenuItem {
   name: string;
   description?: string;
   price: number;
+  originalPrice?: number;
+  isStartingPrice?: boolean;
   category: string;
   categoryId: number;
+  subcategory?: string;
+  imageUrl?: string;
   url: string;
 }

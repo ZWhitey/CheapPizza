@@ -173,10 +173,10 @@ const App: React.FC = () => {
       <footer className="bg-white border-t border-gray-200 mt-12 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-gray-500 text-sm">
-            © 2024 CouponHunt. 圖片僅供參考，實際內容以餐廳現場為主。
+            © 2025 PizzaHunt. 圖片僅供參考，實際內容以餐廳現場為主。
           </p>
           <p className="text-gray-400 text-xs mt-2">
-            資料來源：網路公開資訊整理
+            資料來源：必勝客官網公開資訊整理
           </p>
         </div>
       </footer>

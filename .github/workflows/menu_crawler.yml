@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
       - name: Run Menu Crawler
         run: npm run menu-crawler
 
