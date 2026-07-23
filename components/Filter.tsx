@@ -1,33 +1,72 @@
 import React, { useState, useMemo } from 'react';
-import { MenuItem } from '../types';
+import { Coupon, MenuItem } from '../types';
 import { ChevronDown, ChevronUp, Filter as FilterIcon, X } from 'lucide-react';
 
+// Number of popular items shown as always-visible quick-select chips
+const QUICK_PICK_COUNT = 15;
+
 interface FilterProps {
+  coupons: Coupon[];
   menuItems: MenuItem[];
   selectedItems: string[];
   onSelectionChange: (items: string[]) => void;
-  selectedDeliveryTypes?: string[];
-  onDeliveryTypesChange?: (types: string[]) => void;
+  selectedDeliveryTypes: string[];
+  onDeliveryTypesChange: (types: string[]) => void;
 }
 
-const Filter: React.FC<FilterProps> = ({ 
-  menuItems, 
-  selectedItems, 
+const Filter: React.FC<FilterProps> = ({
+  coupons,
+  menuItems,
+  selectedItems,
   onSelectionChange,
-  selectedDeliveryTypes = [],
-  onDeliveryTypesChange = () => {}
+  selectedDeliveryTypes,
+  onDeliveryTypesChange
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Group items by category and deduplicate names within category
+  const couponTexts = useMemo(
+    () => coupons.map(c => c._searchText || (c.title + (c.items ? c.items.join('') : '')).toLowerCase()),
+    [coupons]
+  );
+
+  // Count matching coupons for each unique menu item name
+  const itemCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    menuItems.forEach(item => {
+      if (!item.name || counts.has(item.name)) return;
+      const nameLower = item.name.toLowerCase();
+      let count = 0;
+      for (const text of couponTexts) {
+        if (text.includes(nameLower)) count++;
+      }
+      counts.set(item.name, count);
+    });
+    return counts;
+  }, [menuItems, couponTexts]);
+
+  // Most popular items, shown as always-visible chips for one-tap filtering.
+  // Selected items stay visible even when they fall outside the top list.
+  const quickPickItems = useMemo(() => {
+    const popular = Array.from(itemCounts)
+      .filter(([, count]) => count > 0)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, QUICK_PICK_COUNT)
+      .map(([name]) => name);
+    const extras = selectedItems.filter(name => !popular.includes(name));
+    return [...popular, ...extras].map(name => ({ name, count: itemCounts.get(name) ?? 0 }));
+  }, [itemCounts, selectedItems]);
+
+  // Group items by category and deduplicate names within category.
+  // Items that match no coupon are hidden — selecting them could only return empty results.
   const categories = useMemo(() => {
     const grouped: Record<string, Set<string>> = {};
     // Preferred order for food categories
     const order = ["大/小比薩", "個人比薩", "拼盤/熱烤", "義大利麵/燉飯", "甜點/飲料"];
 
     menuItems.forEach(item => {
-      // Skip empty names
+      // Skip empty names and items with no matching coupons
       if (!item.name) return;
+      if ((itemCounts.get(item.name) ?? 0) === 0) return;
 
       if (!grouped[item.category]) {
         grouped[item.category] = new Set();
@@ -47,11 +86,13 @@ const Filter: React.FC<FilterProps> = ({
 
     return sortedKeys.map(key => ({
       name: key,
-      items: Array.from(grouped[key]).sort()
+      items: Array.from(grouped[key])
+        .map(name => ({ name, count: itemCounts.get(name) ?? 0 }))
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
     }));
-  }, [menuItems]);
+  }, [menuItems, itemCounts]);
 
-  const handleCheckboxChange = (item: string) => {
+  const toggleItem = (item: string) => {
     if (selectedItems.includes(item)) {
       onSelectionChange(selectedItems.filter(i => i !== item));
     } else {
@@ -72,11 +113,6 @@ const Filter: React.FC<FilterProps> = ({
       onDeliveryTypesChange([]);
   }
 
-  const removeTag = (item: string, e: React.MouseEvent) => {
-      e.stopPropagation();
-      onSelectionChange(selectedItems.filter(i => i !== item));
-  }
-
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 mb-6 overflow-hidden">
       <div
@@ -89,7 +125,7 @@ const Filter: React.FC<FilterProps> = ({
             想吃什麼？
           </span>
           <span className="text-sm text-gray-500 ml-2">
-            (選擇餐點以搜尋包含該項目的優惠券)
+            (點選餐點來篩選優惠券)
           </span>
         </div>
 
@@ -108,24 +144,45 @@ const Filter: React.FC<FilterProps> = ({
         </div>
       </div>
 
-      {/* Selected Tags Area (Always visible if items selected, or inside expanded?)
-          Let's put it inside expanded area or a separate bar.
-          Actually, having it visible when collapsed is nice.
-      */}
-      {!isExpanded && selectedItems.length > 0 && (
-          <div className="px-4 pb-3 flex flex-wrap gap-2 bg-gray-50">
-              {selectedItems.map(item => (
-                  <span key={item} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                      {item}
-                      <button onClick={(e) => removeTag(item, e)} className="ml-1.5 text-red-600 hover:text-red-900">
-                          <X size={12} />
-                      </button>
-                  </span>
-              ))}
-              <button onClick={(e) => { e.stopPropagation(); clearFilter(); }} className="text-xs text-gray-500 hover:text-red-600 underline ml-2 self-center">
-                  清除
+      {/* Quick-select meal chips (always visible) */}
+      {quickPickItems.length > 0 && (
+        <div className="px-4 pb-4 bg-gray-50 flex flex-wrap items-center gap-2">
+          {quickPickItems.map(({ name, count }) => {
+            const isSelected = selectedItems.includes(name);
+            return (
+              <button
+                key={name}
+                onClick={() => toggleItem(name)}
+                aria-pressed={isSelected}
+                className={`inline-flex items-center gap-1 px-3.5 py-2 rounded-full text-sm font-medium border cursor-pointer transition-colors ${
+                  isSelected
+                    ? 'bg-red-600 border-red-600 text-white hover:bg-red-700'
+                    : 'bg-white border-gray-300 text-gray-700 hover:border-red-400 hover:text-red-600'
+                }`}
+              >
+                {name}
+                <span className={`text-xs ${isSelected ? 'text-red-100' : 'text-gray-500'}`}>({count})</span>
+                {isSelected && <X size={14} className="ml-0.5" />}
               </button>
-          </div>
+            );
+          })}
+          {!isExpanded && (
+            <button
+              onClick={() => setIsExpanded(true)}
+              className="px-2 py-2 text-sm text-gray-500 hover:text-red-600 underline cursor-pointer"
+            >
+              更多餐點…
+            </button>
+          )}
+          {selectedItems.length > 0 && (
+            <button
+              onClick={clearFilter}
+              className="px-2 py-2 text-sm text-gray-500 hover:text-red-600 underline cursor-pointer"
+            >
+              清除
+            </button>
+          )}
+        </div>
       )}
 
       {isExpanded && (
@@ -167,6 +224,7 @@ const Filter: React.FC<FilterProps> = ({
                 </div>
             </div>
 
+            {categories.length > 0 && (
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">餐點分類</h2>
                 {selectedItems.length > 0 && (
@@ -175,19 +233,6 @@ const Filter: React.FC<FilterProps> = ({
                     </button>
                 )}
             </div>
-
-            {/* Selected Tags inside Expanded View */}
-            {selectedItems.length > 0 && (
-                <div className="mb-6 flex flex-wrap gap-2 p-3 bg-red-50 rounded-lg border border-red-100">
-                    {selectedItems.map(item => (
-                        <span key={item} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white border border-red-200 text-red-800 shadow-sm">
-                            {item}
-                            <button onClick={(e) => removeTag(item, e)} className="ml-2 text-red-400 hover:text-red-700">
-                                <X size={14} />
-                            </button>
-                        </span>
-                    ))}
-                </div>
             )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
@@ -199,17 +244,18 @@ const Filter: React.FC<FilterProps> = ({
                 </h3>
                 <div className="space-y-2 max-h-60 overflow-y-auto pr-2">
                   {category.items.map((item) => (
-                    <label key={item} className="flex items-start gap-2 cursor-pointer group hover:bg-gray-50 p-1 rounded -ml-1 transition-colors">
+                    <label key={item.name} className="flex items-start gap-2 cursor-pointer group hover:bg-gray-50 p-1 rounded -ml-1 transition-colors">
                       <div className="relative flex items-center mt-0.5">
                         <input
                             type="checkbox"
-                            checked={selectedItems.includes(item)}
-                            onChange={() => handleCheckboxChange(item)}
+                            checked={selectedItems.includes(item.name)}
+                            onChange={() => toggleItem(item.name)}
                             className="peer h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500"
                         />
                       </div>
-                      <span className={`text-sm leading-tight transition-colors ${selectedItems.includes(item) ? 'text-red-700 font-medium' : 'text-gray-600 group-hover:text-gray-900'}`}>
-                        {item}
+                      <span className={`text-sm leading-tight transition-colors ${selectedItems.includes(item.name) ? 'text-red-700 font-medium' : 'text-gray-600 group-hover:text-gray-900'}`}>
+                        {item.name}
+                        <span className="text-xs text-gray-500 ml-1">({item.count})</span>
                       </span>
                     </label>
                   ))}

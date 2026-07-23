@@ -95,13 +95,12 @@ const App: React.FC = () => {
 
       // 2. Sort by Price (Low to High)
       // Use minPurchasePrice when discountedPrice is 0
-      result.sort((a, b) => {
+      // Copy before sorting so the coupons state array is never mutated
+      return [...result].sort((a, b) => {
           const priceA = a.discountedPrice || a.minPurchasePrice || 0;
           const priceB = b.discountedPrice || b.minPurchasePrice || 0;
           return priceA - priceB;
       });
-
-      return result;
   }, [coupons, selectedFilterItems, selectedDeliveryTypes]);
 
 
@@ -124,20 +123,21 @@ const App: React.FC = () => {
         ) : (
           <>
             {/* Filter Section */}
-            {menuItems.length > 0 && (
-                <Filter
-                    menuItems={menuItems}
-                    selectedItems={selectedFilterItems}
-                    onSelectionChange={setSelectedFilterItems}
-                    selectedDeliveryTypes={selectedDeliveryTypes}
-                    onDeliveryTypesChange={setSelectedDeliveryTypes}
-                />
-            )}
+            <Filter
+                coupons={coupons}
+                menuItems={menuItems}
+                selectedItems={selectedFilterItems}
+                onSelectionChange={setSelectedFilterItems}
+                selectedDeliveryTypes={selectedDeliveryTypes}
+                onDeliveryTypesChange={setSelectedDeliveryTypes}
+            />
 
             {/* Results Count */}
             <div className="mb-4 text-sm text-gray-500 font-medium flex justify-between items-center">
               <span>
-                  {selectedFilterItems.length > 0 ? `搜尋結果: ${filteredCoupons.length} 筆優惠` : `全部優惠 (${coupons.length})`}
+                  {(selectedFilterItems.length > 0 || selectedDeliveryTypes.length > 0)
+                      ? `搜尋結果: ${filteredCoupons.length} 筆優惠`
+                      : `全部優惠 (${coupons.length})`}
               </span>
               <span className="text-xs text-gray-400">
                   排序：價格低到高
