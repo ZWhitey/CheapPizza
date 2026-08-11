@@ -25,7 +25,7 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon }) => {
 
   const handleOrder = () => {
     const encodedCode = encodeURIComponent(coupon.code);
-    window.open(`https://pizzahut.com.tw/order/?mode=step_2&type_id=1025&cno=${encodedCode}`, '_blank');
+    window.open(`https://www.pizzahut.com.tw/order/?mode=step_2&type_id=1025&cno=${encodedCode}`, '_blank');
   };
 
   // Get delivery type label
