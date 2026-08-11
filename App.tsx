@@ -10,6 +10,7 @@ const App: React.FC = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [selectedFilterItems, setSelectedFilterItems] = useState<string[]>([]);
   const [selectedDeliveryTypes, setSelectedDeliveryTypes] = useState<string[]>([]);
+  const [sortOption, setSortOption] = useState<string>('price-asc');
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -93,15 +94,53 @@ const App: React.FC = () => {
           });
       }
 
-      // 2. Sort by Price (Low to High)
-      // Use minPurchasePrice when discountedPrice is 0
-      // Copy before sorting so the coupons state array is never mutated
+      // 2. Sort Coupons
       return [...result].sort((a, b) => {
-          const priceA = a.discountedPrice || a.minPurchasePrice || 0;
-          const priceB = b.discountedPrice || b.minPurchasePrice || 0;
-          return priceA - priceB;
+          switch (sortOption) {
+              case 'price-asc': {
+                  const priceA = a.discountedPrice || a.minPurchasePrice || 0;
+                  const priceB = b.discountedPrice || b.minPurchasePrice || 0;
+                  return priceA - priceB;
+              }
+              case 'price-desc': {
+                  const priceA = a.discountedPrice || a.minPurchasePrice || 0;
+                  const priceB = b.discountedPrice || b.minPurchasePrice || 0;
+                  return priceB - priceA;
+              }
+              case 'discount-desc': {
+                  // Percentage discount: (originalPrice - finalPrice) / originalPrice
+                  const priceA = a.discountedPrice || a.minPurchasePrice || 0;
+                  const priceB = b.discountedPrice || b.minPurchasePrice || 0;
+                  const discA = a.originalPrice && a.originalPrice > priceA ? (a.originalPrice - priceA) / a.originalPrice : 0;
+                  const discB = b.originalPrice && b.originalPrice > priceB ? (b.originalPrice - priceB) / b.originalPrice : 0;
+                  return discB - discA;
+              }
+              case 'discount-asc': {
+                  const priceA = a.discountedPrice || a.minPurchasePrice || 0;
+                  const priceB = b.discountedPrice || b.minPurchasePrice || 0;
+                  const discA = a.originalPrice && a.originalPrice > priceA ? (a.originalPrice - priceA) / a.originalPrice : 0;
+                  const discB = b.originalPrice && b.originalPrice > priceB ? (b.originalPrice - priceB) / b.originalPrice : 0;
+                  return discA - discB;
+              }
+              case 'code-asc': {
+                  return a.code.localeCompare(b.code);
+              }
+              case 'code-desc': {
+                  return b.code.localeCompare(a.code);
+              }
+              case 'expire-soon': {
+                  const dateA = a.validUntil ? new Date(a.validUntil).getTime() : Infinity;
+                  const dateB = b.validUntil ? new Date(b.validUntil).getTime() : Infinity;
+                  return dateA - dateB;
+              }
+              default: {
+                  const priceA = a.discountedPrice || a.minPurchasePrice || 0;
+                  const priceB = b.discountedPrice || b.minPurchasePrice || 0;
+                  return priceA - priceB;
+              }
+          }
       });
-  }, [coupons, selectedFilterItems, selectedDeliveryTypes]);
+  }, [coupons, selectedFilterItems, selectedDeliveryTypes, sortOption]);
 
 
   return (
@@ -132,16 +171,30 @@ const App: React.FC = () => {
                 onDeliveryTypesChange={setSelectedDeliveryTypes}
             />
 
-            {/* Results Count */}
+            {/* Results Count & Sort Dropdown */}
             <div className="mb-4 text-sm text-gray-500 font-medium flex justify-between items-center">
               <span>
                   {(selectedFilterItems.length > 0 || selectedDeliveryTypes.length > 0)
                       ? `搜尋結果: ${filteredCoupons.length} 筆優惠`
                       : `全部優惠 (${coupons.length})`}
               </span>
-              <span className="text-xs text-gray-400">
-                  排序：價格低到高
-              </span>
+              <div className="flex items-center gap-2">
+                <label htmlFor="sort-select" className="text-xs text-gray-400 hidden sm:inline">排序：</label>
+                <select
+                  id="sort-select"
+                  value={sortOption}
+                  onChange={(e) => setSortOption(e.target.value)}
+                  className="text-xs text-gray-600 bg-white border border-gray-200 rounded px-2 py-1 outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                >
+                  <option value="price-asc">價格低到高</option>
+                  <option value="price-desc">價格高到低</option>
+                  <option value="discount-desc">折扣多到少</option>
+                  <option value="discount-asc">折扣少到多</option>
+                  <option value="expire-soon">最新到期</option>
+                  <option value="code-asc">代碼小到大</option>
+                  <option value="code-desc">代碼大到小</option>
+                </select>
+              </div>
             </div>
 
             {/* Coupon Grid */}

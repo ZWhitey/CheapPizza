@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import pLimit from 'p-limit';
+import process from 'node:process';
+
 
 /**
  * Coupon Crawler Script
@@ -407,8 +409,9 @@ async function fetchCouponDetails(code: string, typeId: string): Promise<CouponD
   }
 }
 
+
 async function main() {
-  let args = typeof process !== 'undefined' ? (process as any).argv.slice(2) : [];
+  let args = typeof process !== 'undefined' ? process.argv.slice(2) : [];
   if (args.length === 0) {
     console.log(`No args. Using default ranges: ${DEFAULT_RANGES.join(', ')}`);
     args = DEFAULT_RANGES;
@@ -417,11 +420,31 @@ async function main() {
   const codes = parseArgsToCodes(args);
   
   // Load existing coupons to enable incremental updates
-  const publicPath = path.join((process as any).cwd(), 'public', 'coupons.json');
+  const publicPath = path.join(process.cwd(), 'public', 'coupons.json');
+  const publicMetadataPath = path.join(process.cwd(), 'public', 'metadata.json');
   let existingCoupons: CouponData[] = [];
   let existingCodes = new Set<string>();
   
-  if (fs.existsSync(publicPath)) {
+  let isCacheExpired = false;
+  if (fs.existsSync(publicMetadataPath)) {
+    try {
+      const metaData = JSON.parse(fs.readFileSync(publicMetadataPath, 'utf-8'));
+      if (metaData.lastUpdated) {
+        const lastUpdatedDate = new Date(metaData.lastUpdated);
+        const now = new Date();
+        const diffMs = now.getTime() - lastUpdatedDate.getTime();
+        const diffDays = diffMs / (1000 * 60 * 60 * 24);
+        if (diffDays > 7) {
+          isCacheExpired = true;
+          console.log(`Cache is older than 7 days (${diffDays.toFixed(1)} days). Invalidating cache and rescanning all coupons.`);
+        }
+      }
+    } catch (err) {
+      console.error('Failed to check metadata for cache expiration:', err);
+    }
+  }
+
+  if (!isCacheExpired && fs.existsSync(publicPath)) {
     try {
       const existingData = fs.readFileSync(publicPath, 'utf-8');
       const loadedCoupons: CouponData[] = JSON.parse(existingData);
@@ -474,8 +497,8 @@ async function main() {
       }
     } else {
         // Fix for process.stdout type issue
-        if ((process as any).stdout) {
-            (process as any).stdout.write('.'); 
+        if (process.stdout) {
+            process.stdout.write('.');
         }
     }
   }));
