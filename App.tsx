@@ -4,12 +4,14 @@ import CouponCard from './components/CouponCard';
 import Filter from './components/Filter';
 import { Coupon, Metadata, MenuItem } from './types';
 import { Loader2 } from 'lucide-react';
+import { buildCouponSearchText, couponMatchesKeywords, parseSearchKeywords } from './search';
 
 const App: React.FC = () => {
   const [coupons, setCoupons] = useState<Coupon[]>([]);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [selectedFilterItems, setSelectedFilterItems] = useState<string[]>([]);
   const [selectedDeliveryTypes, setSelectedDeliveryTypes] = useState<string[]>([]);
+  const [keywordQuery, setKeywordQuery] = useState('');
   const [sortOption, setSortOption] = useState<string>('price-asc');
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
@@ -34,7 +36,7 @@ const App: React.FC = () => {
         // Pre-calculate search text for performance
         const couponsWithSearch = couponsData.map((c: Coupon) => ({
             ...c,
-            _searchText: (c.title + (c.items ? c.items.join('') : '')).toLowerCase()
+            _searchText: buildCouponSearchText(c)
         }));
         setCoupons(couponsWithSearch);
 
@@ -63,6 +65,12 @@ const App: React.FC = () => {
   const filteredCoupons = useMemo(() => {
       // 1. Filter
       let result = coupons;
+
+      // Space-separated keywords use AND matching across coupon codes, titles and meal contents.
+      const keywords = parseSearchKeywords(keywordQuery);
+      if (keywords.length > 0) {
+          result = result.filter(coupon => couponMatchesKeywords(coupon, keywords));
+      }
 
       // Filter by menu items
       if (selectedFilterItems.length > 0) {
@@ -140,7 +148,7 @@ const App: React.FC = () => {
               }
           }
       });
-  }, [coupons, selectedFilterItems, selectedDeliveryTypes, sortOption]);
+  }, [coupons, keywordQuery, selectedFilterItems, selectedDeliveryTypes, sortOption]);
 
 
   return (
@@ -169,12 +177,14 @@ const App: React.FC = () => {
                 onSelectionChange={setSelectedFilterItems}
                 selectedDeliveryTypes={selectedDeliveryTypes}
                 onDeliveryTypesChange={setSelectedDeliveryTypes}
+                keywordQuery={keywordQuery}
+                onKeywordQueryChange={setKeywordQuery}
             />
 
             {/* Results Count & Sort Dropdown */}
             <div className="mb-4 text-sm text-gray-500 font-medium flex justify-between items-center">
               <span>
-                  {(selectedFilterItems.length > 0 || selectedDeliveryTypes.length > 0)
+                  {(keywordQuery.trim() || selectedFilterItems.length > 0 || selectedDeliveryTypes.length > 0)
                       ? `搜尋結果: ${filteredCoupons.length} 筆優惠`
                       : `全部優惠 (${coupons.length})`}
               </span>
@@ -211,6 +221,7 @@ const App: React.FC = () => {
                     onClick={() => {
                         setSelectedFilterItems([]);
                         setSelectedDeliveryTypes([]);
+                        setKeywordQuery('');
                     }}
                     className="text-red-600 hover:underline"
                 >
