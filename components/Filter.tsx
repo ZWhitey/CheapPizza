@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Coupon, MenuItem } from '../types';
-import { ChevronDown, ChevronUp, Filter as FilterIcon, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, Filter as FilterIcon, Search, X } from 'lucide-react';
 
 // Number of popular items shown as always-visible quick-select chips
 const QUICK_PICK_COUNT = 15;
@@ -12,6 +12,8 @@ interface FilterProps {
   onSelectionChange: (items: string[]) => void;
   selectedDeliveryTypes: string[];
   onDeliveryTypesChange: (types: string[]) => void;
+  keywordQuery: string;
+  onKeywordQueryChange: (query: string) => void;
 }
 
 const Filter: React.FC<FilterProps> = ({
@@ -20,7 +22,9 @@ const Filter: React.FC<FilterProps> = ({
   selectedItems,
   onSelectionChange,
   selectedDeliveryTypes,
-  onDeliveryTypesChange
+  onDeliveryTypesChange,
+  keywordQuery,
+  onKeywordQueryChange
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -115,6 +119,37 @@ const Filter: React.FC<FilterProps> = ({
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 mb-6 overflow-hidden">
+      <div className="p-4 border-b border-gray-200">
+        <label htmlFor="keyword-search" className="block text-sm font-bold text-gray-800 mb-2">
+          搜尋優惠
+        </label>
+        <div className="relative">
+          <Search
+            size={20}
+            aria-hidden="true"
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+          />
+          <input
+            id="keyword-search"
+            type="search"
+            value={keywordQuery}
+            onChange={(event) => onKeywordQueryChange(event.target.value)}
+            placeholder="搜尋優惠代碼、標題或餐點，多個關鍵字請以空格分隔"
+            className="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-10 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+          />
+          {keywordQuery && (
+            <button
+              type="button"
+              onClick={() => onKeywordQueryChange('')}
+              aria-label="清除關鍵字搜尋"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
+            >
+              <X size={18} />
+            </button>
+          )}
+        </div>
+        <p className="mt-2 text-xs text-gray-500">多個關鍵字會同時比對，例如「大披薩 可樂」。</p>
+      </div>
       <div
         className="p-4 flex flex-col sm:flex-row sm:items-center justify-between cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors gap-3"
         onClick={() => setIsExpanded(!isExpanded)}
